@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社クラフトファニチャー | 一生を共にする、家具づくり</title>
+    <meta name="description" content="東京を拠点とする家具職人による、一枚板を使ったオーダーメイド家具の製造・販売。ダイニングテーブルを中心に、永年保証でお客様の一生に寄り添う家具をお作りします。">
+    <meta name="keywords" content="オーダー家具, 一枚板, ダイニングテーブル, 東京, 家具職人, オーダーメイド">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craft-furniture.jp/">
+    <meta property="og:title" content="株式会社クラフトファニチャー | 一生を共にする、家具づくり">
+    <meta property="og:description" content="東京を拠点とする家具職人による、一枚板を使ったオーダーメイド家具の製造・販売。">
+    <meta property="og:image" content="https://craft-furniture.jp/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://craft-furniture.jp/">
+    <meta property="twitter:title" content="株式会社クラフトファニチャー | 一生を共にする、家具づくり">
+    <meta property="twitter:description" content="東京を拠点とする家具職人による、一枚板を使ったオーダーメイド家具の製造・販売。">
+    <meta property="twitter:image" content="https://craft-furniture.jp/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    
+    <!-- 見積もりシミュレーターボタンのスタイル強制適用 -->
+    <style>
+        /* 見積もりシミュレーターボタンを確実に白背景・緑文字にする */
+        .cta__buttons a[href="simulator/"],
+        a.btn.btn--contact.btn--large[href="simulator/"],
+        section.cta .cta__content .cta__buttons a.btn.btn--contact.btn--large[href="simulator/"] {
+            background: #FFFFFF !important;
+            background-color: #FFFFFF !important;
+            color: #2E5E3E !important;
+            border: 2px solid #2E5E3E !important;
+            border-color: #2E5E3E !important;
+        }
+        
+        /* 見積もりシミュレーターボタンのテキストと矢印も緑にする */
+        .cta__buttons a[href="simulator/"] span,
+        a.btn.btn--contact.btn--large[href="simulator/"] span,
+        .cta__buttons a[href="simulator/"] svg,
+        a.btn.btn--contact.btn--large[href="simulator/"] svg {
+            color: #2E5E3E !important;
+        }
+        
+        /* ホバー状態は薄い緑背景・濃い緑文字にする */
+        .cta__buttons a[href="simulator/"]:hover,
+        a.btn.btn--contact.btn--large[href="simulator/"]:hover {
+            background: #f0f5f1 !important;
+            background-color: #f0f5f1 !important;
+            border-color: #2E5E3E !important;
+            color: #1e3f2a !important;
+        }
+        
+        /* CTAセクションの背景色を施工事例ページと同じ配色に統一 */
+        .cta {
+            background: linear-gradient(135deg, #3E2723 0%, #2E5E3E 100%) !important; /* ダークブラウン→フォレストグリーンのグラデーション */
+            color: #FFFFFF !important; /* 白文字 */
+        }
+        
+        .cta__title {
+            color: #FFFFFF !important; /* タイトルを白文字 */
+        }
+        
+        .cta__description {
+            color: #FFFFFF !important; /* 説明文を白文字 */
+            opacity: 0.9; /* 少し透明度を下げて読みやすく */
+        }
+        
+        .cta__phone,
+        .cta__hours {
+            color: #FFFFFF !important; /* 連絡先情報も白文字 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="./" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="./" class="nav__link nav__link--active">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="works/?filter=desk">デスク</a></li>
+                                <li><a href="works/?filter=storage">収納家具</a></li>
+                                <li><a href="works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="about/">会社概要</a></li>
+                                <li><a href="flow/">納品までの流れ</a></li>
+                                <li><a href="delivery/">納品エリア</a></li>
+                                <li><a href="showroom/">ショールーム</a></li>
+                                <li><a href="faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="simulator/" class="nav__link nav__link--cta">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__slider">
+                <div class="hero__slide hero__slide--active">
+                    <div class="hero__image">
+                        <div class="image-placeholder image-placeholder--hero">
+                            <div class="image-placeholder__content">
+                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                </svg>
+                                <div class="image-placeholder__text">準備中</div>
+                                <div class="image-placeholder__subtext">一枚板ダイニングテーブル</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__content">
+                        <h1 class="hero__title">
+                            <span class="hero__title-main">一生を共にする、</span>
+                            <span class="hero__title-sub">家具づくり</span>
+                        </h1>
+                        <p class="hero__description">
+                            厳選された一枚板から、職人の手で生み出される<br>
+                            唯一無二のオーダーメイド家具
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="hero__slide">
+                    <div class="hero__image">
+                        <div class="image-placeholder image-placeholder--hero">
+                            <div class="image-placeholder__content">
+                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
+                                </svg>
+                                <div class="image-placeholder__text">準備中</div>
+                                <div class="image-placeholder__subtext">職人の手作業</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__content">
+                        <h1 class="hero__title">
+                            <span class="hero__title-main">職人の技術が</span>
+                            <span class="hero__title-sub">息づく家具</span>
+                        </h1>
+                        <p class="hero__description">
+                            15年以上の経験を持つ職人が<br>
+                            丁寧に仕上げる確かな品質
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero__slide">
+                    <div class="hero__image">
+                        <div class="image-placeholder image-placeholder--hero">
+                            <div class="image-placeholder__content">
+                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                </svg>
+                                <div class="image-placeholder__text">準備中</div>
+                                <div class="image-placeholder__subtext">完成品とお客様</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__content">
+                        <h1 class="hero__title">
+                            <span class="hero__title-main">永年保証で</span>
+                            <span class="hero__title-sub">安心をお届け</span>
+                        </h1>
+                        <p class="hero__description">
+                            アフターケアも万全<br>
+                            一生涯のお付き合いをお約束します
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Navigation -->
+            <div class="hero__nav">
+                <button class="hero__nav-btn hero__nav-btn--prev" aria-label="前のスライド">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="hero__nav-btn hero__nav-btn--next" aria-label="次のスライド">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Hero Indicators -->
+            <div class="hero__indicators">
+                <button class="hero__indicator hero__indicator--active" data-slide="0"></button>
+                <button class="hero__indicator" data-slide="1"></button>
+                <button class="hero__indicator" data-slide="2"></button>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="hero__scroll">
+                <span class="hero__scroll-text">SCROLL</span>
+                <div class="hero__scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Concept Section -->
+        <section class="concept">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">私たちの3つの強み</h2>
+                    <p class="section__subtitle">Quality & Commitment</p>
+                </div>
+
+                <div class="concept__grid">
+                    <div class="concept__item">
+                        <div class="concept__icon">
+                            <div class="image-placeholder image-placeholder--icon">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="concept__title">素材へのこだわり</h3>
+                        <p class="concept__description">
+                            厳選された一枚板のみを使用。木の個性を活かした美しい家具を生み出します。各木材の特性を熟知した職人が最適な板を選定し、お客様だけの特別な家具をお作りします。
+                        </p>
+                    </div>
+
+                    <div class="concept__item">
+                        <div class="concept__icon">
+                            <div class="image-placeholder image-placeholder--icon">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="concept__title">職人の技術</h3>
+                        <p class="concept__description">
+                            10年以上の経験を持つ熟練職人が、一つひとつ丁寧に手作業で仕上げます。機械では表現できない、人の手だからこそ生まれる温もりと精密さを両立した家具をお届けします。
+                        </p>
+                    </div>
+
+                    <div class="concept__item">
+                        <div class="concept__icon">
+                            <div class="image-placeholder image-placeholder--icon">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="concept__title">永年保証</h3>
+                        <p class="concept__description">
+                            お客様に長くご愛用いただけるよう、永年保証でアフターケアをお約束。定期メンテナンスから修理まで、一生涯のお付き合いをさせていただきます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section class="works">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">施工事例</h2>
+                    <p class="section__subtitle">Latest Works</p>
+                </div>
+
+                <div class="works__grid">
+                    <article class="works__item">
+                        <a href="works/" class="works__link">
+                            <div class="works__image">
+                                <div class="image-placeholder image-placeholder--medium">
+                                    <div class="image-placeholder__content">
+                                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                        </svg>
+                                        <div class="image-placeholder__text">準備中</div>
+                                        <div class="image-placeholder__subtext">ウォールナットテーブル</div>
+                                    </div>
+                                </div>
+                                <div class="works__overlay">
+                                    <div class="works__info">
+                                        <span class="works__category">ダイニングテーブル</span>
+                                        <span class="works__material">ウォールナット</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="works__content">
+                                <h3 class="works__title">ウォールナット一枚板テーブル</h3>
+                                <p class="works__specs">W2400 × D950 × H720mm / 板厚50mm</p>
+                                <div class="works__meta">
+                                    <span class="works__price">¥800,000 - 1,200,000</span>
+                                    <span class="works__period">制作期間 3ヶ月</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="works__item">
+                        <a href="works/" class="works__link">
+                            <div class="works__image">
+                                <div class="image-placeholder image-placeholder--medium">
+                                    <div class="image-placeholder__content">
+                                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                        </svg>
+                                        <div class="image-placeholder__text">準備中</div>
+                                        <div class="image-placeholder__subtext">オークL字デスク</div>
+                                    </div>
+                                </div>
+                                <div class="works__overlay">
+                                    <div class="works__info">
+                                        <span class="works__category">デスク</span>
+                                        <span class="works__material">オーク</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="works__content">
+                                <h3 class="works__title">オーク材L字デスク</h3>
+                                <p class="works__specs">W1800 × D1200 × H720mm / 板厚40mm</p>
+                                <div class="works__meta">
+                                    <span class="works__price">¥450,000 - 650,000</span>
+                                    <span class="works__period">制作期間 2.5ヶ月</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="works__item">
+                        <a href="works/" class="works__link">
+                            <div class="works__image">
+                                <div class="image-placeholder image-placeholder--medium">
+                                    <div class="image-placeholder__content">
+                                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                        </svg>
+                                        <div class="image-placeholder__text">準備中</div>
+                                        <div class="image-placeholder__subtext">チェリーカウンター</div>
+                                    </div>
+                                </div>
+                                <div class="works__overlay">
+                                    <div class="works__info">
+                                        <span class="works__category">カウンター</span>
+                                        <span class="works__material">チェリー</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="works__content">
+                                <h3 class="works__title">チェリー材カウンターテーブル</h3>
+                                <p class="works__specs">W3000 × D450 × H1050mm / 板厚30mm</p>
+                                <div class="works__meta">
+                                    <span class="works__price">¥350,000 - 550,000</span>
+                                    <span class="works__period">制作期間 2ヶ月</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="works__item">
+                        <a href="works/" class="works__link">
+                            <div class="works__image">
+                                <div class="image-placeholder image-placeholder--medium">
+                                    <div class="image-placeholder__content">
+                                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                        </svg>
+                                        <div class="image-placeholder__text">準備中</div>
+                                        <div class="image-placeholder__subtext">無垢材収納棚</div>
+                                    </div>
+                                </div>
+                                <div class="works__overlay">
+                                    <div class="works__info">
+                                        <span class="works__category">収納</span>
+                                        <span class="works__material">ウォールナット</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="works__content">
+                                <h3 class="works__title">無垢材収納棚</h3>
+                                <p class="works__specs">W1800 × D400 × H1800mm</p>
+                                <div class="works__meta">
+                                    <span class="works__price">¥280,000 - 420,000</span>
+                                    <span class="works__period">制作期間 2ヶ月</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="works__item">
+                        <a href="works/" class="works__link">
+                            <div class="works__image">
+                                <div class="image-placeholder image-placeholder--medium">
+                                    <div class="image-placeholder__content">
+                                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                        </svg>
+                                        <div class="image-placeholder__text">準備中</div>
+                                        <div class="image-placeholder__subtext">オーク円形テーブル</div>
+                                    </div>
+                                </div>
+                                <div class="works__overlay">
+                                    <div class="works__info">
+                                        <span class="works__category">ダイニングテーブル</span>
+                                        <span class="works__material">オーク</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="works__content">
+                                <h3 class="works__title">オーク材円形テーブル</h3>
+                                <p class="works__specs">Φ1500 × H720mm / 板厚40mm</p>
+                                <div class="works__meta">
+                                    <span class="works__price">¥600,000 - 900,000</span>
+                                    <span class="works__period">制作期間 3ヶ月</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="works__item">
+                        <a href="works/" class="works__link">
+                            <div class="works__image">
+                                <div class="image-placeholder image-placeholder--medium">
+                                    <div class="image-placeholder__content">
+                                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                        </svg>
+                                        <div class="image-placeholder__text">準備中</div>
+                                        <div class="image-placeholder__subtext">店舗用大型テーブル</div>
+                                    </div>
+                                </div>
+                                <div class="works__overlay">
+                                    <div class="works__info">
+                                        <span class="works__category">店舗用</span>
+                                        <span class="works__material">ウォールナット</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="works__content">
+                                <h3 class="works__title">店舗用大型テーブル</h3>
+                                <p class="works__specs">W3500 × D1200 × H720mm / 板厚50mm</p>
+                                <div class="works__meta">
+                                    <span class="works__price">¥1,200,000 - 1,800,000</span>
+                                    <span class="works__period">制作期間 4ヶ月</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+
+                <div class="section__cta">
+                    <a href="works/" class="btn btn--primary btn--large">すべての施工事例を見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Craftsmen Section -->
+        <section class="craftsmen">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">職人紹介</h2>
+                    <p class="section__subtitle">Master Craftsmen</p>
+                </div>
+
+                <div class="craftsmen__grid">
+                    <div class="craftsmen__item">
+                        <div class="craftsmen__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">田中職人</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craftsmen__content">
+                            <h3 class="craftsmen__name">田中 一郎</h3>
+                            <p class="craftsmen__title">主任職人</p>
+                            <p class="craftsmen__experience">家具職人歴 15年</p>
+                            <p class="craftsmen__specialty">専門：一枚板テーブル</p>
+                            <p class="craftsmen__description">
+                                木の個性を最大限に活かした一枚板テーブルの制作を得意としています。お客様のライフスタイルに合わせた最適な設計をご提案いたします。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="craftsmen__item">
+                        <div class="craftsmen__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">山田職人</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craftsmen__content">
+                            <h3 class="craftsmen__name">山田 太郎</h3>
+                            <p class="craftsmen__title">職人</p>
+                            <p class="craftsmen__experience">家具職人歴 12年</p>
+                            <p class="craftsmen__specialty">専門：収納家具・細工</p>
+                            <p class="craftsmen__description">
+                                収納家具や細かな細工を施した家具の制作を担当。機能性と美しさを両立した、使い勝手の良い家具をお作りします。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="craftsmen__item craftsmen__item--anonymous">
+                        <div class="craftsmen__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">K.S職人の手元</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="craftsmen__content">
+                            <h3 class="craftsmen__name">K.S</h3>
+                            <p class="craftsmen__title">ベテラン職人</p>
+                            <p class="craftsmen__experience">家具職人歴 20年以上</p>
+                            <p class="craftsmen__specialty">専門：オーダーデスク</p>
+                            <p class="craftsmen__description">
+                                長年の経験を活かし、お客様の細かなご要望にお応えするオーダーデスクの制作を手がけています。匠の技をご体験ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section__cta">
+                    <a href="craftsmen/" class="btn btn--secondary btn--large">職人詳細を見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Section -->
+        <section class="instagram">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Instagram</h2>
+                    <p class="section__subtitle">@craft_furniture_jp</p>
+                </div>
+
+                <div class="instagram__grid" id="instagram-feed">
+                    <!-- Instagram posts will be loaded here via JavaScript -->
+                </div>
+
+                <div class="section__cta">
+                    <a href="https://www.instagram.com/craft_furniture_jp/" target="_blank" rel="noopener" class="btn btn--instagram btn--large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Instagramで更新をチェック
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery Section -->
+        <section class="delivery">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">納品エリア</h2>
+                    <p class="section__subtitle">Delivery Area</p>
+                </div>
+
+                <div class="delivery__content">
+                    <div class="delivery__map">
+                        <div class="image-placeholder image-placeholder--large">
+                            <div class="image-placeholder__content">
+                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <div class="image-placeholder__text">準備中</div>
+                                <div class="image-placeholder__subtext">配送エリアマップ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="delivery__info">
+                        <h3 class="delivery__title">配送設置無料エリア</h3>
+                        <ul class="delivery__list">
+                            <li>東京都全域</li>
+                            <li>神奈川県全域</li>
+                            <li>千葉県全域</li>
+                            <li>埼玉県全域</li>
+                        </ul>
+                        <p class="delivery__note">
+                            上記エリアは配送・設置まで無料で承ります。<br>
+                            その他のエリアについてもご相談ください。
+                        </p>
+                        <div class="delivery__cta">
+                            <a href="delivery/" class="btn btn--secondary">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">お知らせ</h2>
+                    <p class="section__subtitle">News & Updates</p>
+                </div>
+
+                <div class="news__list">
+                    <article class="news__item">
+                        <time class="news__date" datetime="2025-01-15">2025.01.15</time>
+                        <span class="news__category news__category--event">イベント</span>
+                        <h3 class="news__title">
+                            <a href="news/exhibition-2025-april.html">4月住宅展示場イベント出展のお知らせ</a>
+                        </h3>
+                    </article>
+
+                    <article class="news__item">
+                        <time class="news__date" datetime="2025-01-10">2025.01.10</time>
+                        <span class="news__category news__category--update">更新</span>
+                        <h3 class="news__title">
+                            <a href="news/website-renewal.html">ウェブサイトをリニューアルいたしました</a>
+                        </h3>
+                    </article>
+
+                    <article class="news__item">
+                        <time class="news__date" datetime="2024-12-20">2024.12.20</time>
+                        <span class="news__category news__category--info">お知らせ</span>
+                        <h3 class="news__title">
+                            <a href="news/year-end-schedule.html">年末年始の営業についてのお知らせ</a>
+                        </h3>
+                    </article>
+                </div>
+
+                <div class="section__cta">
+                    <a href="news/" class="btn btn--secondary btn--large">すべてのお知らせを見る</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">お気軽にご相談ください</h2>
+                    <p class="cta__description">
+                        オーダーメイド家具のことなら、何でもお気軽にお問い合わせください。<br>
+                        経験豊富な職人が、お客様のご要望に丁寧にお応えいたします。
+                    </p>
+                    
+                    <div class="cta__buttons">
+                        <a href="simulator/" class="btn btn--contact btn--large" style="background: #FFFFFF !important; color: #2E5E3E !important; border: 2px solid #2E5E3E !important; background-color: #FFFFFF !important;">
+                            <span style="color: #2E5E3E !important;">見積もりシミュレーター</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="color: #2E5E3E !important;">
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="showroom/" class="btn btn--secondary btn--large">
+                            <span>ショールーム予約</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="contact/" class="btn btn--contact btn--large">
+                            <span>お問い合わせ</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <div class="cta__contact-info">
+                        <div class="cta__phone">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>TEL: 03-1234-5678</span>
+                        </div>
+                        <div class="cta__hours">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>営業時間: 9:00-18:00（定休日：日曜・祝日）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="footer__logo-text">Craft Furniture</span>
+                        <span class="footer__logo-sub">株式会社クラフトファニチャー</span>
+                    </div>
+                    <p class="footer__description">
+                        東京を拠点に、一枚板を使ったオーダーメイド家具の製造・販売を行っています。職人の技術と木の温もりを大切に、一生を共にする家具をお作りします。
+                    </p>
+                    <div class="footer__contact">
+                        <p class="footer__phone">TEL: 03-1234-5678</p>
+                        <p class="footer__address">〒123-4567 東京都○○区○○ 1-2-3</p>
+                    </div>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">サービス</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="works/">施工事例</a></li>
+                            <li><a href="process/">製作工程</a></li>
+                            <li><a href="craftsmen/">職人紹介</a></li>
+                            <li><a href="wood-guide/">木材図鑑</a></li>
+                            <li><a href="simulator/">見積もり</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">会社情報</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="about/">会社概要</a></li>
+                            <li><a href="flow/">納品までの流れ</a></li>
+                            <li><a href="delivery/">納品エリア</a></li>
+                            <li><a href="showroom/">ショールーム</a></li>
+                            <li><a href="faq/">よくある質問</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">その他</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="voice/">お客様の声</a></li>
+                            <li><a href="news/">お知らせ</a></li>
+                            <li><a href="contact/">お問い合わせ</a></li>
+                            <li><a href="privacy/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="footer__social">
+                    <h3 class="footer__social-title">Follow Us</h3>
+                    <div class="footer__social-links">
+                        <a href="https://www.instagram.com/craft_furniture_jp/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Craft Furniture Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/common.js"></script>
+    <script src="assets/js/hero-slider.js"></script>
+    <script src="assets/js/instagram.js"></script>
+    
+    <!-- 見積もりシミュレーターボタンの色を強制変更 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 見積もりシミュレーターボタンを特定
+            const simulatorButton = document.querySelector('a[href="simulator/"]');
+            
+            if (simulatorButton) {
+                console.log('見積もりシミュレーターボタンを発見:', simulatorButton);
+                
+                // 強制的にスタイルを適用（白背景・緑文字）
+                simulatorButton.style.setProperty('background', '#FFFFFF', 'important');
+                simulatorButton.style.setProperty('background-color', '#FFFFFF', 'important');
+                simulatorButton.style.setProperty('color', '#2E5E3E', 'important');
+                simulatorButton.style.setProperty('border', '2px solid #2E5E3E', 'important');
+                simulatorButton.style.setProperty('border-color', '#2E5E3E', 'important');
+                
+                // テキストとSVGも緑にする
+                const span = simulatorButton.querySelector('span');
+                const svg = simulatorButton.querySelector('svg');
+                
+                if (span) {
+                    span.style.setProperty('color', '#2E5E3E', 'important');
+                    console.log('スパンの色を緑に設定');
+                }
+                
+                if (svg) {
+                    svg.style.setProperty('color', '#2E5E3E', 'important');
+                    console.log('SVGの色を緑に設定');
+                }
+                
+                // ホバーイベントも追加（薄い緑背景・濃い緑文字）
+                simulatorButton.addEventListener('mouseenter', function() {
+                    this.style.setProperty('background', '#f0f5f1', 'important');
+                    this.style.setProperty('background-color', '#f0f5f1', 'important');
+                    this.style.setProperty('border-color', '#2E5E3E', 'important');
+                    this.style.setProperty('color', '#1e3f2a', 'important');
+                    if (span) span.style.setProperty('color', '#1e3f2a', 'important');
+                    if (svg) svg.style.setProperty('color', '#1e3f2a', 'important');
+                });
+                
+                simulatorButton.addEventListener('mouseleave', function() {
+                    this.style.setProperty('background', '#FFFFFF', 'important');
+                    this.style.setProperty('background-color', '#FFFFFF', 'important');
+                    this.style.setProperty('border-color', '#2E5E3E', 'important');
+                    this.style.setProperty('color', '#2E5E3E', 'important');
+                    if (span) span.style.setProperty('color', '#2E5E3E', 'important');
+                    if (svg) svg.style.setProperty('color', '#2E5E3E', 'important');
+                });
+                
+                console.log('見積もりシミュレーターボタンのスタイルを強制適用完了');
+            } else {
+                console.error('見積もりシミュレーターボタンが見つかりませんでした');
+            }
+        });
+    </script>
+</body>
+</html>

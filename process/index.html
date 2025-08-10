@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>製作工程｜クラフトファニチャー - オーダーメイド家具</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="クラフトファニチャーの製作工程をご紹介。一枚板の選定から完成まで、職人の技術と手仕事による家具作りの全工程を詳しく解説します。">
+    <meta name="keywords" content="家具製作工程,オーダーメイド,職人,手作り家具,一枚板,木工,東京">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="製作工程｜クラフトファニチャー">
+    <meta property="og:description" content="職人の技術と手仕事による家具作りの全工程をご紹介">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craft-furniture.jp/process/">
+    <meta property="og:image" content="https://craft-furniture.jp/assets/images/process/og-process.jpg">
+    
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/process.css">
+    
+    <!-- 見積もりシミュレーターボタンのスタイル強制適用 -->
+    <style>
+        
+        /* CTAセクションの背景色を施工事例ページと同じ配色に統一 */
+        .cta-section {
+            background: linear-gradient(135deg, #3E2723 0%, #2E5E3E 100%) !important; /* ダークブラウン→フォレストグリーンのグラデーション */
+            color: #FFFFFF !important; /* 白文字 */
+        }
+        
+        .cta-section__title {
+            color: #FFFFFF !important; /* タイトルを白文字 */
+        }
+        
+        .cta-section__description {
+            color: #FFFFFF !important; /* 説明文を白文字 */
+            opacity: 0.9; /* 少し透明度を下げて読みやすく */
+        }
+        
+        /* 品質へのお約束のタイトルを白文字に */
+        .quality-promise__title {
+            color: #FFFFFF !important; /* タイトルを白文字 */
+        }
+    </style>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    
+    <!-- Preload -->
+    <link rel="preload" href="../assets/images/process/hero-bg.jpg" as="image" type="image/jpeg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "製作工程",
+        "url": "https://craft-furniture.jp/process/",
+        "description": "クラフトファニチャーの製作工程をご紹介。一枚板の選定から完成まで、職人の技術と手仕事による家具作りの全工程を詳しく解説します。",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "株式会社クラフトファニチャー",
+            "url": "https://craft-furniture.jp"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="../" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../" class="nav__link">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="../works/?filter=desk">デスク</a></li>
+                                <li><a href="../works/?filter=storage">収納家具</a></li>
+                                <li><a href="../works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="./" class="nav__link nav__link--active">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../about/">会社概要</a></li>
+                                <li><a href="../flow/">納品までの流れ</a></li>
+                                <li><a href="../delivery/">納品エリア</a></li>
+                                <li><a href="../showroom/">ショールーム</a></li>
+                                <li><a href="../faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero__image">
+                <div class="image-placeholder image-placeholder--hero">
+                    <div class="image-placeholder__content">
+                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <div class="image-placeholder__text">準備中</div>
+                        <div class="image-placeholder__subtext">製作工程の画像</div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-hero__content">
+                <div class="container">
+                    <div class="page-hero__inner">
+                        <h1 class="page-hero__title">製作工程</h1>
+                        <p class="page-hero__subtitle">職人の技術と手仕事による<br>家具作りの全工程をご紹介</p>
+                        
+                        <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+                            <ol class="breadcrumb__list">
+                                <li class="breadcrumb__item">
+                                    <a href="../" class="breadcrumb__link">ホーム</a>
+                                </li>
+                                <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                                    製作工程
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Overview -->
+        <section class="process-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">製作の流れ</h2>
+                    <p class="section-subtitle">
+                        お客様のご要望をお聞きしてから完成まで、通常2～3ヶ月の期間をいただいております。<br>
+                        一つひとつの工程を丁寧に行い、一生モノの家具をお作りします。
+                    </p>
+                </div>
+
+                <div class="process-timeline">
+                    <div class="process-step" data-step="1">
+                        <div class="process-step__number">01</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">お打ち合わせ・設計</h3>
+                            <p class="process-step__description">
+                                お客様のご要望、設置場所、使用目的などを詳しくお聞きします。図面作成とお見積もりをご提示いたします。
+                            </p>
+                            <div class="process-step__duration">期間: 1-2週間</div>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="2">
+                        <div class="process-step__number">02</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">木材選定</h3>
+                            <p class="process-step__description">
+                                ご希望の木材を厳選します。一枚板の場合は、木目や色合いを実際にご確認いただけます。
+                            </p>
+                            <div class="process-step__duration">期間: 1週間</div>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="3">
+                        <div class="process-step__number">03</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">木取り・乾燥</h3>
+                            <p class="process-step__description">
+                                選定した木材を設計に合わせて木取りし、含水率を調整するための乾燥工程を行います。
+                            </p>
+                            <div class="process-step__duration">期間: 2-3週間</div>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="4">
+                        <div class="process-step__number">04</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">加工・組み立て</h3>
+                            <p class="process-step__description">
+                                職人が手作業で丁寧に加工し、組み立てを行います。継ぎ手や仕口など、伝統的な技法を用います。
+                            </p>
+                            <div class="process-step__duration">期間: 3-4週間</div>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="5">
+                        <div class="process-step__number">05</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">仕上げ・塗装</h3>
+                            <p class="process-step__description">
+                                表面を滑らかに研磨し、オイルまたはウレタン塗装で仕上げます。木材の美しさを最大限に引き出します。
+                            </p>
+                            <div class="process-step__duration">期間: 1-2週間</div>
+                        </div>
+                    </div>
+
+                    <div class="process-step" data-step="6">
+                        <div class="process-step__number">06</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">検査・納品</h3>
+                            <p class="process-step__description">
+                                最終検査を行い、お客様宅への配送・設置を行います。アフターメンテナンスもお任せください。
+                            </p>
+                            <div class="process-step__duration">期間: 1週間</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Process -->
+        <section class="detailed-process">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">工程詳細</h2>
+                    <p class="section-subtitle">
+                        各工程での職人の技術と、こだわりのポイントをご紹介します。
+                    </p>
+                </div>
+
+                <div class="process-details">
+                    <!-- Process 1: Design & Planning -->
+                    <article class="process-detail">
+                        <div class="process-detail__image">
+                            <div class="image-placeholder image-placeholder--large">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">設計・打ち合わせ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-detail__content">
+                            <div class="process-detail__step">STEP 01</div>
+                            <h3 class="process-detail__title">お打ち合わせ・設計</h3>
+                            <div class="process-detail__description">
+                                <p>お客様のライフスタイルに合わせた家具をお作りするため、詳細なお打ち合わせを行います。</p>
+                                
+                                <div class="process-detail__points">
+                                    <h4>主なポイント</h4>
+                                    <ul>
+                                        <li>使用目的と機能要件の確認</li>
+                                        <li>設置場所の採寸と環境調査</li>
+                                        <li>デザインイメージの共有</li>
+                                        <li>木材や仕上げ方法のご提案</li>
+                                        <li>予算に応じたプランニング</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>
+                                    この段階で、お客様のご要望を100％理解することが、満足いただける家具作りの基盤となります。
+                                    CADによる設計図面と3Dイメージで、完成形をご確認いただきます。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Process 2: Wood Selection -->
+                    <article class="process-detail process-detail--reverse">
+                        <div class="process-detail__image">
+                            <div class="image-placeholder image-placeholder--large">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">木材選定</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-detail__content">
+                            <div class="process-detail__step">STEP 02</div>
+                            <h3 class="process-detail__title">木材選定</h3>
+                            <div class="process-detail__description">
+                                <p>家具の品質を決める最も重要な工程の一つが、木材選定です。</p>
+                                
+                                <div class="process-detail__points">
+                                    <h4>選定基準</h4>
+                                    <ul>
+                                        <li>木目の美しさと特徴</li>
+                                        <li>強度と耐久性</li>
+                                        <li>乾燥状態と含水率</li>
+                                        <li>節やキズの状態</li>
+                                        <li>色合いと経年変化の予測</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>
+                                    特に一枚板のダイニングテーブルでは、お客様に実際の木材をご覧いただき、
+                                    木目の表情や色合いを確認していただきます。同じ樹種でも一つとして同じものはない、
+                                    天然木の魅力をお楽しみください。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Process 3: Drying -->
+                    <article class="process-detail">
+                        <div class="process-detail__image">
+                            <div class="image-placeholder image-placeholder--large">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">乾燥・首季</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-detail__content">
+                            <div class="process-detail__step">STEP 03</div>
+                            <h3 class="process-detail__title">木取り・乾燥</h3>
+                            <div class="process-detail__description">
+                                <p>木材を設計に合わせて切り出し、適切な含水率まで乾燥させます。</p>
+                                
+                                <div class="process-detail__points">
+                                    <h4>乾燥のこだわり</h4>
+                                    <ul>
+                                        <li>目標含水率: 8-12%</li>
+                                        <li>自然乾燥と人工乾燥の組み合わせ</li>
+                                        <li>木材の変形や割れを防ぐ管理</li>
+                                        <li>季節や湿度を考慮した調整</li>
+                                        <li>完成後の狂いを最小限に抑制</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>
+                                    急激な乾燥は木材にストレスを与え、完成後の変形や割れの原因となります。
+                                    時間をかけてゆっくりと乾燥させることで、安定した品質の家具をお作りします。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Process 4: Crafting -->
+                    <article class="process-detail process-detail--reverse">
+                        <div class="process-detail__image">
+                            <div class="image-placeholder image-placeholder--large">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">加工・成形</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-detail__content">
+                            <div class="process-detail__step">STEP 04</div>
+                            <h3 class="process-detail__title">加工・組み立て</h3>
+                            <div class="process-detail__description">
+                                <p>熟練の職人が、一つひとつ手作業で丁寧に加工します。</p>
+                                
+                                <div class="process-detail__points">
+                                    <h4>職人技術</h4>
+                                    <ul>
+                                        <li>手カンナによる表面仕上げ</li>
+                                        <li>伝統的な継ぎ手技法</li>
+                                        <li>精密な組み立て調整</li>
+                                        <li>木材特性を活かした加工</li>
+                                        <li>強度と美しさの両立</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>
+                                    機械だけでは表現できない、手仕事ならではの温かみと精度を追求します。
+                                    木材と対話しながら、その特性を最大限に活かした加工を行います。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Process 5: Finishing -->
+                    <article class="process-detail">
+                        <div class="process-detail__image">
+                            <div class="image-placeholder image-placeholder--large">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">仕上げ・塗装</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-detail__content">
+                            <div class="process-detail__step">STEP 05</div>
+                            <h3 class="process-detail__title">仕上げ・塗装</h3>
+                            <div class="process-detail__description">
+                                <p>木材の美しさを最大限に引き出す、仕上げ工程です。</p>
+                                
+                                <div class="process-detail__points">
+                                    <h4>仕上げ方法</h4>
+                                    <ul>
+                                        <li>段階的な研磨（#150→#240→#320）</li>
+                                        <li>オイル仕上げ（自然な質感）</li>
+                                        <li>ウレタン仕上げ（耐久性重視）</li>
+                                        <li>複数回の重ね塗り</li>
+                                        <li>最終研磨とタッチアップ</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>
+                                    木目を美しく見せるために、段階的に番手を上げながら研磨を行います。
+                                    塗装は使用環境に応じて、オイル系またはウレタン系を選択し、
+                                    木材の持つ自然な美しさを長期間保護します。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Process 6: Quality Check & Delivery -->
+                    <article class="process-detail process-detail--reverse">
+                        <div class="process-detail__image">
+                            <div class="image-placeholder image-placeholder--large">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">検査・納品</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="process-detail__content">
+                            <div class="process-detail__step">STEP 06</div>
+                            <h3 class="process-detail__title">検査・納品</h3>
+                            <div class="process-detail__description">
+                                <p>厳格な品質検査を経て、お客様のもとへお届けします。</p>
+                                
+                                <div class="process-detail__points">
+                                    <h4>品質管理</h4>
+                                    <ul>
+                                        <li>寸法精度の最終確認</li>
+                                        <li>仕上がり品質のチェック</li>
+                                        <li>可動部分の動作確認</li>
+                                        <li>梱包・輸送時の保護対策</li>
+                                        <li>設置場所での最終調整</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>
+                                    専門の配送チームが、傷つけることなく丁寧に搬入・設置いたします。
+                                    設置後は使用方法やメンテナンス方法についてもご説明し、
+                                    長くご愛用いただけるようサポートいたします。
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools & Equipment -->
+        <section class="tools-equipment">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">使用する道具・設備</h2>
+                    <p class="section-subtitle">
+                        伝統的な手工具から最新の機械設備まで、<br>
+                        品質の高い家具作りに必要な道具を取り揃えています。
+                    </p>
+                </div>
+
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-item__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">手カンナ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tool-item__title">手カンナ</h3>
+                        <p class="tool-item__description">
+                            職人の技術が最も現れる道具。機械では出せない滑らかな仕上がりを実現します。
+                        </p>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-item__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">ノミ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tool-item__title">ノミ</h3>
+                        <p class="tool-item__description">
+                            継ぎ手加工に欠かせない道具。精密な加工で強固な接合部を作り上げます。
+                        </p>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-item__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">テーブルソー</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tool-item__title">テーブルソー</h3>
+                        <p class="tool-item__description">
+                            正確な直線カットを行う大型機械。安全性と精度を両立した最新設備です。
+                        </p>
+                    </div>
+
+                    <div class="tool-item">
+                        <div class="tool-item__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c1.1 0 2-.9 2-2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">サンダー</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="tool-item__title">サンダー</h3>
+                        <p class="tool-item__description">
+                            表面研磨に使用。段階的な番手変更で、滑らかで美しい仕上がりを実現します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Promise -->
+        <section class="quality-promise">
+            <div class="container">
+                <div class="quality-promise__inner">
+                    <div class="quality-promise__content">
+                        <h2 class="quality-promise__title">品質へのお約束</h2>
+                        <div class="quality-promise__text">
+                            <p>
+                                私たちは一つひとつの工程で妥協することなく、
+                                お客様に長くご愛用いただける家具をお作りしています。
+                            </p>
+                            <p>
+                                熟練の職人技術と厳選された素材、そして時間をかけた丁寧な仕事で、
+                                「一生モノの家具」をお届けいたします。
+                            </p>
+                        </div>
+                        
+                        <div class="quality-promise__features">
+                            <div class="promise-feature">
+                                <div class="promise-feature__icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24 4L30.18 16.82L44 18L34 27.18L36.36 41L24 34L11.64 41L14 27.18L4 18L17.82 16.82L24 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3 class="promise-feature__title">品質保証</h3>
+                                <p class="promise-feature__description">すべての製品に永年保証を付けています</p>
+                            </div>
+
+                            <div class="promise-feature">
+                                <div class="promise-feature__icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M16 24L22 30L32 18" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3 class="promise-feature__title">安心サポート</h3>
+                                <p class="promise-feature__description">納品後のメンテナンスもお任せください</p>
+                            </div>
+
+                            <div class="promise-feature">
+                                <div class="promise-feature__icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M24 4C35 4 44 13 44 24C44 35 35 44 24 44C13 44 4 35 4 24C4 13 13 4 24 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M24 12V24L32 28" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h3 class="promise-feature__title">時間をかけた仕事</h3>
+                                <p class="promise-feature__description">急がず丁寧に、品質を最優先します</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-section__inner">
+                    <h2 class="cta-section__title">お見積もり・ご相談はお気軽に</h2>
+                    <p class="cta-section__description">
+                        製作工程についてのご質問や、オーダー家具のご相談など、<br>
+                        どんなことでもお気軽にお問い合わせください。
+                    </p>
+                    
+                    <div class="cta-section__actions">
+                        <a href="../contact/" class="btn btn--contact btn--lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="9" cy="9" r="2"/>
+                                <path d="M21 15L16 10L5 21"/>
+                            </svg>
+                            <span>お問い合わせ</span>
+                        </a>
+                        <a href="../simulator/" class="btn btn--secondary btn--lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="9" cy="9" r="2"/>
+                                <path d="M21 15L16 10L5 21"/>
+                            </svg>
+                            <span>見積もりシミュレーター</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="footer__logo-text">Craft Furniture</span>
+                        <span class="footer__logo-sub">株式会社クラフトファニチャー</span>
+                    </div>
+                    <p class="footer__description">
+                        東京を拠点に、一枚板を使ったオーダーメイド家具の製造・販売を行っています。職人の技術と木の温もりを大切に、一生を共にする家具をお作りします。
+                    </p>
+                    <div class="footer__contact">
+                        <p class="footer__phone">TEL: 03-1234-5678</p>
+                        <p class="footer__address">〒123-4567 東京都○○区○○ 1-2-3</p>
+                    </div>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">サービス</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../works/">施工事例</a></li>
+                            <li><a href="./">製作工程</a></li>
+                            <li><a href="../craftsmen/">職人紹介</a></li>
+                            <li><a href="../wood-guide/">木材図鑑</a></li>
+                            <li><a href="../simulator/">見積もり</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">会社情報</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../about/">会社概要</a></li>
+                            <li><a href="../flow/">納品までの流れ</a></li>
+                            <li><a href="../delivery/">納品エリア</a></li>
+                            <li><a href="../showroom/">ショールーム</a></li>
+                            <li><a href="../faq/">よくある質問</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">その他</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../voice/">お客様の声</a></li>
+                            <li><a href="../news/">お知らせ</a></li>
+                            <li><a href="../contact/">お問い合わせ</a></li>
+                            <li><a href="../privacy/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="footer__social">
+                    <h3 class="footer__social-title">Follow Us</h3>
+                    <div class="footer__social-links">
+                        <a href="https://www.instagram.com/craft_furniture_jp/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Craft Furniture Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/process.js"></script>
+    
+</body>
+</html>

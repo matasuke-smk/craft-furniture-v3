@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 株式会社クラフトファニチャー</title>
+    <meta name="description" content="株式会社クラフトファニチャーへのお問い合わせフォーム。オーダーメイド家具のご相談、お見積もり、ショールーム予約など、お気軽にお問い合わせください。">
+    <meta name="keywords" content="お問い合わせ, 相談, 見積もり, ショールーム予約, オーダーメイド家具">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craft-furniture.jp/contact/">
+    <meta property="og:title" content="お問い合わせ | 株式会社クラフトファニチャー">
+    <meta property="og:description" content="オーダーメイド家具のご相談はお気軽にお問い合わせください。">
+    <meta property="og:image" content="https://craft-furniture.jp/assets/images/contact-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://craft-furniture.jp/contact/">
+    <meta property="twitter:title" content="お問い合わせ | 株式会社クラフトファニチャー">
+    <meta property="twitter:description" content="オーダーメイド家具のご相談はお気軽にお問い合わせください。">
+    <meta property="twitter:image" content="https://craft-furniture.jp/assets/images/contact-og.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "お問い合わせ",
+        "description": "株式会社クラフトファニチャーへのお問い合わせフォーム",
+        "url": "https://craft-furniture.jp/contact/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "株式会社クラフトファニチャー",
+            "url": "https://craft-furniture.jp/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="../" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../" class="nav__link">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="../works/?filter=desk">デスク</a></li>
+                                <li><a href="../works/?filter=storage">収納家具</a></li>
+                                <li><a href="../works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../about/">会社概要</a></li>
+                                <li><a href="../flow/">納品までの流れ</a></li>
+                                <li><a href="../delivery/">納品エリア</a></li>
+                                <li><a href="../showroom/">ショールーム</a></li>
+                                <li><a href="../faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="./" class="nav__link nav__link--contact nav__link--active">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main" id="main-content">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero__image">
+                <img src="../assets/images/contact/hero-bg.jpg" alt="お問い合わせ" loading="eager">
+            </div>
+            <div class="page-hero__content">
+                <div class="container">
+                    <div class="page-hero__inner">
+                        <h1 class="page-hero__title">お問い合わせ</h1>
+                        <p class="page-hero__subtitle">オーダーメイド家具のご相談、お見積もり<br>ショールーム予約などお気軽にお問い合わせください</p>
+                        
+                        <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+                            <ol class="breadcrumb__list">
+                                <li class="breadcrumb__item">
+                                    <a href="../" class="breadcrumb__link">ホーム</a>
+                                </li>
+                                <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                                    お問い合わせ
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="contact-methods">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">お問い合わせ方法</h2>
+                    <p class="section__description">
+                        ご相談内容に応じて、お客様に最適なお問い合わせ方法をお選びください。
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="contact-card__title">お電話</h3>
+                        <p class="contact-card__description">
+                            お急ぎのご相談や詳しいご質問は<br>
+                            お電話でお気軽にどうぞ
+                        </p>
+                        <div class="contact-card__info">
+                            <p class="phone-number">
+                                <a href="tel:03-1234-5678">03-1234-5678</a>
+                            </p>
+                            <p class="business-hours">
+                                <strong>受付時間</strong><br>
+                                平日 9:00 - 18:00<br>
+                                土曜日 10:00 - 17:00<br>
+                                <small>※日曜・祝日は休業</small>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card contact-card--primary">
+                        <div class="contact-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="contact-card__title">お問い合わせフォーム</h3>
+                        <p class="contact-card__description">
+                            24時間受付可能<br>
+                            詳細なご相談内容を記載できます
+                        </p>
+                        <div class="contact-card__info">
+                            <p>
+                                <strong>返信目安</strong><br>
+                                営業日内に必ずご返信いたします
+                            </p>
+                        </div>
+                        <a href="#contact-form" class="btn btn--primary">フォームへ進む</a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="9,22 9,12 15,12 15,22" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="contact-card__title">ショールーム見学</h3>
+                        <p class="contact-card__description">
+                            実際の家具をご覧いただけます<br>
+                            完全予約制
+                        </p>
+                        <div class="contact-card__info">
+                            <p>
+                                <strong>営業時間</strong><br>
+                                平日・土曜 10:00 - 17:00<br>
+                                <small>※要予約</small>
+                            </p>
+                        </div>
+                        <a href="../showroom/" class="btn btn--secondary">ショールーム詳細</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Notice -->
+        <section class="quote-notice" id="quote-notice" style="display: none;">
+            <div class="container">
+                <div class="notice-card">
+                    <div class="notice-card__icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="notice-card__content">
+                        <h3>見積もりシミュレーター結果</h3>
+                        <p>シミュレーター結果を受け取りました。詳細なお見積もりをご希望の場合は、下記フォームよりお問い合わせください。</p>
+                        <div id="quote-summary"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form-section" id="contact-form">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">お問い合わせフォーム</h2>
+                    <p class="section__description">
+                        下記フォームに必要事項をご記入の上、送信してください。<br>
+                        <span class="required-note">※印は必須項目です</span>
+                    </p>
+                </div>
+
+                <form class="contact-form" id="contact-form-element" method="POST" action="#" novalidate>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="inquiry-type" class="form-label">
+                                お問い合わせ種別 <span class="required">※</span>
+                            </label>
+                            <select id="inquiry-type" name="inquiryType" class="form-select" required>
+                                <option value="">選択してください</option>
+                                <option value="estimate">お見積もり相談</option>
+                                <option value="showroom">ショールーム見学予約</option>
+                                <option value="product">商品に関するご質問</option>
+                                <option value="delivery">配送・納品について</option>
+                                <option value="maintenance">メンテナンス・修理</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-type" class="form-label">
+                                お客様種別 <span class="required">※</span>
+                            </label>
+                            <select id="customer-type" name="customerType" class="form-select" required>
+                                <option value="">選択してください</option>
+                                <option value="individual">個人のお客様</option>
+                                <option value="corporate">法人のお客様</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">
+                                お名前 <span class="required">※</span>
+                            </label>
+                            <input type="text" id="name" name="name" class="form-input" required placeholder="山田 太郎">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name-kana" class="form-label">
+                                お名前（フリガナ） <span class="required">※</span>
+                            </label>
+                            <input type="text" id="name-kana" name="nameKana" class="form-input" required placeholder="ヤマダ タロウ">
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="company" class="form-label">
+                                会社名・団体名
+                            </label>
+                            <input type="text" id="company" name="company" class="form-input" placeholder="株式会社○○">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                メールアドレス <span class="required">※</span>
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" required placeholder="example@domain.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">
+                                電話番号 <span class="required">※</span>
+                            </label>
+                            <input type="tel" id="phone" name="phone" class="form-input" required placeholder="03-1234-5678">
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="prefecture" class="form-label">
+                                お住まいの都道府県 <span class="required">※</span>
+                            </label>
+                            <select id="prefecture" name="prefecture" class="form-select" required>
+                                <option value="">選択してください</option>
+                                <option value="tokyo">東京都</option>
+                                <option value="kanagawa">神奈川県</option>
+                                <option value="chiba">千葉県</option>
+                                <option value="saitama">埼玉県</option>
+                                <option value="ibaraki">茨城県</option>
+                                <option value="tochigi">栃木県</option>
+                                <option value="gunma">群馬県</option>
+                                <option value="yamanashi">山梨県</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group--full furniture-details" style="display: none;">
+                            <label for="furniture-type" class="form-label">
+                                ご希望の家具
+                            </label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="furnitureType" value="dining-table">
+                                    <span class="checkbox-mark"></span>
+                                    ダイニングテーブル
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="furnitureType" value="desk">
+                                    <span class="checkbox-mark"></span>
+                                    デスク
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="furnitureType" value="storage">
+                                    <span class="checkbox-mark"></span>
+                                    収納家具
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="furnitureType" value="counter">
+                                    <span class="checkbox-mark"></span>
+                                    カウンターテーブル
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="furnitureType" value="other">
+                                    <span class="checkbox-mark"></span>
+                                    その他
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group--full budget-range" style="display: none;">
+                            <label for="budget" class="form-label">
+                                ご予算
+                            </label>
+                            <select id="budget" name="budget" class="form-select">
+                                <option value="">選択してください</option>
+                                <option value="under-500000">50万円未満</option>
+                                <option value="500000-1000000">50万円〜100万円</option>
+                                <option value="1000000-1500000">100万円〜150万円</option>
+                                <option value="1500000-2000000">150万円〜200万円</option>
+                                <option value="over-2000000">200万円以上</option>
+                                <option value="undecided">未定</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="message" class="form-label">
+                                お問い合わせ内容 <span class="required">※</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" rows="8" required placeholder="ご相談内容、ご質問、ご要望などを詳しくお聞かせください。&#10;&#10;＜記入例＞&#10;・ダイニングテーブルの製作をお願いしたいと考えております。&#10;・サイズ：幅180cm × 奥行き90cm程度&#10;・木材：ウォールナット希望&#10;・納期：できれば3月末まで&#10;・ショールーム見学希望日：○月○日（○）午後"></textarea>
+                        </div>
+
+                        <div class="form-group form-group--full showroom-details" style="display: none;">
+                            <label class="form-label">ショールーム見学希望日時</label>
+                            <div class="datetime-group">
+                                <div class="date-input">
+                                    <label for="visit-date" class="form-sublabel">第一希望日</label>
+                                    <input type="date" id="visit-date" name="visitDate" class="form-input" min="">
+                                </div>
+                                <div class="time-input">
+                                    <label for="visit-time" class="form-sublabel">時間</label>
+                                    <select id="visit-time" name="visitTime" class="form-select">
+                                        <option value="">選択してください</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="datetime-group">
+                                <div class="date-input">
+                                    <label for="visit-date-2" class="form-sublabel">第二希望日</label>
+                                    <input type="date" id="visit-date-2" name="visitDate2" class="form-input" min="">
+                                </div>
+                                <div class="time-input">
+                                    <label for="visit-time-2" class="form-sublabel">時間</label>
+                                    <select id="visit-time-2" name="visitTime2" class="form-select">
+                                        <option value="">選択してください</option>
+                                        <option value="10:00">10:00</option>
+                                        <option value="11:00">11:00</option>
+                                        <option value="13:00">13:00</option>
+                                        <option value="14:00">14:00</option>
+                                        <option value="15:00">15:00</option>
+                                        <option value="16:00">16:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label class="form-label">
+                                個人情報の取り扱いについて <span class="required">※</span>
+                            </label>
+                            <div class="privacy-agreement">
+                                <p class="privacy-text">
+                                    お客様からお預かりした個人情報は、お問い合わせへの回答、サービス提供のためにのみ使用し、
+                                    適切に管理いたします。詳細は<a href="../privacy/" target="_blank">プライバシーポリシー</a>をご確認ください。
+                                </p>
+                                <label class="checkbox-item checkbox-item--large">
+                                    <input type="checkbox" name="privacyAgreement" value="agreed" required>
+                                    <span class="checkbox-mark"></span>
+                                    個人情報の取り扱いに同意します
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn--secondary" id="form-reset">入力内容をクリア</button>
+                        <button type="submit" class="btn btn--primary btn--large" id="form-submit">
+                            <span>送信する</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Other Contact Info -->
+        <section class="other-contact">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">その他のお問い合わせ先</h2>
+                </div>
+
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <h3 class="contact-info-card__title">営業・設計相談</h3>
+                        <div class="contact-info-card__content">
+                            <p class="contact-detail">
+                                <span class="contact-detail__label">担当者</span>
+                                <span class="contact-detail__value">営業部 田中</span>
+                            </p>
+                            <p class="contact-detail">
+                                <span class="contact-detail__label">直通</span>
+                                <span class="contact-detail__value">
+                                    <a href="tel:03-1234-5679">03-1234-5679</a>
+                                </span>
+                            </p>
+                            <p class="contact-detail">
+                                <span class="contact-detail__label">メール</span>
+                                <span class="contact-detail__value">
+                                    <a href="mailto:sales@craft-furniture.jp">sales@craft-furniture.jp</a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <h3 class="contact-info-card__title">アフターサービス</h3>
+                        <div class="contact-info-card__content">
+                            <p class="contact-detail">
+                                <span class="contact-detail__label">担当者</span>
+                                <span class="contact-detail__value">サービス部 山田</span>
+                            </p>
+                            <p class="contact-detail">
+                                <span class="contact-detail__label">直通</span>
+                                <span class="contact-detail__value">
+                                    <a href="tel:03-1234-5680">03-1234-5680</a>
+                                </span>
+                            </p>
+                            <p class="contact-detail">
+                                <span class="contact-detail__label">メール</span>
+                                <span class="contact-detail__value">
+                                    <a href="mailto:service@craft-furniture.jp">service@craft-furniture.jp</a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card contact-info-card--highlight">
+                        <h3 class="contact-info-card__title">緊急対応</h3>
+                        <div class="contact-info-card__content">
+                            <p class="emergency-note">
+                                配送中の事故、商品の破損など<br>
+                                緊急を要する場合のご連絡先
+                            </p>
+                            <p class="contact-detail contact-detail--emergency">
+                                <span class="contact-detail__label">24時間対応</span>
+                                <span class="contact-detail__value">
+                                    <a href="tel:080-1234-5678">080-1234-5678</a>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Quick Links -->
+        <section class="faq-links">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">よくあるご質問</h2>
+                    <p class="section__description">
+                        お問い合わせの前に、よくあるご質問もご確認ください。
+                    </p>
+                </div>
+
+                <div class="faq-grid">
+                    <a href="../faq/#delivery" class="faq-card">
+                        <div class="faq-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M1 3h15l4 13H6l-3-9zm0 0L6 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="9" cy="20" r="1" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="1" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>配送・納品について</h3>
+                        <p>配送エリア、納期、搬入方法など</p>
+                    </a>
+
+                    <a href="../faq/#price" class="faq-card">
+                        <div class="faq-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>価格・お支払い</h3>
+                        <p>価格の決まり方、お支払い方法など</p>
+                    </a>
+
+                    <a href="../faq/#maintenance" class="faq-card">
+                        <div class="faq-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>メンテナンス</h3>
+                        <p>お手入れ方法、修理サービスなど</p>
+                    </a>
+
+                    <a href="../faq/" class="faq-card faq-card--all">
+                        <div class="faq-card__icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" stroke="currentColor" stroke-width="2"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>すべてのFAQを見る</h3>
+                        <p>その他のよくあるご質問</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="footer__logo-text">Craft Furniture</span>
+                        <span class="footer__logo-sub">株式会社クラフトファニチャー</span>
+                    </div>
+                    <p class="footer__description">
+                        東京を拠点に、一枚板を使ったオーダーメイド家具の製造・販売を行っています。職人の技術と木の温もりを大切に、一生を共にする家具をお作りします。
+                    </p>
+                    <div class="footer__contact">
+                        <p class="footer__phone">TEL: 03-1234-5678</p>
+                        <p class="footer__address">〒123-4567 東京都○○区○○ 1-2-3</p>
+                    </div>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">サービス</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../works/">施工事例</a></li>
+                            <li><a href="../process/">製作工程</a></li>
+                            <li><a href="../craftsmen/">職人紹介</a></li>
+                            <li><a href="../wood-guide/">木材図鑑</a></li>
+                            <li><a href="../simulator/">見積もり</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">会社情報</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../about/">会社概要</a></li>
+                            <li><a href="../flow/">納品までの流れ</a></li>
+                            <li><a href="../delivery/">納品エリア</a></li>
+                            <li><a href="../showroom/">ショールーム</a></li>
+                            <li><a href="../faq/">よくある質問</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">その他</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../voice/">お客様の声</a></li>
+                            <li><a href="../news/">お知らせ</a></li>
+                            <li><a href="./">お問い合わせ</a></li>
+                            <li><a href="../privacy/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="footer__social">
+                    <h3 class="footer__social-title">Follow Us</h3>
+                    <div class="footer__social-links">
+                        <a href="https://www.instagram.com/craft_furniture_jp/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Craft Furniture Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/contact.js"></script>
+</body>
+</html>

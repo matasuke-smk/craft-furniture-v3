@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ショールーム案内 | 株式会社クラフトファニチャー</title>
+    <meta name="description" content="完全予約制のショールームで、実物の家具をご覧いただけます。木材サンプルや展示品を通して、家具の品質を直接お確かめください。">
+    <meta name="keywords" content="ショールーム, 展示品, 木材サンプル, 予約, 見学, 東京">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craft-furniture.jp/showroom/">
+    <meta property="og:title" content="ショールーム案内 | 株式会社クラフトファニチャー">
+    <meta property="og:description" content="完全予約制のショールームで、実物の家具をご覧いただけます。">
+    <meta property="og:image" content="https://craft-furniture.jp/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/showroom.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="/" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                    </a>
+                </div>
+                
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="/works/" class="nav__link">施工事例</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/simulator/" class="nav__link">見積もり</a>
+                        </li>
+                        <li class="nav__item dropdown">
+                            <a href="#" class="nav__link dropdown-toggle">サービス</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/wood-guide/" class="dropdown-link">木材図鑑</a></li>
+                                <li><a href="/voice/" class="dropdown-link">お客様の声</a></li>
+                                <li><a href="/flow/" class="dropdown-link">納品まで</a></li>
+                                <li><a href="/delivery/" class="dropdown-link">納品エリア</a></li>
+                                <li><a href="/showroom/" class="dropdown-link">ショールーム</a></li>
+                                <li><a href="/faq/" class="dropdown-link">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/about/" class="nav__link">会社概要</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="/news/" class="nav__link">お知らせ</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav__actions">
+                    <a href="/contact/" class="btn btn--primary btn--small">お問い合わせ</a>
+                    <button class="nav__toggle" id="nav-toggle">
+                        <span class="nav__toggle-line"></span>
+                        <span class="nav__toggle-line"></span>
+                        <span class="nav__toggle-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__content">
+                <div class="container">
+                    <div class="hero__text">
+                        <h1 class="hero__title">ショールーム</h1>
+                        <p class="hero__description">実物の家具を直接ご覧いただける、完全予約制のショールームです</p>
+                    </div>
+                </div>
+            </div>
+            <div class="breadcrumb">
+                <div class="container">
+                    <nav class="breadcrumb__nav">
+                        <a href="/" class="breadcrumb__link">ホーム</a>
+                        <span class="breadcrumb__separator">></span>
+                        <span class="breadcrumb__current">ショールーム</span>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showroom Gallery -->
+        <section class="showroom-gallery section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">ショールームギャラリー</h2>
+                    <p class="section__description">職人の工房とショールームをご覧ください</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item gallery-item--large">
+                        <img src="../assets/images/showroom/showroom-1.jpg" alt="ショールーム全景" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <h3 class="gallery-item__title">ショールーム全景</h3>
+                            <p class="gallery-item__description">厳選された家具を展示しています</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../assets/images/showroom/showroom-2.jpg" alt="ダイニングテーブル展示" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <h3 class="gallery-item__title">ダイニングテーブル</h3>
+                            <p class="gallery-item__description">様々な木材のテーブルを展示</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../assets/images/showroom/showroom-3.jpg" alt="木材サンプル" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <h3 class="gallery-item__title">木材サンプル</h3>
+                            <p class="gallery-item__description">実際に触って質感を確認</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../assets/images/showroom/showroom-4.jpg" alt="職人工房" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <h3 class="gallery-item__title">職人工房</h3>
+                            <p class="gallery-item__description">製作現場もご覧いただけます</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="../assets/images/showroom/showroom-5.jpg" alt="相談スペース" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <h3 class="gallery-item__title">相談スペース</h3>
+                            <p class="gallery-item__description">ゆったりとご相談いただけます</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showroom Info -->
+        <section class="showroom-info section section--gray">
+            <div class="container">
+                <div class="showroom-info__content">
+                    <div class="showroom-info__details">
+                        <h2 class="showroom-info__title">ショールーム詳細</h2>
+                        
+                        <div class="info-card">
+                            <div class="info-card__header">
+                                <div class="info-card__icon">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="info-card__title">所在地・アクセス</h3>
+                            </div>
+                            <div class="info-card__content">
+                                <address class="address">
+                                    <p class="address__line"><strong>〒150-0001</strong></p>
+                                    <p class="address__line">東京都渋谷区神宮前3-15-7</p>
+                                    <p class="address__line">クラフトファニチャービル1F</p>
+                                </address>
+                                <div class="access-info">
+                                    <div class="access-item">
+                                        <strong>最寄り駅：</strong>
+                                        <span>JR山手線・表参道駅より徒歩10分</span>
+                                    </div>
+                                    <div class="access-item">
+                                        <strong>駐車場：</strong>
+                                        <span>専用駐車場3台完備（無料）</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-card__header">
+                                <div class="info-card__icon">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="info-card__title">営業時間</h3>
+                            </div>
+                            <div class="info-card__content">
+                                <div class="hours-info">
+                                    <div class="hours-item">
+                                        <strong>平日：</strong>
+                                        <span>10:00 - 18:00</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <strong>土曜：</strong>
+                                        <span>10:00 - 17:00</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <strong>日曜・祝日：</strong>
+                                        <span>10:00 - 16:00</span>
+                                    </div>
+                                </div>
+                                <div class="hours-note">
+                                    <p><strong>※完全予約制</strong>です。必ず事前にご予約ください。</p>
+                                    <p>年末年始（12/29-1/3）は休業いたします。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="showroom-info__map">
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7471464855194!2d139.70776831525314!3d35.67094408019628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca16b6f84b7%3A0x6c0d289e4958c6b6!2z5pys6aeQ!5e0!3m2!1sja!2sjp!4v1642678901234!5m2!1sja!2sjp" 
+                                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exhibition Items -->
+        <section class="exhibition section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">展示品のご紹介</h2>
+                    <p class="section__description">実際に触れて品質をお確かめください</p>
+                </div>
+
+                <div class="exhibition__content">
+                    <div class="exhibition-grid">
+                        <div class="exhibition-item">
+                            <div class="exhibition-item__image">
+                                <img src="../assets/images/showroom/exhibit-1.jpg" alt="オーク材ダイニングテーブル" loading="lazy">
+                            </div>
+                            <div class="exhibition-item__info">
+                                <h3 class="exhibition-item__title">オーク材ダイニングテーブル</h3>
+                                <div class="exhibition-item__specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">サイズ：</span>
+                                        <span class="spec-value">W180×D90×H72cm</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">板厚：</span>
+                                        <span class="spec-value">40mm</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">仕上げ：</span>
+                                        <span class="spec-value">オイル仕上げ</span>
+                                    </div>
+                                </div>
+                                <p class="exhibition-item__description">
+                                    力強い木目が美しいオーク材の一枚板テーブル。使い込むほどに深い色合いに変化します。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="exhibition-item">
+                            <div class="exhibition-item__image">
+                                <img src="../assets/images/showroom/exhibit-2.jpg" alt="ウォールナット材デスク" loading="lazy">
+                            </div>
+                            <div class="exhibition-item__info">
+                                <h3 class="exhibition-item__title">ウォールナット材デスク</h3>
+                                <div class="exhibition-item__specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">サイズ：</span>
+                                        <span class="spec-value">W140×D70×H72cm</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">板厚：</span>
+                                        <span class="spec-value">30mm</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">仕上げ：</span>
+                                        <span class="spec-value">ウレタン仕上げ</span>
+                                    </div>
+                                </div>
+                                <p class="exhibition-item__description">
+                                    高級材として人気のウォールナット。チョコレート色の美しい木目が特徴です。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="exhibition-item">
+                            <div class="exhibition-item__image">
+                                <img src="../assets/images/showroom/exhibit-3.jpg" alt="チェリー材収納家具" loading="lazy">
+                            </div>
+                            <div class="exhibition-item__info">
+                                <h3 class="exhibition-item__title">チェリー材収納家具</h3>
+                                <div class="exhibition-item__specs">
+                                    <div class="spec-item">
+                                        <span class="spec-label">サイズ：</span>
+                                        <span class="spec-value">W120×D45×H180cm</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">構造：</span>
+                                        <span class="spec-value">無垢材・ほぞ組み</span>
+                                    </div>
+                                    <div class="spec-item">
+                                        <span class="spec-label">仕上げ：</span>
+                                        <span class="spec-value">オイル仕上げ</span>
+                                    </div>
+                                </div>
+                                <p class="exhibition-item__description">
+                                    時間とともに飴色に変化するチェリー材。職人の技術が光る精密な組み継ぎをご覧ください。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wood Samples -->
+        <section class="wood-samples section section--gray">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">木材サンプル</h2>
+                    <p class="section__description">実際に手で触れて、木材の質感をお確かめください</p>
+                </div>
+
+                <div class="wood-samples__content">
+                    <div class="wood-samples__intro">
+                        <p class="wood-samples__description">
+                            当ショールームでは、厳選した木材のサンプルをご用意しております。<br>
+                            写真だけでは分からない木目の美しさや手触り、香りなど、<br>
+                            五感で木材の魅力を感じていただけます。
+                        </p>
+                    </div>
+
+                    <div class="wood-grid">
+                        <div class="wood-sample">
+                            <div class="wood-sample__image">
+                                <img src="../assets/images/wood/oak-sample.jpg" alt="オーク材サンプル" loading="lazy">
+                            </div>
+                            <div class="wood-sample__info">
+                                <h3 class="wood-sample__name">オーク（楢）</h3>
+                                <div class="wood-sample__features">
+                                    <span class="feature-tag">硬度：高</span>
+                                    <span class="feature-tag">耐久性：優秀</span>
+                                    <span class="feature-tag">人気度：★★★★★</span>
+                                </div>
+                                <p class="wood-sample__description">
+                                    力強い木目と高い耐久性が特徴。使い込むほどに味わい深い色合いに変化します。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="wood-sample">
+                            <div class="wood-sample__image">
+                                <img src="../assets/images/wood/walnut-sample.jpg" alt="ウォールナット材サンプル" loading="lazy">
+                            </div>
+                            <div class="wood-sample__info">
+                                <h3 class="wood-sample__name">ウォールナット（胡桃）</h3>
+                                <div class="wood-sample__features">
+                                    <span class="feature-tag">硬度：中</span>
+                                    <span class="feature-tag">高級材</span>
+                                    <span class="feature-tag">人気度：★★★★★</span>
+                                </div>
+                                <p class="wood-sample__description">
+                                    チョコレート色の美しい木目。世界三大銘木の一つとして愛され続けています。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="wood-sample">
+                            <div class="wood-sample__image">
+                                <img src="../assets/images/wood/cherry-sample.jpg" alt="チェリー材サンプル" loading="lazy">
+                            </div>
+                            <div class="wood-sample__info">
+                                <h3 class="wood-sample__name">チェリー（桜）</h3>
+                                <div class="wood-sample__features">
+                                    <span class="feature-tag">硬度：中</span>
+                                    <span class="feature-tag">経年変化</span>
+                                    <span class="feature-tag">人気度：★★★★☆</span>
+                                </div>
+                                <p class="wood-sample__description">
+                                    時間とともに飴色に変化する美しい木材。なめらかな手触りが特徴です。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="wood-sample">
+                            <div class="wood-sample__image">
+                                <img src="../assets/images/wood/maple-sample.jpg" alt="メープル材サンプル" loading="lazy">
+                            </div>
+                            <div class="wood-sample__info">
+                                <h3 class="wood-sample__name">メープル（楓）</h3>
+                                <div class="wood-sample__features">
+                                    <span class="feature-tag">硬度：高</span>
+                                    <span class="feature-tag">明るい色合い</span>
+                                    <span class="feature-tag">人気度：★★★☆☆</span>
+                                </div>
+                                <p class="wood-sample__description">
+                                    明るく清潔感のある色合い。緻密な木目で表面の仕上がりが美しい木材です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section class="reservation section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">ショールーム予約</h2>
+                    <p class="section__description">完全予約制のため、事前のご予約をお願いいたします</p>
+                </div>
+
+                <div class="reservation__content">
+                    <div class="reservation__calendar">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" id="prev-month">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                                </svg>
+                            </button>
+                            <h3 class="calendar-title" id="calendar-title">2024年1月</h3>
+                            <button class="calendar-nav" id="next-month">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="calendar-grid" id="calendar-grid">
+                            <div class="calendar-day-header">日</div>
+                            <div class="calendar-day-header">月</div>
+                            <div class="calendar-day-header">火</div>
+                            <div class="calendar-day-header">水</div>
+                            <div class="calendar-day-header">木</div>
+                            <div class="calendar-day-header">金</div>
+                            <div class="calendar-day-header">土</div>
+                            <!-- Calendar days will be generated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="reservation__form">
+                        <div class="form-container">
+                            <h3 class="form-title">予約フォーム</h3>
+                            <form id="reservation-form" class="reservation-form">
+                                <div class="form-group">
+                                    <label for="selected-date" class="form-label">希望日時 <span class="required">*</span></label>
+                                    <input type="text" id="selected-date" name="selectedDate" class="form-input" readonly required>
+                                    <small class="form-help">カレンダーから日付を選択してください</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="time-slot" class="form-label">時間帯 <span class="required">*</span></label>
+                                    <select id="time-slot" name="timeSlot" class="form-select" required>
+                                        <option value="">時間帯を選択してください</option>
+                                        <option value="10:00-11:30">10:00-11:30</option>
+                                        <option value="13:00-14:30">13:00-14:30</option>
+                                        <option value="15:00-16:30">15:00-16:30</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="visitor-count" class="form-label">来場人数 <span class="required">*</span></label>
+                                    <select id="visitor-count" name="visitorCount" class="form-select" required>
+                                        <option value="">人数を選択してください</option>
+                                        <option value="1">1名</option>
+                                        <option value="2">2名</option>
+                                        <option value="3">3名</option>
+                                        <option value="4">4名</option>
+                                        <option value="5以上">5名以上</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="customer-name" class="form-label">お名前 <span class="required">*</span></label>
+                                    <input type="text" id="customer-name" name="customerName" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="customer-email" class="form-label">メールアドレス <span class="required">*</span></label>
+                                    <input type="email" id="customer-email" name="customerEmail" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="customer-phone" class="form-label">電話番号 <span class="required">*</span></label>
+                                    <input type="tel" id="customer-phone" name="customerPhone" class="form-input" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interest" class="form-label">ご興味のある家具</label>
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interest" value="ダイニングテーブル">
+                                            <span class="checkbox-custom"></span>
+                                            ダイニングテーブル
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interest" value="デスク">
+                                            <span class="checkbox-custom"></span>
+                                            デスク
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interest" value="収納家具">
+                                            <span class="checkbox-custom"></span>
+                                            収納家具
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="interest" value="その他">
+                                            <span class="checkbox-custom"></span>
+                                            その他
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message" class="form-label">ご質問・ご要望</label>
+                                    <textarea id="message" name="message" rows="4" class="form-textarea" placeholder="お気軽にご質問ください"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary btn--large btn--full">予約を申し込む</button>
+                            </form>
+                        </div>
+
+                        <div class="reservation__notes">
+                            <h4 class="reservation__notes-title">ご予約について</h4>
+                            <ul class="reservation__notes-list">
+                                <li>完全予約制となっております。必ず事前にご予約ください。</li>
+                                <li>見学時間は約90分を予定しております。</li>
+                                <li>専用駐車場（3台）をご用意しております。</li>
+                                <li>お子様連れでもお気軽にお越しください。</li>
+                                <li>ご予約の確認メールをお送りいたします。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta-section section section--dark">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">お電話でのご予約も承ります</h2>
+                    <p class="cta-description">
+                        ご質問やお急ぎのご予約は、お電話でも承っております。<br class="sp-hide">
+                        お気軽にお問い合わせください。
+                    </p>
+                    <div class="cta-actions">
+                        <a href="tel:03-1234-5678" class="btn btn--primary btn--large">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            03-1234-5678
+                        </a>
+                        <div class="cta-hours">
+                            <p>営業時間: 9:00-18:00（土日祝除く）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__main">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__section footer__section--brand">
+                        <h3 class="footer__title">Craft Furniture</h3>
+                        <p class="footer__description">
+                            一枚板を使った高品質な家具を、<br>
+                            熟練の職人が心を込めてお作りします。
+                        </p>
+                        <div class="footer__contact">
+                            <div class="footer__contact-item">
+                                <span class="footer__contact-label">TEL:</span>
+                                <a href="tel:03-1234-5678" class="footer__contact-link">03-1234-5678</a>
+                            </div>
+                            <div class="footer__contact-item">
+                                <span class="footer__contact-label">営業時間:</span>
+                                <span>9:00-18:00（土日祝除く）</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">サービス</h4>
+                        <ul class="footer__links">
+                            <li><a href="/works/" class="footer__link">施工事例</a></li>
+                            <li><a href="/craftsmen/" class="footer__link">職人紹介</a></li>
+                            <li><a href="/process/" class="footer__link">製作工程</a></li>
+                            <li><a href="/wood-guide/" class="footer__link">木材図鑑</a></li>
+                            <li><a href="/simulator/" class="footer__link">見積もり</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">サポート</h4>
+                        <ul class="footer__links">
+                            <li><a href="/voice/" class="footer__link">お客様の声</a></li>
+                            <li><a href="/flow/" class="footer__link">納品まで</a></li>
+                            <li><a href="/delivery/" class="footer__link">納品エリア</a></li>
+                            <li><a href="/showroom/" class="footer__link">ショールーム</a></li>
+                            <li><a href="/faq/" class="footer__link">よくある質問</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">会社情報</h4>
+                        <ul class="footer__links">
+                            <li><a href="/about/" class="footer__link">会社概要</a></li>
+                            <li><a href="/news/" class="footer__link">お知らせ</a></li>
+                            <li><a href="/contact/" class="footer__link">お問い合わせ</a></li>
+                            <li><a href="/privacy/" class="footer__link">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__bottom-content">
+                    <div class="footer__social">
+                        <a href="https://instagram.com/craftfurniture" class="footer__social-link" target="_blank" rel="noopener">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <p class="footer__copyright">
+                        &copy; 2024 株式会社クラフトファニチャー. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/showroom.js"></script>
+</body>
+</html>

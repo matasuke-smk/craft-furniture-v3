@@ -1,0 +1,120 @@
+{
+  "name": "craft-furniture-website",
+  "version": "1.0.0",
+  "description": "クラフトファニチャー コーポレートサイト - オーダーメイド家具の職人による一枚板テーブル製造・販売",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js",
+    "test": "node check-links.js",
+    "check-links": "node check-links.js",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "echo 'Please refer to DEPLOYMENT.md for deployment instructions'"
+  },
+  "keywords": [
+    "furniture",
+    "craftsman",
+    "woodworking",
+    "dining-table",
+    "custom-furniture",
+    "japanese-furniture",
+    "一枚板",
+    "オーダーメイド家具",
+    "職人",
+    "ダイニングテーブル"
+  ],
+  "author": {
+    "name": "Craft Furniture Team",
+    "email": "info@craft-furniture.jp",
+    "url": "https://craft-furniture.jp"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "private"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "website": {
+    "name": "株式会社クラフトファニチャー",
+    "url": "https://craft-furniture.jp",
+    "description": "東京を拠点とする家具職人による、一枚板を使ったオーダーメイド家具の製造・販売",
+    "type": "corporate",
+    "industry": "furniture-manufacturing",
+    "target": "B2C",
+    "features": [
+      "responsive-design",
+      "mobile-first",
+      "seo-optimized",
+      "accessibility-compliant",
+      "performance-optimized"
+    ],
+    "pages": {
+      "total": 17,
+      "main": [
+        "index.html",
+        "works/index.html", 
+        "craftsmen/index.html",
+        "about/index.html",
+        "contact/index.html"
+      ],
+      "services": [
+        "process/index.html",
+        "simulator/index.html", 
+        "wood-guide/index.html",
+        "voice/index.html",
+        "flow/index.html",
+        "delivery/index.html",
+        "showroom/index.html",
+        "faq/index.html"
+      ],
+      "content": [
+        "news/index.html",
+        "news/exhibition-2024.html",
+        "works/work-1.html"
+      ],
+      "legal": [
+        "privacy/index.html"
+      ]
+    },
+    "technologies": {
+      "frontend": ["HTML5", "CSS3", "Vanilla JavaScript"],
+      "styling": ["CSS Grid", "Flexbox", "CSS Variables"],
+      "features": ["Responsive Design", "Lazy Loading", "Performance Optimization"],
+      "future": ["WordPress CMS", "Service Worker", "PWA"]
+    },
+    "performance": {
+      "target": "PageSpeed Insights 70+",
+      "optimizations": [
+        "Critical CSS",
+        "Lazy Loading",
+        "Image Optimization", 
+        "Resource Preloading",
+        "Cache Strategies"
+      ]
+    }
+  },
+  "client": {
+    "name": "株式会社クラフトファニチャー",
+    "contact": "木村拓哉（営業部長）",
+    "established": "2008",
+    "employees": 20,
+    "craftsmen": 3,
+    "specialty": "一枚板ダイニングテーブル",
+    "location": "東京都",
+    "target_customers": ["40-60代個人客", "飲食店・オフィス法人客", "30-40代Instagram層"],
+    "launch_date": "2025年3月末",
+    "event": "4月住宅展示場イベント出展"
+  }
+}

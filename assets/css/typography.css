@@ -1,0 +1,453 @@
+/* Typography Styles */
+
+/* Base typography */
+body {
+    font-family: var(--font-secondary);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text);
+    background-color: var(--color-white);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: var(--weight-semibold);
+    line-height: var(--leading-tight);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+}
+
+h1 {
+    font-size: var(--text-5xl);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-none);
+}
+
+h2 {
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-semibold);
+}
+
+h3 {
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-semibold);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-medium);
+}
+
+h5 {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-medium);
+}
+
+h6 {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-medium);
+}
+
+/* Responsive headings */
+@media (max-width: 768px) {
+    h1 {
+        font-size: var(--text-4xl);
+    }
+    
+    h2 {
+        font-size: var(--text-3xl);
+    }
+    
+    h3 {
+        font-size: var(--text-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: var(--text-3xl);
+    }
+    
+    h2 {
+        font-size: var(--text-2xl);
+    }
+    
+    h3 {
+        font-size: var(--text-xl);
+    }
+}
+
+/* Paragraph and text */
+p {
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-relaxed);
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Lead text */
+.text-lead {
+    font-size: var(--text-xl);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text);
+    margin-bottom: var(--space-6);
+}
+
+/* Small text */
+.text-small {
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+}
+
+.text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--leading-normal);
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-muted {
+    color: var(--color-gray-dark);
+}
+
+.text-white {
+    color: var(--color-white);
+}
+
+/* Text weights */
+.text-light {
+    font-weight: var(--weight-light);
+}
+
+.text-regular {
+    font-weight: var(--weight-regular);
+}
+
+.text-medium {
+    font-weight: var(--weight-medium);
+}
+
+.text-semibold {
+    font-weight: var(--weight-semibold);
+}
+
+.text-bold {
+    font-weight: var(--weight-bold);
+}
+
+/* Text alignment */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Links */
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast) var(--ease-out);
+}
+
+a:hover {
+    color: var(--color-accent-700);
+}
+
+a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Link variants */
+.link-primary {
+    color: var(--color-primary);
+}
+
+.link-primary:hover {
+    color: var(--color-primary-700);
+}
+
+.link-underline {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+}
+
+.link-underline:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: var(--space-4);
+}
+
+ul:last-child, ol:last-child {
+    margin-bottom: 0;
+}
+
+li {
+    margin-bottom: var(--space-2);
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+/* Styled lists */
+.list-styled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-styled li {
+    position: relative;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-3);
+}
+
+.list-styled li::before {
+    content: '•';
+    color: var(--color-accent);
+    font-weight: var(--weight-bold);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Numbered list */
+.list-numbered {
+    counter-reset: item;
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-numbered li {
+    position: relative;
+    padding-left: var(--space-8);
+    margin-bottom: var(--space-3);
+    counter-increment: item;
+}
+
+.list-numbered li::before {
+    content: counter(item);
+    color: var(--color-accent);
+    font-weight: var(--weight-bold);
+    font-family: var(--font-accent);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--color-accent-100);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-sm);
+}
+
+/* Blockquote */
+blockquote {
+    border-left: 4px solid var(--color-accent);
+    padding-left: var(--space-6);
+    margin: var(--space-8) 0;
+    font-style: italic;
+    font-size: var(--text-lg);
+    color: var(--color-text);
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: var(--space-4);
+    font-style: normal;
+    font-size: var(--text-base);
+    color: var(--color-gray-dark);
+}
+
+blockquote cite::before {
+    content: '— ';
+}
+
+/* Code */
+code, pre {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+code {
+    background: var(--color-gray-light);
+    padding: 0.2em 0.4em;
+    border-radius: var(--radius-sm);
+    color: var(--color-primary);
+}
+
+pre {
+    background: var(--color-gray-light);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: var(--space-6) 0;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    height: 1px;
+    background: var(--color-gray);
+    margin: var(--space-12) 0;
+}
+
+/* Mark/Highlight */
+mark {
+    background: var(--color-accent-100);
+    color: var(--color-accent-800);
+    padding: 0.1em 0.2em;
+    border-radius: var(--radius-sm);
+}
+
+/* Emphasis */
+strong, b {
+    font-weight: var(--weight-bold);
+}
+
+em, i {
+    font-style: italic;
+}
+
+/* Section titles */
+.section__title {
+    font-family: var(--font-primary);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: var(--space-4);
+    position: relative;
+}
+
+.section__title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent);
+    margin: var(--space-4) auto 0;
+    border-radius: var(--radius-full);
+}
+
+.section__subtitle {
+    font-family: var(--font-accent);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-accent);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-8);
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 768px) {
+    .section__title {
+        font-size: var(--text-3xl);
+    }
+    
+    .text-lead {
+        font-size: var(--text-lg);
+    }
+    
+    blockquote {
+        padding-left: var(--space-4);
+        margin: var(--space-6) 0;
+        font-size: var(--text-base);
+    }
+}
+
+/* Japanese typography specific styles */
+body {
+    /* Better Japanese font rendering */
+    text-rendering: optimizeLegibility;
+    -webkit-font-feature-settings: "palt" 1, "kern" 1;
+    font-feature-settings: "palt" 1, "kern" 1;
+}
+
+/* Japanese punctuation adjustment */
+.text-ja {
+    text-align: justify;
+    text-justify: inter-character;
+}
+
+/* English text within Japanese content */
+.text-en {
+    font-family: var(--font-accent);
+    letter-spacing: 0.02em;
+}
+
+/* Price display */
+.price {
+    font-family: var(--font-accent);
+    font-weight: var(--weight-semibold);
+    color: var(--color-accent);
+}
+
+/* Specification text */
+.specs {
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    color: var(--color-gray-dark);
+    line-height: var(--leading-normal);
+}
+
+/* Meta information */
+.meta {
+    font-size: var(--text-xs);
+    color: var(--color-gray-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    a {
+        transition: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    a {
+        text-decoration: underline;
+    }
+    
+    .text-muted {
+        color: var(--color-text);
+    }
+}

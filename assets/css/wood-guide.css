@@ -1,0 +1,713 @@
+/* Wood Guide Page Styles */
+
+/* Wood Selection Guide */
+.wood-selection-guide {
+    padding: var(--space-16) 0;
+    background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-white) 100%);
+}
+
+.selection-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.selection-point {
+    background: var(--color-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.selection-point:nth-child(1) { animation-delay: 0.1s; }
+.selection-point:nth-child(2) { animation-delay: 0.2s; }
+.selection-point:nth-child(3) { animation-delay: 0.3s; }
+
+.selection-point:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.selection-point__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+    border-radius: 50%;
+    color: var(--color-white);
+}
+
+.selection-point__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+}
+
+.selection-point__description {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* Wood Categories */
+.wood-categories {
+    padding: var(--space-20) 0;
+}
+
+/* Wood Filters */
+.wood-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    align-items: center;
+    justify-content: center;
+    margin: var(--space-12) 0;
+    padding: var(--space-6);
+    background: var(--color-gray-light);
+    border-radius: var(--radius-lg);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.filter-label {
+    font-weight: var(--weight-medium);
+    color: var(--color-primary);
+    white-space: nowrap;
+}
+
+.filter-select {
+    padding: var(--space-2) var(--space-4);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    font-size: var(--text-sm);
+    transition: all var(--transition-base);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(46, 94, 62, 0.1);
+}
+
+.filter-reset {
+    padding: var(--space-2) var(--space-6);
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.filter-reset:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px);
+}
+
+/* Woods Grid */
+.woods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.wood-item {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.wood-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wood-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.wood-item__image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.wood-item__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.wood-item:hover .wood-item__image img {
+    transform: scale(1.05);
+}
+
+.wood-item__badges {
+    position: absolute;
+    top: var(--space-4);
+    left: var(--space-4);
+    display: flex;
+    gap: var(--space-2);
+}
+
+.wood-item__badge {
+    padding: var(--space-1) var(--space-3);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-primary);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+}
+
+.wood-item__content {
+    padding: var(--space-6);
+}
+
+.wood-item__header {
+    margin-bottom: var(--space-4);
+}
+
+.wood-item__name {
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+}
+
+.wood-item__latin {
+    font-family: var(--font-accent);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.wood-item__properties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.wood-property {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.wood-property__label {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.wood-property__value {
+    font-size: var(--text-sm);
+    color: var(--color-text-primary);
+    font-weight: var(--weight-medium);
+}
+
+.wood-item__description {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+.wood-item__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+}
+
+.wood-feature {
+    padding: var(--space-1) var(--space-3);
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    border-radius: var(--radius-full);
+}
+
+.wood-item__actions {
+    display: flex;
+    gap: var(--space-4);
+}
+
+.wood-item__button {
+    flex: 1;
+    padding: var(--space-3);
+    text-align: center;
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.wood-item__button--primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.wood-item__button--primary:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.wood-item__button--secondary {
+    background: var(--color-gray-light);
+    color: var(--color-primary);
+    border: 2px solid var(--color-border);
+}
+
+.wood-item__button--secondary:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+/* Wood Comparison */
+.wood-comparison {
+    padding: var(--space-20) 0;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+}
+
+.comparison-table-wrapper {
+    margin-top: var(--space-12);
+    overflow-x: auto;
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+}
+
+.comparison-table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: var(--space-4) var(--space-3);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.comparison-table th {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-serif);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.comparison-table th:first-child {
+    border-top-left-radius: var(--radius-xl);
+}
+
+.comparison-table th:last-child {
+    border-top-right-radius: var(--radius-xl);
+}
+
+.comparison-table td {
+    font-size: var(--text-sm);
+    color: var(--color-text-primary);
+    vertical-align: top;
+}
+
+.comparison-table tr:hover {
+    background: var(--color-gray-light);
+}
+
+.comparison-table td strong {
+    font-family: var(--font-serif);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+}
+
+.comparison-table td small {
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+.hardness {
+    display: inline-block;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    text-transform: uppercase;
+}
+
+.hardness--soft {
+    background: var(--color-success-light);
+    color: var(--color-success);
+}
+
+.hardness--medium {
+    background: var(--color-warning-light);
+    color: var(--color-warning);
+}
+
+.hardness--hard {
+    background: var(--color-error-light);
+    color: var(--color-error);
+}
+
+.color-sample {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: var(--space-2);
+    vertical-align: middle;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.color--light {
+    background: #D4A574;
+}
+
+.color--medium {
+    background: #8B4513;
+}
+
+.color--dark {
+    background: #3E2723;
+}
+
+/* Wood Care Guide */
+.wood-care-guide {
+    padding: var(--space-20) 0;
+    background: var(--color-white);
+}
+
+.care-steps {
+    margin-top: var(--space-12);
+}
+
+.care-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-16);
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease;
+}
+
+.care-step.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.care-step:nth-child(1) { transition-delay: 0.1s; }
+.care-step:nth-child(2) { transition-delay: 0.2s; }
+.care-step:nth-child(3) { transition-delay: 0.3s; }
+
+.care-step__number {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: var(--color-white);
+    font-family: var(--font-accent);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(62, 39, 35, 0.3);
+}
+
+.care-step__content {
+    background: var(--color-gray-light);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    border-left: 4px solid var(--color-accent);
+}
+
+.care-step__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+}
+
+.care-step__description p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+}
+
+.care-step__tips {
+    background: var(--color-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-accent-light);
+}
+
+.care-step__tips h4 {
+    font-family: var(--font-serif);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-4);
+}
+
+.care-step__tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.care-step__tips li {
+    position: relative;
+    padding-left: var(--space-6);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-2);
+}
+
+.care-step__tips li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: var(--weight-bold);
+}
+
+/* Load More */
+.load-more {
+    text-align: center;
+    margin-top: var(--space-12);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: var(--space-20) 0;
+    background: linear-gradient(135deg, var(--color-gray-light) 0%, var(--color-white) 100%);
+    text-align: center;
+}
+
+.cta-section__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-6);
+}
+
+.cta-section__description {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-12);
+}
+
+.cta-section__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-6);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .comparison-table-wrapper {
+        border-radius: var(--radius-lg);
+    }
+    
+    .comparison-table th:first-child {
+        border-top-left-radius: var(--radius-lg);
+    }
+    
+    .comparison-table th:last-child {
+        border-top-right-radius: var(--radius-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .wood-selection-guide {
+        padding: var(--space-12) 0;
+    }
+    
+    .selection-points {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .selection-point {
+        padding: var(--space-6);
+    }
+    
+    .selection-point__icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .wood-categories {
+        padding: var(--space-12) 0;
+    }
+    
+    .wood-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-4);
+    }
+    
+    .filter-group {
+        justify-content: space-between;
+    }
+    
+    .filter-select {
+        flex: 1;
+        margin-left: var(--space-2);
+    }
+    
+    .woods-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .wood-item__properties {
+        grid-template-columns: 1fr;
+    }
+    
+    .wood-comparison {
+        padding: var(--space-12) 0;
+    }
+    
+    .comparison-table th,
+    .comparison-table td {
+        padding: var(--space-3) var(--space-2);
+        font-size: var(--text-xs);
+    }
+    
+    .wood-care-guide {
+        padding: var(--space-12) 0;
+    }
+    
+    .care-step {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        margin-bottom: var(--space-12);
+        text-align: center;
+    }
+    
+    .care-step__number {
+        width: 60px;
+        height: 60px;
+        font-size: var(--text-xl);
+        margin: 0 auto;
+    }
+    
+    .care-step__content {
+        padding: var(--space-6);
+    }
+    
+    .care-step__title {
+        font-size: var(--text-xl);
+    }
+    
+    .cta-section {
+        padding: var(--space-12) 0;
+    }
+    
+    .cta-section__title {
+        font-size: var(--text-2xl);
+    }
+    
+    .cta-section__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .wood-item__content {
+        padding: var(--space-4);
+    }
+    
+    .wood-item__actions {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .comparison-table {
+        min-width: 600px;
+    }
+    
+    .care-step__number {
+        width: 50px;
+        height: 50px;
+        font-size: var(--text-lg);
+    }
+    
+    .care-step__content {
+        padding: var(--space-4);
+    }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    .comparison-table {
+        background: var(--color-gray-dark);
+    }
+    
+    .comparison-table th {
+        background: var(--color-primary-dark);
+    }
+    
+    .comparison-table td {
+        color: var(--color-white);
+    }
+    
+    .comparison-table tr:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
