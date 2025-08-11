@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モバイルデバッグ - クラフトファニチャー</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .debug-info {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .debug-info h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        .debug-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .status-ok {
+            color: green;
+        }
+        .status-error {
+            color: red;
+        }
+        .test-button {
+            background: #2E5E3E;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .test-button:hover {
+            background: #1a3a24;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            display: block;
+            padding: 10px;
+            background: #2E5E3E;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            border-radius: 3px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>📱 モバイルデバッグページ</h1>
+    
+    <div class="debug-info">
+        <h3>端末情報</h3>
+        <p><strong>画面サイズ:</strong> <span id="screen-size">-</span></p>
+        <p><strong>ビューポート:</strong> <span id="viewport">-</span></p>
+        <p><strong>ユーザーエージェント:</strong> <span id="user-agent">-</span></p>
+        <p><strong>接続状態:</strong> <span id="connection" class="status-ok">オンライン</span></p>
+    </div>
+
+    <div class="debug-info">
+        <h3>CSS読み込みテスト</h3>
+        <p id="css-test">テスト中...</p>
+    </div>
+
+    <div class="debug-info">
+        <h3>JavaScript動作テスト</h3>
+        <button class="test-button" onclick="testJS()">JavaScriptテスト実行</button>
+        <p id="js-result">まだテストされていません</p>
+    </div>
+
+    <div class="links">
+        <h3>ページテスト</h3>
+        <a href="/">トップページ</a>
+        <a href="/works/">施工事例</a>
+        <a href="/craftsmen/">職人紹介</a>
+        <a href="/contact/">お問い合わせ</a>
+    </div>
+
+    <script>
+        // 端末情報表示
+        document.getElementById('screen-size').textContent = 
+            screen.width + ' × ' + screen.height;
+        
+        document.getElementById('viewport').textContent = 
+            window.innerWidth + ' × ' + window.innerHeight;
+        
+        document.getElementById('user-agent').textContent = 
+            navigator.userAgent.substring(0, 100) + '...';
+
+        // CSS読み込みテスト
+        function testCSS() {
+            const testElement = document.createElement('div');
+            testElement.style.cssText = 'width: 100px; height: 100px; background: red;';
+            if (testElement.style.width === '100px') {
+                document.getElementById('css-test').innerHTML = 
+                    '<span class="status-ok">✅ CSS正常動作</span>';
+            } else {
+                document.getElementById('css-test').innerHTML = 
+                    '<span class="status-error">❌ CSS読み込み問題</span>';
+            }
+        }
+
+        // JavaScript動作テスト
+        function testJS() {
+            try {
+                const now = new Date();
+                document.getElementById('js-result').innerHTML = 
+                    '<span class="status-ok">✅ JavaScript正常動作 - ' + now.toLocaleTimeString() + '</span>';
+            } catch (error) {
+                document.getElementById('js-result').innerHTML = 
+                    '<span class="status-error">❌ JavaScript エラー: ' + error.message + '</span>';
+            }
+        }
+
+        // 接続状態監視
+        window.addEventListener('online', () => {
+            document.getElementById('connection').innerHTML = 
+                '<span class="status-ok">オンライン</span>';
+        });
+
+        window.addEventListener('offline', () => {
+            document.getElementById('connection').innerHTML = 
+                '<span class="status-error">オフライン</span>';
+        });
+
+        // 初期化
+        testCSS();
+        
+        // リサイズイベント
+        window.addEventListener('resize', () => {
+            document.getElementById('viewport').textContent = 
+                window.innerWidth + ' × ' + window.innerHeight;
+        });
+    </script>
+</body>
+</html>
