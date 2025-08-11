@@ -456,7 +456,7 @@
     padding: 2rem;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     position: sticky;
-    top: 2rem;
+    top: calc(var(--header-height) + 1rem);
 }
 
 .calendar-header {
@@ -834,6 +834,10 @@
     .reservation__calendar,
     .reservation__form {
         padding: 1.5rem;
+    }
+    
+    .reservation__calendar {
+        top: calc(var(--header-height-mobile) + 1rem);
     }
     
     .exhibition-item__info,
