@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>見積もりシミュレーター | 株式会社クラフトファニチャー</title>
+    <meta name="description" content="オーダーメイド家具の見積もりシミュレーター。家具の種類、サイズ、木材、仕上げ方法を選択して概算価格を確認できます。板厚やオプションも選択可能です。">
+    <meta name="keywords" content="見積もり, シミュレーター, オーダー家具, 価格計算, 一枚板テーブル, カスタマイズ">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craft-furniture.jp/simulator/">
+    <meta property="og:title" content="見積もりシミュレーター | 株式会社クラフトファニチャー">
+    <meta property="og:description" content="オーダーメイド家具の見積もりシミュレーター。お客様のご要望に合わせた概算価格を確認できます。">
+    <meta property="og:image" content="https://craft-furniture.jp/assets/images/simulator-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://craft-furniture.jp/simulator/">
+    <meta property="twitter:title" content="見積もりシミュレーター | 株式会社クラフトファニチャー">
+    <meta property="twitter:description" content="オーダーメイド家具の見積もりシミュレーター。お客様のご要望に合わせた概算価格を確認できます。">
+    <meta property="twitter:image" content="https://craft-furniture.jp/assets/images/simulator-og.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/simulator.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "見積もりシミュレーター",
+        "description": "オーダーメイド家具の見積もりシミュレーター",
+        "url": "https://craft-furniture.jp/simulator/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "JPY"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "株式会社クラフトファニチャー"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="../" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../" class="nav__link">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="../works/?filter=desk">デスク</a></li>
+                                <li><a href="../works/?filter=storage">収納家具</a></li>
+                                <li><a href="../works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../about/">会社概要</a></li>
+                                <li><a href="../flow/">納品までの流れ</a></li>
+                                <li><a href="../delivery/">納品エリア</a></li>
+                                <li><a href="../showroom/">ショールーム</a></li>
+                                <li><a href="../faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="./" class="nav__link nav__link--cta nav__link--active">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero__image">
+                <div class="image-placeholder image-placeholder--hero">
+                    <div class="image-placeholder__content">
+                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="4" y="2" width="16" height="20" rx="2"/>
+                            <path d="M8 6h8"/>
+                            <circle cx="8" cy="10" r="0.5"/>
+                            <circle cx="12" cy="10" r="0.5"/>
+                            <circle cx="16" cy="10" r="0.5"/>
+                            <circle cx="8" cy="14" r="0.5"/>
+                            <circle cx="12" cy="14" r="0.5"/>
+                            <circle cx="16" cy="14" r="0.5"/>
+                            <path d="M8 18h8"/>
+                        </svg>
+                        <div class="image-placeholder__text">準備中</div>
+                        <div class="image-placeholder__subtext">見積もりシミュレーターの画像</div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-hero__content">
+                <div class="container">
+                    <div class="page-hero__inner">
+                        <h1 class="page-hero__title">見積もりシミュレーター</h1>
+                        <p class="page-hero__subtitle">お客様のご要望に合わせたオーダーメイド家具の<br>概算価格を簡単にシミュレーションできます</p>
+                        
+                        <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+                            <ol class="breadcrumb__list">
+                                <li class="breadcrumb__item">
+                                    <a href="../" class="breadcrumb__link">ホーム</a>
+                                </li>
+                                <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                                    見積もりシミュレーター
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simulator -->
+        <section class="simulator">
+            <div class="container">
+                <div class="simulator__grid">
+                    <!-- Configuration Form -->
+                    <div class="simulator__form">
+                        <form id="simulator-form" class="form">
+                            <div class="form__section">
+                                <h2 class="form__title">
+                                    <span class="form__step">STEP 1</span>
+                                    家具の種類を選択
+                                </h2>
+                                
+                                <div class="form__group">
+                                    <fieldset class="radio-group">
+                                        <legend class="sr-only">家具の種類を選択してください</legend>
+                                        
+                                        <label class="radio-card">
+                                            <input type="radio" name="furnitureType" value="dining" class="radio-card__input" required>
+                                            <div class="radio-card__content">
+                                                <div class="radio-card__icon">
+                                                    <div class="image-placeholder" style="min-height: 64px; width: 64px; border-radius: 50%;">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;">
+                                                                <rect x="2" y="8" width="20" height="12" rx="2"/>
+                                                                <path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>
+                                                                <path d="M6 21V8"/>
+                                                                <path d="M18 21V8"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h3 class="radio-card__title">ダイニングテーブル</h3>
+                                                <p class="radio-card__description">ご家族の食事やコミュニケーションの中心となるテーブル</p>
+                                                <span class="radio-card__price">¥400,000〜</span>
+                                            </div>
+                                        </label>
+
+                                        <label class="radio-card">
+                                            <input type="radio" name="furnitureType" value="desk" class="radio-card__input">
+                                            <div class="radio-card__content">
+                                                <div class="radio-card__icon">
+                                                    <div class="image-placeholder" style="min-height: 64px; width: 64px; border-radius: 50%;">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;">
+                                                                <rect x="3" y="4" width="18" height="12" rx="2"/>
+                                                                <path d="M5 16v4"/>
+                                                                <path d="M19 16v4"/>
+                                                                <path d="M9 12h6"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h3 class="radio-card__title">デスク</h3>
+                                                <p class="radio-card__description">在宅ワークや学習に最適な作業デスク</p>
+                                                <span class="radio-card__price">¥250,000〜</span>
+                                            </div>
+                                        </label>
+
+                                        <label class="radio-card">
+                                            <input type="radio" name="furnitureType" value="storage" class="radio-card__input">
+                                            <div class="radio-card__content">
+                                                <div class="radio-card__icon">
+                                                    <div class="image-placeholder" style="min-height: 64px; width: 64px; border-radius: 50%;">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;">
+                                                                <rect x="4" y="4" width="16" height="16" rx="2"/>
+                                                                <path d="M4 12h16"/>
+                                                                <path d="M10 8h4"/>
+                                                                <path d="M10 16h4"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h3 class="radio-card__title">収納家具</h3>
+                                                <p class="radio-card__description">本棚、チェスト、キャビネットなど</p>
+                                                <span class="radio-card__price">¥180,000〜</span>
+                                            </div>
+                                        </label>
+
+                                        <label class="radio-card">
+                                            <input type="radio" name="furnitureType" value="counter" class="radio-card__input">
+                                            <div class="radio-card__content">
+                                                <div class="radio-card__icon">
+                                                    <div class="image-placeholder" style="min-height: 64px; width: 64px; border-radius: 50%;">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor" style="width: 32px; height: 32px;">
+                                                                <rect x="2" y="10" width="20" height="8" rx="2"/>
+                                                                <path d="M6 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/>
+                                                                <path d="M8 18v4"/>
+                                                                <path d="M16 18v4"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h3 class="radio-card__title">カウンターテーブル</h3>
+                                                <p class="radio-card__description">キッチンカウンターや店舗用カウンター</p>
+                                                <span class="radio-card__price">¥300,000〜</span>
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <div class="form__section">
+                                <h2 class="form__title">
+                                    <span class="form__step">STEP 2</span>
+                                    サイズを指定
+                                </h2>
+                                
+                                <div class="form__group">
+                                    <div class="size-inputs">
+                                        <div class="size-input">
+                                            <label for="width" class="size-input__label">
+                                                幅 (W)
+                                                <span class="size-input__unit">mm</span>
+                                            </label>
+                                            <input type="number" id="width" name="width" class="size-input__field" 
+                                                   min="600" max="4000" step="50" value="1800" required>
+                                            <div class="size-input__range">
+                                                <input type="range" class="size-range" 
+                                                       min="600" max="4000" step="50" value="1800"
+                                                       data-target="width">
+                                            </div>
+                                        </div>
+
+                                        <div class="size-input">
+                                            <label for="depth" class="size-input__label">
+                                                奥行き (D)
+                                                <span class="size-input__unit">mm</span>
+                                            </label>
+                                            <input type="number" id="depth" name="depth" class="size-input__field" 
+                                                   min="400" max="1500" step="50" value="900" required>
+                                            <div class="size-input__range">
+                                                <input type="range" class="size-range" 
+                                                       min="400" max="1500" step="50" value="900"
+                                                       data-target="depth">
+                                            </div>
+                                        </div>
+
+                                        <div class="size-input">
+                                            <label for="height" class="size-input__label">
+                                                高さ (H)
+                                                <span class="size-input__unit">mm</span>
+                                            </label>
+                                            <input type="number" id="height" name="height" class="size-input__field" 
+                                                   min="400" max="1200" step="10" value="720" required>
+                                            <div class="size-input__range">
+                                                <input type="range" class="size-range" 
+                                                       min="400" max="1200" step="10" value="720"
+                                                       data-target="height">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="size-visual" id="size-visual">
+                                        <div class="size-visual__container">
+                                            <div class="size-visual__furniture" id="furniture-visual"></div>
+                                            <div class="size-visual__dimensions">
+                                                <span class="dimension dimension--width" id="width-dimension">1800mm</span>
+                                                <span class="dimension dimension--depth" id="depth-dimension">900mm</span>
+                                                <span class="dimension dimension--height" id="height-dimension">720mm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__section">
+                                <h2 class="form__title">
+                                    <span class="form__step">STEP 3</span>
+                                    板厚を選択
+                                </h2>
+                                
+                                <div class="form__group">
+                                    <fieldset class="thickness-group">
+                                        <legend class="sr-only">板厚を選択してください</legend>
+                                        
+                                        <label class="thickness-option">
+                                            <input type="radio" name="thickness" value="30" class="thickness-option__input" required>
+                                            <div class="thickness-option__content">
+                                                <div class="thickness-option__visual"></div>
+                                                <div class="thickness-option__info">
+                                                    <span class="thickness-option__size">30mm</span>
+                                                    <span class="thickness-option__desc">標準的な厚み</span>
+                                                    <span class="thickness-option__price">基準価格</span>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <label class="thickness-option">
+                                            <input type="radio" name="thickness" value="40" class="thickness-option__input">
+                                            <div class="thickness-option__content">
+                                                <div class="thickness-option__visual thickness-option__visual--medium"></div>
+                                                <div class="thickness-option__info">
+                                                    <span class="thickness-option__size">40mm</span>
+                                                    <span class="thickness-option__desc">重厚感のある厚み</span>
+                                                    <span class="thickness-option__price">+15%</span>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <label class="thickness-option">
+                                            <input type="radio" name="thickness" value="50" class="thickness-option__input">
+                                            <div class="thickness-option__content">
+                                                <div class="thickness-option__visual thickness-option__visual--thick"></div>
+                                                <div class="thickness-option__info">
+                                                    <span class="thickness-option__size">50mm</span>
+                                                    <span class="thickness-option__desc">最も重厚で高級感のある厚み</span>
+                                                    <span class="thickness-option__price">+30%</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <div class="form__section">
+                                <h2 class="form__title">
+                                    <span class="form__step">STEP 4</span>
+                                    木材を選択
+                                </h2>
+                                
+                                <div class="form__group">
+                                    <fieldset class="material-group">
+                                        <legend class="sr-only">木材を選択してください</legend>
+                                        
+                                        <label class="material-card">
+                                            <input type="radio" name="material" value="walnut" class="material-card__input" required>
+                                            <div class="material-card__content">
+                                                <div class="material-card__image">
+                                                    <div class="image-placeholder image-placeholder--medium">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                                <path d="M2 17l10 5 10-5"/>
+                                                                <path d="M2 12l10 5 10-5"/>
+                                                            </svg>
+                                                            <div class="image-placeholder__text">準備中</div>
+                                                            <div class="image-placeholder__subtext">ウォールナット</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="material-card__info">
+                                                    <h3 class="material-card__name">ウォールナット</h3>
+                                                    <p class="material-card__description">深いブラウンと美しい木目が特徴</p>
+                                                    <span class="material-card__grade">高級材 (+30%)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <label class="material-card">
+                                            <input type="radio" name="material" value="oak" class="material-card__input">
+                                            <div class="material-card__content">
+                                                <div class="material-card__image">
+                                                    <div class="image-placeholder image-placeholder--medium">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                                <path d="M2 17l10 5 10-5"/>
+                                                                <path d="M2 12l10 5 10-5"/>
+                                                            </svg>
+                                                            <div class="image-placeholder__text">準備中</div>
+                                                            <div class="image-placeholder__subtext">オーク</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="material-card__info">
+                                                    <h3 class="material-card__name">オーク</h3>
+                                                    <p class="material-card__description">力強い木目と耐久性が魅力</p>
+                                                    <span class="material-card__grade">人気材 (+20%)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <label class="material-card">
+                                            <input type="radio" name="material" value="cherry" class="material-card__input">
+                                            <div class="material-card__content">
+                                                <div class="material-card__image">
+                                                    <div class="image-placeholder image-placeholder--medium">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                                <path d="M2 17l10 5 10-5"/>
+                                                                <path d="M2 12l10 5 10-5"/>
+                                                            </svg>
+                                                            <div class="image-placeholder__text">準備中</div>
+                                                            <div class="image-placeholder__subtext">チェリー</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="material-card__info">
+                                                    <h3 class="material-card__name">チェリー</h3>
+                                                    <p class="material-card__description">温かみのある色調と滑らかな質感</p>
+                                                    <span class="material-card__grade">上質材 (+15%)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+
+                                        <label class="material-card">
+                                            <input type="radio" name="material" value="maple" class="material-card__input">
+                                            <div class="material-card__content">
+                                                <div class="material-card__image">
+                                                    <div class="image-placeholder image-placeholder--medium">
+                                                        <div class="image-placeholder__content">
+                                                            <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                                                <path d="M2 17l10 5 10-5"/>
+                                                                <path d="M2 12l10 5 10-5"/>
+                                                            </svg>
+                                                            <div class="image-placeholder__text">準備中</div>
+                                                            <div class="image-placeholder__subtext">メープル</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="material-card__info">
+                                                    <h3 class="material-card__name">メープル</h3>
+                                                    <p class="material-card__description">明るく上品な色合い</p>
+                                                    <span class="material-card__grade">標準材 (基準価格)</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                            <div class="form__section">
+                                <h2 class="form__title">
+                                    <span class="form__step">STEP 5</span>
+                                    仕上げ・オプション
+                                </h2>
+                                
+                                <div class="form__group">
+                                    <label for="finish" class="form__label">仕上げ方法</label>
+                                    <select id="finish" name="finish" class="form__select" required>
+                                        <option value="">選択してください</option>
+                                        <option value="oil">オイル仕上げ（木の質感を活かした自然な仕上げ）</option>
+                                        <option value="urethane">ウレタン仕上げ（耐久性重視の仕上げ）+¥20,000</option>
+                                    </select>
+                                </div>
+
+                                <div class="form__group">
+                                    <fieldset class="checkbox-group">
+                                        <legend class="form__label">オプション</legend>
+                                        
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="options" value="edge" class="checkbox-item__input">
+                                            <div class="checkbox-item__content">
+                                                <span class="checkbox-item__name">エッジ加工（面取り）</span>
+                                                <span class="checkbox-item__price">+¥30,000</span>
+                                            </div>
+                                            <p class="checkbox-item__description">角を丸く加工し、安全性と美観を向上</p>
+                                        </label>
+
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="options" value="drawer" class="checkbox-item__input">
+                                            <div class="checkbox-item__content">
+                                                <span class="checkbox-item__name">引き出し追加（1個）</span>
+                                                <span class="checkbox-item__price">+¥50,000</span>
+                                            </div>
+                                            <p class="checkbox-item__description">デスクや収納家具に引き出しを追加</p>
+                                        </label>
+
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="options" value="adjustment" class="checkbox-item__input">
+                                            <div class="checkbox-item__content">
+                                                <span class="checkbox-item__name">高さ調整脚</span>
+                                                <span class="checkbox-item__price">+¥40,000</span>
+                                            </div>
+                                            <p class="checkbox-item__description">床の凹凸に対応する調整可能な脚</p>
+                                        </label>
+
+                                        <label class="checkbox-item">
+                                            <input type="checkbox" name="options" value="delivery" class="checkbox-item__input">
+                                            <div class="checkbox-item__content">
+                                                <span class="checkbox-item__name">2階搬入・設置</span>
+                                                <span class="checkbox-item__price">+¥15,000</span>
+                                            </div>
+                                            <p class="checkbox-item__description">2階以上への搬入・設置作業</p>
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Price Estimate -->
+                    <div class="simulator__result">
+                        <div class="result-card" id="result-card">
+                            <div class="result-card__header">
+                                <h2 class="result-card__title">概算見積もり</h2>
+                                <p class="result-card__subtitle">Price Estimate</p>
+                            </div>
+
+                            <div class="result-card__summary" id="result-summary">
+                                <div class="summary-item summary-item--main">
+                                    <span class="summary-item__label">選択された家具</span>
+                                    <span class="summary-item__value" id="selected-furniture">未選択</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-item__label">サイズ</span>
+                                    <span class="summary-item__value" id="selected-size">1800×900×720mm</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-item__label">板厚</span>
+                                    <span class="summary-item__value" id="selected-thickness">未選択</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-item__label">木材</span>
+                                    <span class="summary-item__value" id="selected-material">未選択</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="summary-item__label">仕上げ</span>
+                                    <span class="summary-item__value" id="selected-finish">未選択</span>
+                                </div>
+                            </div>
+
+                            <div class="result-card__breakdown" id="price-breakdown">
+                                <!-- Price breakdown will be populated by JavaScript -->
+                            </div>
+
+                            <div class="result-card__total">
+                                <div class="total-price">
+                                    <span class="total-price__label">概算価格</span>
+                                    <span class="total-price__value" id="total-price">¥0</span>
+                                </div>
+                                <p class="result-card__note">
+                                    ※こちらは概算価格です。最終的な価格は詳細な打ち合わせ後に決定いたします。<br>
+                                    制作期間：約2〜4ヶ月
+                                </p>
+                            </div>
+
+                            <div class="result-card__actions">
+                                <button type="button" class="btn btn--primary btn--large" id="request-quote" disabled>
+                                    <span>正式見積もりを依頼</span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                                
+                                <button type="button" class="btn btn--secondary btn--large" id="save-estimate">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    見積もりを保存
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section class="how-it-works">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">ご注文の流れ</h2>
+                    <p class="section__subtitle">Order Process</p>
+                </div>
+
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-step__number">1</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">シミュレーション</h3>
+                            <p class="process-step__description">お客様のご要望に合わせて概算価格をシミュレーション</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-step__number">2</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">お問い合わせ</h3>
+                            <p class="process-step__description">詳細なご要望をお聞かせください</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-step__number">3</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">正式見積もり</h3>
+                            <p class="process-step__description">詳細検討後、正式なお見積もりをご提示</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-step__number">4</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">制作開始</h3>
+                            <p class="process-step__description">ご契約後、職人が心を込めて制作開始</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-step__number">5</div>
+                        <div class="process-step__content">
+                            <h3 class="process-step__title">納品・設置</h3>
+                            <p class="process-step__description">完成した家具をお客様のもとへお届け</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">よくある質問</h2>
+                    <p class="section__subtitle">FAQ</p>
+                    <p class="section__description">見積もりシミュレーターに関してよく寄せられるご質問にお答えします</p>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            シミュレーターの価格と実際の価格はどのくらい違いますか？
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>シミュレーターは概算価格です。木材の状態（節の有無、木目の美しさなど）や詳細な仕様（脚の形状、仕上げ方法など）により、実際の価格は±20%程度変動する場合があります。正確な価格は木材選定から詳細な打ち合わせ後にお見積もりいたします。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            制作期間はどのくらいかかりますか？
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>家具の種類やサイズにより異なりますが、通常2〜4ヶ月程度です。ダイニングテーブルは約2〜3ヶ月、大型収納家具は3〜4ヶ月が目安です。春・秋の繁忙期は1ヶ月程度延びる場合があります。正確な納期はご注文確定時にお伝えいたします。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            木材の選択によって価格はどの程度変わりますか？
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>木材による価格差は以下の通りです：<br>
+                            • オーク（基準価格）<br>
+                            • ウォールナット（+20〜30%）<br>
+                            • チェリー（+15〜25%）<br>
+                            • メープル（+10〜20%）<br>
+                            同じ木材でも一枚板の幅や木目の美しさにより価格は変動いたします。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            板厚を変更すると価格への影響はありますか？
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>板厚による価格への影響は大きく、以下のような係数で計算されます：<br>
+                            • 30mm（標準）：基準価格<br>
+                            • 40mm：約+15%<br>
+                            • 50mm：約+30%<br>
+                            厚みが増すほど重厚感と耐久性が向上しますが、材料費と加工費が大幅に増加いたします。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            支払い方法と支払いタイミングを教えてください
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>お支払い方法は銀行振込のみとなります。支払いタイミングは以下の通りです：<br>
+                            • ご契約時：30%<br>
+                            • 制作完了・納品時：70%<br>
+                            大型案件（100万円以上）の場合は、中間金として制作開始時に追加で30%をお支払いいただく場合があります。</p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            アフターサービス・保証について教えてください
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>クラフトファニチャーでは永年保証でアフターケアをお約束しています：<br>
+                            • 構造的な不具合：永年保証<br>
+                            • 定期メンテナンス：年1回無料点検<br>
+                            • オイル仕上げの再塗装：2年に1回推奨<br>
+                            • 軽微な傷の補修：随時対応<br>
+                            一生を共にする家具として、末永くサポートいたします。</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-all-link">
+                    <a href="../faq/" class="btn btn--outline btn--large">
+                        すべての質問を見る
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="footer__logo-text">Craft Furniture</span>
+                        <span class="footer__logo-sub">株式会社クラフトファニチャー</span>
+                    </div>
+                    <p class="footer__description">
+                        東京を拠点に、一枚板を使ったオーダーメイド家具の製造・販売を行っています。職人の技術と木の温もりを大切に、一生を共にする家具をお作りします。
+                    </p>
+                    <div class="footer__contact">
+                        <p class="footer__phone">TEL: 03-1234-5678</p>
+                        <p class="footer__address">〒123-4567 東京都○○区○○ 1-2-3</p>
+                    </div>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">サービス</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../works/">施工事例</a></li>
+                            <li><a href="../process/">製作工程</a></li>
+                            <li><a href="../craftsmen/">職人紹介</a></li>
+                            <li><a href="../wood-guide/">木材図鑑</a></li>
+                            <li><a href="./">見積もり</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">会社情報</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../about/">会社概要</a></li>
+                            <li><a href="../flow/">納品までの流れ</a></li>
+                            <li><a href="../delivery/">納品エリア</a></li>
+                            <li><a href="../showroom/">ショールーム</a></li>
+                            <li><a href="../faq/">よくある質問</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">その他</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../voice/">お客様の声</a></li>
+                            <li><a href="../news/">お知らせ</a></li>
+                            <li><a href="../contact/">お問い合わせ</a></li>
+                            <li><a href="../privacy/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="footer__social">
+                    <h3 class="footer__social-title">Follow Us</h3>
+                    <div class="footer__social-links">
+                        <a href="https://www.instagram.com/craft_furniture_jp/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Craft Furniture Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/simulator.js"></script>
+</body>
+</html>

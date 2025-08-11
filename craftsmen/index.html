@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職人紹介 | 株式会社クラフトファニチャー</title>
+    <meta name="description" content="クラフトファニチャーの熟練職人をご紹介。10年以上の経験を持つ職人たちが、一つひとつ丁寧に手作業で家具を製作いたします。">
+    <meta name="keywords" content="職人, 家具職人, 手作業, 技術, 経験, 一枚板, オーダーメイド">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craft-furniture.jp/craftsmen/">
+    <meta property="og:title" content="職人紹介 | 株式会社クラフトファニチャー">
+    <meta property="og:description" content="熟練職人による手作業での家具製作。職人の技術と経験をご紹介します。">
+    <meta property="og:image" content="https://craft-furniture.jp/assets/images/craftsmen-og.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://craft-furniture.jp/craftsmen/">
+    <meta property="twitter:title" content="職人紹介 | 株式会社クラフトファニチャー">
+    <meta property="twitter:description" content="熟練職人による手作業での家具製作。職人の技術と経験をご紹介します。">
+    <meta property="twitter:image" content="https://craft-furniture.jp/assets/images/craftsmen-og.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/craftsmen.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "職人紹介",
+        "description": "クラフトファニチャーの職人紹介ページ",
+        "url": "https://craft-furniture.jp/craftsmen/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "株式会社クラフトファニチャー",
+            "url": "https://craft-furniture.jp/"
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="../" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../" class="nav__link">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="../works/?filter=desk">デスク</a></li>
+                                <li><a href="../works/?filter=storage">収納家具</a></li>
+                                <li><a href="../works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="./" class="nav__link nav__link--active">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../about/">会社概要</a></li>
+                                <li><a href="../flow/">納品までの流れ</a></li>
+                                <li><a href="../delivery/">納品エリア</a></li>
+                                <li><a href="../showroom/">ショールーム</a></li>
+                                <li><a href="../faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero__image">
+                <div class="image-placeholder image-placeholder--hero">
+                    <div class="image-placeholder__content">
+                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <div class="image-placeholder__text">準備中</div>
+                        <div class="image-placeholder__subtext">職人紹介の画像</div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-hero__content">
+                <div class="container">
+                    <div class="page-hero__inner">
+                        <h1 class="page-hero__title">職人紹介</h1>
+                        <p class="page-hero__subtitle">長年の経験を積んだ熟練職人が<br>心を込めて家具を製作いたします</p>
+                        
+                        <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+                            <ol class="breadcrumb__list">
+                                <li class="breadcrumb__item">
+                                    <a href="../" class="breadcrumb__link">ホーム</a>
+                                </li>
+                                <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                                    職人紹介
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Craftsmen Philosophy -->
+        <section class="philosophy">
+            <div class="container">
+                <div class="philosophy__content">
+                    <div class="philosophy__text">
+                        <h2 class="philosophy__title">職人の技術と心</h2>
+                        <p class="philosophy__description">
+                            クラフトファニチャーでは、10年以上の経験を持つ熟練職人が、
+                            伝統的な技術と現代的な感性を融合させて家具を製作しています。<br><br>
+                            
+                            一枚の板から始まり、お客様の手元に届くまで、
+                            職人の手によって丁寧に形作られる家具には、
+                            作り手の想いと技術が息づいています。<br><br>
+                            
+                            私たちは単に家具を作るのではなく、
+                            お客様の生活に寄り添う「パートナー」を作っているのです。
+                        </p>
+                    </div>
+                    <div class="philosophy__image">
+                        <div class="image-placeholder image-placeholder--medium">
+                            <div class="image-placeholder__content">
+                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                </svg>
+                                <div class="image-placeholder__text">準備中</div>
+                                <div class="image-placeholder__subtext">職人作業の画像</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Craftsmen Profiles -->
+        <section class="craftsmen">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">職人プロフィール</h2>
+                    <p class="section__subtitle">Meet Our Craftsmen</p>
+                </div>
+
+                <div class="craftsmen__grid">
+                    <!-- Craftsman 1: Tanaka -->
+                    <article class="craftsman" id="tanaka">
+                        <div class="craftsman__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">田中職人の写真</div>
+                                </div>
+                            </div>
+                            <div class="craftsman__overlay">
+                                <div class="craftsman__stats">
+                                    <div class="stat">
+                                        <span class="stat__number">15</span>
+                                        <span class="stat__label">年の経験</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__number">200+</span>
+                                        <span class="stat__label">作品数</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="craftsman__content">
+                            <div class="craftsman__header">
+                                <h3 class="craftsman__name">田中 一郎</h3>
+                                <p class="craftsman__role">主任職人</p>
+                                <div class="craftsman__badges">
+                                    <span class="badge badge--specialty">一枚板テーブル</span>
+                                    <span class="badge badge--experience">15年の経験</span>
+                                </div>
+                            </div>
+                            
+                            <div class="craftsman__details">
+                                <div class="craftsman__bio">
+                                    <h4>プロフィール</h4>
+                                    <p>
+                                        家具職人として15年のキャリアを持つ主任職人。
+                                        特に一枚板テーブルの製作を得意とし、木の個性を最大限に活かした作品作りで定評があります。
+                                        お客様のライフスタイルに合わせた最適な設計を心がけています。
+                                    </p>
+                                </div>
+                                
+                                <div class="craftsman__specialties">
+                                    <h4>得意分野</h4>
+                                    <ul>
+                                        <li>一枚板ダイニングテーブル</li>
+                                        <li>無垢材を使った大型家具</li>
+                                        <li>木目を活かした設計・加工</li>
+                                        <li>お客様との打ち合わせ・提案</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="craftsman__philosophy">
+                                    <h4>職人としての想い</h4>
+                                    <blockquote>
+                                        「木にはそれぞれ個性があります。その個性を読み取り、最適な形に仕上げることが職人の技術だと思います。
+                                        お客様が何十年も愛用できる家具を作ることが私の誇りです。」
+                                    </blockquote>
+                                </div>
+                            </div>
+                            
+                            <div class="craftsman__gallery">
+                                <h4>代表作品</h4>
+                                <div class="works-preview">
+                                    <a href="../simulator/" class="work-preview">
+                                        <div class="image-placeholder image-placeholder--small">
+                                            <div class="image-placeholder__content">
+                                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                                </svg>
+                                                <div class="image-placeholder__text">準備中</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../simulator/" class="work-preview">
+                                        <div class="image-placeholder image-placeholder--small">
+                                            <div class="image-placeholder__content">
+                                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                                </svg>
+                                                <div class="image-placeholder__text">準備中</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../simulator/" class="work-preview">
+                                        <div class="image-placeholder image-placeholder--small">
+                                            <div class="image-placeholder__content">
+                                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                                </svg>
+                                                <div class="image-placeholder__text">準備中</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Craftsman 2: Yamada -->
+                    <article class="craftsman" id="yamada">
+                        <div class="craftsman__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">山田職人の写真</div>
+                                </div>
+                            </div>
+                            <div class="craftsman__overlay">
+                                <div class="craftsman__stats">
+                                    <div class="stat">
+                                        <span class="stat__number">12</span>
+                                        <span class="stat__label">年の経験</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__number">150+</span>
+                                        <span class="stat__label">作品数</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="craftsman__content">
+                            <div class="craftsman__header">
+                                <h3 class="craftsman__name">山田 太郎</h3>
+                                <p class="craftsman__role">職人</p>
+                                <div class="craftsman__badges">
+                                    <span class="badge badge--specialty">収納家具・細工</span>
+                                    <span class="badge badge--experience">12年の経験</span>
+                                </div>
+                            </div>
+                            
+                            <div class="craftsman__details">
+                                <div class="craftsman__bio">
+                                    <h4>プロフィール</h4>
+                                    <p>
+                                        収納家具や細かな細工を施した家具の製作を専門とする職人。
+                                        機能性と美しさを両立した、使い勝手の良い家具作りに定評があります。
+                                        特に引き出しや扉の精密な調整技術に優れています。
+                                    </p>
+                                </div>
+                                
+                                <div class="craftsman__specialties">
+                                    <h4>得意分野</h4>
+                                    <ul>
+                                        <li>収納家具（本棚・チェスト・キャビネット）</li>
+                                        <li>精密な継ぎ手加工</li>
+                                        <li>引き出し・扉の調整</li>
+                                        <li>装飾的な細工・彫刻</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="craftsman__philosophy">
+                                    <h4>職人としての想い</h4>
+                                    <blockquote>
+                                        「美しいだけでなく、使いやすさも追求します。毎日使う家具だからこそ、
+                                        細部の仕上がりにこだわり、長く愛用していただける品質を心がけています。」
+                                    </blockquote>
+                                </div>
+                            </div>
+                            
+                            <div class="craftsman__gallery">
+                                <h4>代表作品</h4>
+                                <div class="works-preview">
+                                    <a href="../simulator/" class="work-preview">
+                                        <div class="image-placeholder image-placeholder--small">
+                                            <div class="image-placeholder__content">
+                                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                                </svg>
+                                                <div class="image-placeholder__text">準備中</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../simulator/" class="work-preview">
+                                        <div class="image-placeholder image-placeholder--small">
+                                            <div class="image-placeholder__content">
+                                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                                </svg>
+                                                <div class="image-placeholder__text">準備中</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../works/" class="work-preview work-preview--more">
+                                        <div class="work-preview__more">
+                                            <span>もっと見る</span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M9 18L15 12L9 6"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Craftsman 3: K.S (Anonymous) -->
+                    <article class="craftsman craftsman--anonymous" id="ks">
+                        <div class="craftsman__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 6h4v1h-4V6zm8 15H6V9h12v12zm-7-2l-2-2 1.41-1.41L12 17.17l3.59-3.58L17 15l-4 4z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">K.S職人の手元作業</div>
+                                </div>
+                            </div>
+                            <div class="craftsman__overlay craftsman__overlay--hands">
+                                <div class="craftsman__stats">
+                                    <div class="stat">
+                                        <span class="stat__number">20+</span>
+                                        <span class="stat__label">年の経験</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat__number">300+</span>
+                                        <span class="stat__label">作品数</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="craftsman__content">
+                            <div class="craftsman__header">
+                                <h3 class="craftsman__name">K.S</h3>
+                                <p class="craftsman__role">ベテラン職人</p>
+                                <div class="craftsman__badges">
+                                    <span class="badge badge--specialty">オーダーデスク</span>
+                                    <span class="badge badge--experience">20年以上の経験</span>
+                                    <span class="badge badge--master">匠の技</span>
+                                </div>
+                            </div>
+                            
+                            <div class="craftsman__details">
+                                <div class="craftsman__bio">
+                                    <h4>プロフィール</h4>
+                                    <p>
+                                        20年以上の経験を持つベテラン職人。
+                                        長年培った技術を活かし、お客様の細かなご要望にお応えするオーダーデスクの制作を手がけています。
+                                        伝統的な技法と現代的なデザインを融合させた独創的な作品作りで高い評価を得ています。
+                                    </p>
+                                </div>
+                                
+                                <div class="craftsman__specialties">
+                                    <h4>得意分野</h4>
+                                    <ul>
+                                        <li>オーダーデスク（L字型・コーナー型など）</li>
+                                        <li>複雑な設計の家具</li>
+                                        <li>伝統的な継ぎ手技法</li>
+                                        <li>修理・リストア作業</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="craftsman__philosophy">
+                                    <h4>職人としての想い</h4>
+                                    <blockquote>
+                                        「長年の経験から学んだことは、お客様の声に耳を傾けることの大切さです。
+                                        一人ひとり異なるニーズに応え、唯一無二の家具を作り上げることが職人の使命だと考えています。」
+                                    </blockquote>
+                                </div>
+                            </div>
+                            
+                            <div class="craftsman__gallery">
+                                <h4>代表作品</h4>
+                                <div class="works-preview">
+                                    <a href="../simulator/" class="work-preview">
+                                        <div class="image-placeholder image-placeholder--small">
+                                            <div class="image-placeholder__content">
+                                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                                </svg>
+                                                <div class="image-placeholder__text">準備中</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../simulator/" class="work-preview">
+                                        <div class="image-placeholder image-placeholder--small">
+                                            <div class="image-placeholder__content">
+                                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                                </svg>
+                                                <div class="image-placeholder__text">準備中</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="../works/" class="work-preview work-preview--more">
+                                        <div class="work-preview__more">
+                                            <span>もっと見る</span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M9 18L15 12L9 6"/>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshop Tour -->
+        <section class="workshop">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">工房の様子</h2>
+                    <p class="section__subtitle">Our Workshop</p>
+                </div>
+
+                <div class="workshop__gallery">
+                    <div class="workshop__image workshop__image--large">
+                        <div class="image-placeholder image-placeholder--large">
+                            <div class="image-placeholder__content">
+                                <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                </svg>
+                                <div class="image-placeholder__text">準備中</div>
+                                <div class="image-placeholder__subtext">工房全体の画像</div>
+                            </div>
+                        </div>
+                        <div class="workshop__caption">
+                            <h3>職人たちが働く工房</h3>
+                            <p>伝統的な道具と現代的な設備を併用した工房で、熟練職人が日々作業に取り組んでいます。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="workshop__images">
+                        <div class="workshop__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 6h4v1h-4V6zm8 15H6V9h12v12zm-7-2l-2-2 1.41-1.41L12 17.17l3.59-3.58L17 15l-4 4z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">道具の画像</div>
+                                </div>
+                            </div>
+                            <div class="workshop__caption">
+                                <h3>職人の道具</h3>
+                                <p>長年使い込まれた道具たち</p>
+                            </div>
+                        </div>
+                        
+                        <div class="workshop__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">木材選定の画像</div>
+                                </div>
+                            </div>
+                            <div class="workshop__caption">
+                                <h3>木材の選定</h3>
+                                <p>厳選された一枚板</p>
+                            </div>
+                        </div>
+                        
+                        <div class="workshop__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zM10 6h4v1h-4V6zm8 15H6V9h12v12zm-7-2l-2-2 1.41-1.41L12 17.17l3.59-3.58L17 15l-4 4z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">仕上げ作業の画像</div>
+                                </div>
+                            </div>
+                            <div class="workshop__caption">
+                                <h3>仕上げ作業</h3>
+                                <p>細部まで丁寧に仕上げます</p>
+                            </div>
+                        </div>
+                        
+                        <div class="workshop__image">
+                            <div class="image-placeholder image-placeholder--medium">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                    <div class="image-placeholder__text">準備中</div>
+                                    <div class="image-placeholder__subtext">品質チェックの画像</div>
+                                </div>
+                            </div>
+                            <div class="workshop__caption">
+                                <h3>品質チェック</h3>
+                                <p>最終確認も徹底的に</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Techniques -->
+        <section class="techniques">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">職人の技術</h2>
+                    <p class="section__subtitle">Craftsmanship Skills</p>
+                </div>
+
+                <div class="techniques__grid">
+                    <div class="technique">
+                        <div class="technique__icon">
+                            <div class="image-placeholder image-placeholder--icon">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="technique__title">継ぎ手加工</h3>
+                        <p class="technique__description">
+                            釘やネジを使わず、木と木を組み合わせる伝統的な技法。
+                            強度と美しさを両立する職人の技術です。
+                        </p>
+                    </div>
+
+                    <div class="technique">
+                        <div class="technique__icon">
+                            <div class="image-placeholder image-placeholder--icon">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="technique__title">鉋（かんな）がけ</h3>
+                        <p class="technique__description">
+                            木材の表面を滑らかに仕上げる技術。
+                            手作業による鉋がけが生み出す質感は格別です。
+                        </p>
+                    </div>
+
+                    <div class="technique">
+                        <div class="technique__icon">
+                            <div class="image-placeholder image-placeholder--icon">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 7h-3V6c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v1H5c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="technique__title">彫刻・装飾</h3>
+                        <p class="technique__description">
+                            細やかな彫刻や装飾を施すことで、
+                            家具に独特の表情と価値を与えます。
+                        </p>
+                    </div>
+
+                    <div class="technique">
+                        <div class="technique__icon">
+                            <div class="image-placeholder image-placeholder--icon">
+                                <div class="image-placeholder__content">
+                                    <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="technique__title">仕上げ技術</h3>
+                        <p class="technique__description">
+                            オイル仕上げやウレタン仕上げなど、
+                            用途に応じた最適な仕上げを選択します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">職人の技術を体感してください</h2>
+                    <p class="cta__description">
+                        ショールームでは実際の作品をご覧いただけます。<br>
+                        職人が心を込めて作った家具の質感をぜひお確かめください。
+                    </p>
+                    
+                    <div class="cta__buttons">
+                        <a href="../showroom/" class="btn btn--primary btn--large">
+                            <span>ショールーム予約</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="../works/" class="btn btn--secondary btn--large">
+                            <span>施工事例を見る</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4m-6-4l-6-6 6-6m6 6H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="../contact/" class="btn btn--contact btn--large">
+                            <span>お問い合わせ</span>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="footer__logo-text">Craft Furniture</span>
+                        <span class="footer__logo-sub">株式会社クラフトファニチャー</span>
+                    </div>
+                    <p class="footer__description">
+                        東京を拠点に、一枚板を使ったオーダーメイド家具の製造・販売を行っています。職人の技術と木の温もりを大切に、一生を共にする家具をお作りします。
+                    </p>
+                    <div class="footer__contact">
+                        <p class="footer__phone">TEL: 03-1234-5678</p>
+                        <p class="footer__address">〒123-4567 東京都○○区○○ 1-2-3</p>
+                    </div>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">サービス</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../works/">施工事例</a></li>
+                            <li><a href="../process/">製作工程</a></li>
+                            <li><a href="./">職人紹介</a></li>
+                            <li><a href="../wood-guide/">木材図鑑</a></li>
+                            <li><a href="../simulator/">見積もり</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">会社情報</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../about/">会社概要</a></li>
+                            <li><a href="../flow/">納品までの流れ</a></li>
+                            <li><a href="../delivery/">納品エリア</a></li>
+                            <li><a href="../showroom/">ショールーム</a></li>
+                            <li><a href="../faq/">よくある質問</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">その他</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../voice/">お客様の声</a></li>
+                            <li><a href="../news/">お知らせ</a></li>
+                            <li><a href="../contact/">お問い合わせ</a></li>
+                            <li><a href="../privacy/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="footer__social">
+                    <h3 class="footer__social-title">Follow Us</h3>
+                    <div class="footer__social-links">
+                        <a href="https://www.instagram.com/craft_furniture_jp/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Craft Furniture Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/craftsmen.js"></script>
+</body>
+</html>

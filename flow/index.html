@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>納品までの流れ | 株式会社クラフトファニチャー</title>
+    <meta name="description" content="オーダーメイド家具のご注文から納品まで、安心してお任せいただけるよう丁寧にサポートいたします。お客様との打ち合わせから完成まで全工程をご紹介。">
+    <meta name="keywords" content="ご注文の流れ,オーダーメイド,注文方法,納品まで,製作期間,打ち合わせ,東京">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craft-furniture.jp/flow/">
+    <meta property="og:title" content="納品までの流れ | 株式会社クラフトファニチャー">
+    <meta property="og:description" content="オーダーメイド家具のご注文から納品まで、安心のサポート体制をご紹介">
+    <meta property="og:image" content="https://craft-furniture.jp/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/typography.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    
+    <!-- ヘッダーの見積もりボタンを施工事例ページと同じ緑背景・白文字にする - 最強指定（フッター除外） -->
+    <style>
+    a[href="../simulator/"]:not(.btn--contact):not(.footer a) {
+        background: #2E5E3E !important;
+        color: #FFFFFF !important;
+        border: 2px solid #2E5E3E !important;
+    }
+    
+    /* フッター内の見積もりリンクは背景色なしに戻す */
+    .footer a[href="../simulator/"] {
+        background: transparent !important;
+        color: inherit !important;
+        border: none !important;
+    }
+
+    /* Flow Page Styles */
+    .flow-overview {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .timeline-summary {
+        padding: 80px 0;
+        background-color: #fafafa;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-family: 'Noto Serif JP', serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #3E2723;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #2E5E3E;
+        margin: 20px auto 0;
+        border-radius: 2px;
+    }
+
+    .section-subtitle {
+        font-size: 1.125rem;
+        color: #666;
+        line-height: 1.8;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .flow-timeline {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .flow-step {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 30px;
+        margin-bottom: 60px;
+        position: relative;
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .flow-step:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .flow-step:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        left: 80px;
+        top: calc(100% + 10px);
+        width: 2px;
+        height: 30px;
+        background: linear-gradient(to bottom, #2E5E3E, #4CAF50);
+        z-index: 1;
+    }
+
+    .flow-step__number {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #2E5E3E 0%, #4CAF50 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        box-shadow: 0 8px 20px rgba(46, 94, 62, 0.3);
+        position: relative;
+        z-index: 2;
+    }
+
+    .flow-step__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .flow-step__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #3E2723;
+        margin: 0;
+    }
+
+    .flow-step__description {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .flow-step__duration {
+        font-size: 0.9rem;
+        color: #2E5E3E;
+        font-weight: 600;
+        background: rgba(46, 94, 62, 0.1);
+        padding: 8px 16px;
+        border-radius: 20px;
+        display: inline-block;
+        width: fit-content;
+    }
+
+    .flow-step__methods {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .method-tag {
+        background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+        color: #333;
+        padding: 6px 14px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        border: 1px solid #ddd;
+        transition: all 0.2s ease;
+    }
+
+    .method-tag:hover {
+        background: #2E5E3E;
+        color: white;
+        transform: translateY(-1px);
+    }
+
+    /* Timeline Chart Styles */
+    .timeline-chart {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 50px;
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        border: 1px solid #eee;
+    }
+
+
+    .timeline-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .timeline-item {
+        display: grid;
+        grid-template-columns: 200px repeat(4, 1fr) 120px;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-item__label {
+        font-weight: 600;
+        color: #3E2723;
+        font-size: 0.95rem;
+    }
+
+    .timeline-item__bar {
+        height: 25px;
+        border-radius: 15px;
+        position: relative;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+
+    .timeline-item__bar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%);
+        background-size: 20px 20px;
+        animation: move 1s linear infinite;
+    }
+
+    @keyframes move {
+        0% { background-position: 0 0; }
+        100% { background-position: 20px 0; }
+    }
+
+    .timeline-item__bar--planning { 
+        background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%); 
+        grid-column: 2 / 3;
+    }
+    .timeline-item__bar--preparation { 
+        background: linear-gradient(135deg, #4ECDC4 0%, #26A69A 100%); 
+        grid-column: 2 / 4;
+    }
+    .timeline-item__bar--production { 
+        background: linear-gradient(135deg, #45B7D1 0%, #2196F3 100%); 
+        grid-column: 2 / 5;
+    }
+    .timeline-item__bar--finishing { 
+        background: linear-gradient(135deg, #96CEB4 0%, #66BB6A 100%); 
+        grid-column: 5 / 6;
+    }
+    .timeline-item__bar--delivery { 
+        background: linear-gradient(135deg, #FECA57 0%, #FFC107 100%); 
+        grid-column: 6 / 7;
+    }
+
+    .timeline-item__weeks {
+        font-size: 0.85rem;
+        color: #2E5E3E;
+        text-align: center;
+        font-weight: 600;
+        background: rgba(46, 94, 62, 0.1);
+        padding: 6px 12px;
+        border-radius: 12px;
+    }
+
+    /* FAQ Styles */
+    .faq-section {
+        padding: var(--space-20) 0;
+        background-color: var(--color-white);
+    }
+
+    .faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        border: 1px solid var(--color-gray-light);
+        border-radius: var(--radius-lg);
+        margin-bottom: var(--space-4);
+        overflow: hidden;
+    }
+
+    .faq-question {
+        width: 100%;
+        padding: var(--space-6);
+        background: var(--color-white);
+        border: none;
+        text-align: left;
+        font-weight: var(--weight-medium);
+        color: var(--color-text);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color var(--transition-base);
+    }
+
+    .faq-question:hover {
+        background-color: var(--color-gray-light);
+    }
+
+    .faq-answer {
+        padding: 0 var(--space-6) var(--space-6);
+        color: var(--color-text);
+        line-height: var(--leading-relaxed);
+    }
+
+    /* Payment Methods Styles */
+    .payment-methods {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .payment-schedule {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .payment-step {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        transition: transform 0.3s ease;
+    }
+
+    .payment-step:hover {
+        transform: translateY(-4px);
+    }
+
+    .payment-step__icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #2E5E3E, #4CAF50);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .payment-step__icon svg {
+        color: white;
+    }
+
+    .payment-step__content {
+        flex: 1;
+    }
+
+    .payment-step__title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #3E2723;
+        margin-bottom: 0.5rem;
+    }
+
+    .payment-step__amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2E5E3E;
+        margin-bottom: 0.25rem;
+    }
+
+    .payment-step__description {
+        font-size: 0.875rem;
+        color: #666;
+    }
+
+    .payment-options {
+        text-align: center;
+        background: white;
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .payment-options__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #3E2723;
+        margin-bottom: 2rem;
+    }
+
+    .payment-methods-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .payment-method {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        border: 2px solid #f0f0f0;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .payment-method:hover {
+        border-color: #2E5E3E;
+        background-color: #fafafa;
+    }
+
+    .payment-method__icon {
+        width: 48px;
+        height: 48px;
+        background: #2E5E3E;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .payment-method__icon svg {
+        color: white;
+    }
+
+    .payment-method__name {
+        font-weight: 600;
+        color: #3E2723;
+    }
+
+    .payment-method__note {
+        font-size: 0.875rem;
+        color: #666;
+    }
+
+    /* Guarantee Support Styles */
+    .guarantee-support {
+        padding: 80px 0;
+        background-color: #fafafa;
+    }
+
+    .support-items {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .support-item {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .support-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .support-item__icon {
+        margin: 0 auto 1.5rem;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #2E5E3E, #4CAF50);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .support-item__icon svg {
+        color: white;
+    }
+
+    .support-item__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #3E2723;
+        margin-bottom: 1rem;
+    }
+
+    .support-item__description {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .support-item__features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .feature-tag {
+        background: #2E5E3E;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 500;
+    }
+
+    /* Flow FAQ Styles */
+    .flow-faq {
+        padding: 80px 0;
+        background: white;
+    }
+
+    .faq-items {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .faq-item:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .faq-item__question {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        border: none;
+        background: transparent;
+        text-align: left;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #3E2723;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.2s ease;
+    }
+
+    .faq-item__question:hover {
+        background: #fafafa;
+    }
+
+    .faq-item__icon {
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+        margin-left: 1rem;
+    }
+
+    .faq-item__question[aria-expanded="true"] .faq-item__icon {
+        transform: rotate(180deg);
+    }
+
+    .faq-item__answer {
+        padding: 0 2rem 1.5rem;
+        color: #555;
+        line-height: 1.7;
+        display: none;
+    }
+
+    .faq-item__answer.active {
+        display: block;
+    }
+
+    /* CTA Section Styles */
+    .cta-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #3E2723 0%, #2E5E3E 100%);
+        color: white;
+    }
+
+    .cta-section__inner {
+        text-align: center;
+    }
+
+    .cta-section__title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: white;
+    }
+
+    .cta-section__description {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .cta-section__actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .btn--lg {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .cta-section .cta-section__actions .btn.btn--contact,
+    .cta-section .cta-section__actions .btn.btn--secondary {
+        background: #FFFFFF !important;
+        color: #3E2723 !important;
+        border: 2px solid #FFFFFF !important;
+    }
+    
+    .cta-section .cta-section__actions .btn.btn--contact:hover,
+    .cta-section .cta-section__actions .btn.btn--secondary:hover {
+        background: rgba(255, 255, 255, 0.9) !important;
+        color: #3E2723 !important;
+        transform: translateY(-2px) !important;
+        border: 2px solid rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    }
+
+    .cta-section__contact {
+        border-top: 1px solid rgba(255,255,255,0.2);
+        padding-top: 2rem;
+        margin-top: 2rem;
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .contact-label {
+        font-size: 0.875rem;
+        opacity: 0.8;
+    }
+
+    .contact-phone {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+    }
+
+    .contact-phone:hover {
+        color: #4CAF50;
+    }
+
+    .contact-hours {
+        font-size: 0.875rem;
+        opacity: 0.7;
+    }
+
+    .timeline-note {
+        margin-top: 2rem;
+        text-align: center;
+        color: #666;
+        font-size: 0.875rem;
+    }
+
+    .timeline-note p {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .flow-step {
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-chart {
+            padding: 30px;
+        }
+        
+        .timeline-items {
+            gap: 15px;
+        }
+        
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .timeline-item__bar {
+            width: 100%;
+            height: 20px;
+        }
+        
+        .timeline-item__weeks {
+            align-self: flex-end;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 1.75rem;
+        }
+        
+        .flow-step {
+            grid-template-columns: 60px 1fr;
+            gap: 20px;
+            padding: 25px;
+        }
+
+        .flow-step__number {
+            width: 50px;
+            height: 50px;
+            font-size: 1rem;
+        }
+
+        .flow-step:not(:last-child)::before {
+            left: 60px;
+        }
+        
+        .payment-schedule {
+            grid-template-columns: 1fr;
+        }
+        
+        .payment-step {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .support-items {
+            grid-template-columns: 1fr;
+        }
+        
+        .cta-section__title {
+            font-size: 2rem;
+        }
+        
+        .cta-section__actions {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-title {
+            font-size: 1.5rem;
+        }
+        
+        .flow-step {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        
+        .flow-step__number {
+            margin: 0 auto 1rem;
+        }
+        
+        .flow-step:not(:last-child)::before {
+            display: none;
+        }
+        
+        .payment-step {
+            padding: 1.5rem;
+        }
+        
+        .support-item {
+            padding: 2rem 1.5rem;
+        }
+        
+        .faq-item__question {
+            padding: 1rem 1.5rem;
+            font-size: 0.9375rem;
+        }
+        
+        .faq-item__answer {
+            padding: 0 1.5rem 1rem;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="../" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="../" class="nav__link">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="../works/?filter=desk">デスク</a></li>
+                                <li><a href="../works/?filter=storage">収納家具</a></li>
+                                <li><a href="../works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="../about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="../about/">会社概要</a></li>
+                                <li><a href="./">納品までの流れ</a></li>
+                                <li><a href="../delivery/">納品エリア</a></li>
+                                <li><a href="../showroom/">ショールーム</a></li>
+                                <li><a href="../faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="../news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero__image">
+                <div class="image-placeholder image-placeholder--hero">
+                    <div class="image-placeholder__content">
+                        <svg class="image-placeholder__icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <div class="image-placeholder__text">準備中</div>
+                        <div class="image-placeholder__subtext">ご注文の流れの画像</div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-hero__content">
+                <div class="container">
+                    <div class="page-hero__inner">
+                        <h1 class="page-hero__title">ご注文の流れ</h1>
+                        <p class="page-hero__subtitle">お客様のご要望から完成まで<br>安心のサポート体制</p>
+                        
+                        <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+                            <ol class="breadcrumb__list">
+                                <li class="breadcrumb__item">
+                                    <a href="../" class="breadcrumb__link">ホーム</a>
+                                </li>
+                                <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                                    ご注文の流れ
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow Overview -->
+        <section class="flow-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">8つのステップで理想の家具を実現</h2>
+                    <p class="section-subtitle">
+                        お客様のご要望をじっくりとお聞きし、理想の家具をお作りします。<br>
+                        各ステップで丁寧にご確認いただきながら進めてまいります。
+                    </p>
+                </div>
+
+                <div class="flow-timeline">
+                    <div class="flow-step" data-step="1">
+                        <div class="flow-step__number">01</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">お問い合わせ・ご相談</h3>
+                            <div class="flow-step__description">
+                                お電話、メール、またはお問い合わせフォームからお気軽にご連絡ください。おおまかなご要望をお聞かせいただきます。
+                            </div>
+                            <div class="flow-step__duration">所要時間: 30分程度</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">電話</span>
+                                <span class="method-tag">メール</span>
+                                <span class="method-tag">フォーム</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step" data-step="2">
+                        <div class="flow-step__number">02</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">初回お打ち合わせ</h3>
+                            <div class="flow-step__description">
+                                ショールームまたはお客様宅にお伺いし、詳しいご要望をお聞きします。使用シーンやご予算についてもご相談ください。
+                            </div>
+                            <div class="flow-step__duration">所要時間: 1-2時間</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">ショールーム</span>
+                                <span class="method-tag">お客様宅</span>
+                                <span class="method-tag">オンライン</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step" data-step="3">
+                        <div class="flow-step__number">03</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">プランニング・お見積もり</h3>
+                            <div class="flow-step__description">
+                                お聞きした内容を基に、詳細な設計図とお見積もりをご提示いたします。木材選びのアドバイスも行います。
+                            </div>
+                            <div class="flow-step__duration">期間: 1週間程度</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">3D図面</span>
+                                <span class="method-tag">詳細見積</span>
+                                <span class="method-tag">木材提案</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step" data-step="4">
+                        <div class="flow-step__number">04</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">ご契約・木材選定</h3>
+                            <div class="flow-step__description">
+                                プランにご納得いただけましたらご契約となります。実際の木材をご覧いただき、最終的な材料を選定します。
+                            </div>
+                            <div class="flow-step__duration">期間: 1週間程度</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">契約書</span>
+                                <span class="method-tag">木材確認</span>
+                                <span class="method-tag">着手金</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step" data-step="5">
+                        <div class="flow-step__number">05</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">製作開始</h3>
+                            <div class="flow-step__description">
+                                熟練の職人による製作が始まります。途中経過は定期的にお写真でご報告いたします。ご質問はいつでもお気軽にどうぞ。
+                            </div>
+                            <div class="flow-step__duration">期間: 2-3ヶ月</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">進捗報告</span>
+                                <span class="method-tag">写真共有</span>
+                                <span class="method-tag">品質管理</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step" data-step="6">
+                        <div class="flow-step__number">06</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">完成・検品</h3>
+                            <div class="flow-step__description">
+                                完成した家具を厳格にチェックし、品質基準をクリアしたもののみお客様にお届けします。完成写真もお送りします。
+                            </div>
+                            <div class="flow-step__duration">期間: 3日程度</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">品質検査</span>
+                                <span class="method-tag">完成写真</span>
+                                <span class="method-tag">最終確認</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step" data-step="7">
+                        <div class="flow-step__number">07</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">配送・設置</h3>
+                            <div class="flow-step__description">
+                                専門スタッフが丁寧に梱包し、お客様のご都合に合わせて配送・設置いたします。設置後の最終調整も行います。
+                            </div>
+                            <div class="flow-step__duration">期間: 配送日程調整後</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">専門配送</span>
+                                <span class="method-tag">設置作業</span>
+                                <span class="method-tag">最終調整</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flow-step" data-step="8">
+                        <div class="flow-step__number">08</div>
+                        <div class="flow-step__content">
+                            <h3 class="flow-step__title">アフターサポート</h3>
+                            <div class="flow-step__description">
+                                納品後も末永くサポートいたします。メンテナンス方法のご案内、定期点検、必要に応じた補修なども承ります。
+                            </div>
+                            <div class="flow-step__duration">永年サポート</div>
+                            <div class="flow-step__methods">
+                                <span class="method-tag">永年保証</span>
+                                <span class="method-tag">メンテナンス</span>
+                                <span class="method-tag">補修対応</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Summary -->
+        <section class="timeline-summary">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">製作スケジュール</h2>
+                    <p class="section-subtitle">
+                        一般的なダイニングテーブル（4人用）の場合の<br>
+                        お問い合わせから納品までのスケジュール例をご紹介します。
+                    </p>
+                </div>
+
+                <div class="timeline-chart">
+                    <div class="timeline-items">
+                        <div class="timeline-item" data-duration="2">
+                            <div class="timeline-item__label">お打ち合わせ・ご契約</div>
+                            <div class="timeline-item__bar timeline-item__bar--planning"></div>
+                            <div class="timeline-item__weeks">1-2週間</div>
+                        </div>
+
+                        <div class="timeline-item" data-duration="2">
+                            <div class="timeline-item__label">木材調達・乾燥</div>
+                            <div class="timeline-item__bar timeline-item__bar--preparation"></div>
+                            <div class="timeline-item__weeks">2-3週間</div>
+                        </div>
+
+                        <div class="timeline-item" data-duration="8">
+                            <div class="timeline-item__label">製作・加工</div>
+                            <div class="timeline-item__bar timeline-item__bar--production"></div>
+                            <div class="timeline-item__weeks">6-8週間</div>
+                        </div>
+
+                        <div class="timeline-item" data-duration="1">
+                            <div class="timeline-item__label">仕上げ・検品</div>
+                            <div class="timeline-item__bar timeline-item__bar--finishing"></div>
+                            <div class="timeline-item__weeks">1週間</div>
+                        </div>
+
+                        <div class="timeline-item" data-duration="1">
+                            <div class="timeline-item__label">配送・設置</div>
+                            <div class="timeline-item__bar timeline-item__bar--delivery"></div>
+                            <div class="timeline-item__weeks">配送日調整</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-note">
+                        <p>※ 製作期間は家具の種類、サイズ、仕様により変動します</p>
+                        <p>※ 木材の在庫状況により、調達期間が延びる場合があります</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Methods -->
+        <section class="payment-methods">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">お支払い方法</h2>
+                    <p class="section-subtitle">
+                        お客様のご都合に合わせて、複数のお支払い方法をご用意しています。
+                    </p>
+                </div>
+
+                <div class="payment-schedule">
+                    <div class="payment-step">
+                        <div class="payment-step__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17L4 12"/>
+                            </svg>
+                        </div>
+                        <div class="payment-step__content">
+                            <h3 class="payment-step__title">ご契約時</h3>
+                            <div class="payment-step__amount">総額の30%</div>
+                            <div class="payment-step__description">着手金として頂戴いたします</div>
+                        </div>
+                    </div>
+
+                    <div class="payment-step">
+                        <div class="payment-step__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="payment-step__content">
+                            <h3 class="payment-step__title">製作完了時</h3>
+                            <div class="payment-step__amount">総額の40%</div>
+                            <div class="payment-step__description">完成確認後にお支払いください</div>
+                        </div>
+                    </div>
+
+                    <div class="payment-step">
+                        <div class="payment-step__icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9L12 2L21 9V20C21 20.5523 20.4477 21 20 21H4C3.44772 21 3 20.5523 3 20V9Z"/>
+                            </svg>
+                        </div>
+                        <div class="payment-step__content">
+                            <h3 class="payment-step__title">納品完了時</h3>
+                            <div class="payment-step__amount">総額の30%</div>
+                            <div class="payment-step__description">設置完了後にお支払いください</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-options">
+                    <h3 class="payment-options__title">対応可能なお支払い方法</h3>
+                    <div class="payment-methods-grid">
+                        <div class="payment-method">
+                            <div class="payment-method__icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                    <line x1="1" y1="10" x2="23" y2="10"/>
+                                </svg>
+                            </div>
+                            <div class="payment-method__name">銀行振込</div>
+                            <div class="payment-method__note">手数料お客様負担</div>
+                        </div>
+
+                        <div class="payment-method">
+                            <div class="payment-method__icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10,9 9,9 8,9"/>
+                                </svg>
+                            </div>
+                            <div class="payment-method__name">現金</div>
+                            <div class="payment-method__note">納品時お支払い可</div>
+                        </div>
+
+                        <div class="payment-method">
+                            <div class="payment-method__icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M16 8L8 16"/>
+                                    <path d="M16 16L8 8"/>
+                                </svg>
+                            </div>
+                            <div class="payment-method__name">分割払い</div>
+                            <div class="payment-method__note">ご相談ください</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantee & Support -->
+        <section class="guarantee-support">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">保証・サポート体制</h2>
+                    <p class="section-subtitle">
+                        末永く安心してご利用いただけるよう、<br>
+                        充実したサポート体制を整えています。
+                    </p>
+                </div>
+
+                <div class="support-items">
+                    <div class="support-item">
+                        <div class="support-item__icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="support-item__title">永年保証</h3>
+                        <div class="support-item__description">
+                            製作したすべての家具に永年保証をお付けしています。構造的な不具合や材質の欠陥については、無償で修理・交換いたします。
+                        </div>
+                        <div class="support-item__features">
+                            <span class="feature-tag">構造保証</span>
+                            <span class="feature-tag">材質保証</span>
+                            <span class="feature-tag">無償修理</span>
+                        </div>
+                    </div>
+
+                    <div class="support-item">
+                        <div class="support-item__icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 2V6H16V2M10 14H14M10 18H14M4 8H20V20C20 20.5523 19.4477 21 19 21H5C4.44772 21 4 20.5523 4 20V8Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="support-item__title">定期メンテナンス</h3>
+                        <div class="support-item__description">
+                            年1回の定期点検と、必要に応じたメンテナンスを行います。オイル仕上げの再塗装や、小さな傷の補修も承ります。
+                        </div>
+                        <div class="support-item__features">
+                            <span class="feature-tag">年1回点検</span>
+                            <span class="feature-tag">再塗装</span>
+                            <span class="feature-tag">傷補修</span>
+                        </div>
+                    </div>
+
+                    <div class="support-item">
+                        <div class="support-item__icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 5C3 3.89543 3.89543 3 5 3H9L12 6H19C20.1046 6 21 6.89543 21 8V18C21 19.1046 20.1046 20 19 20H5C3.89543 20 3 19.1046 3 18V5Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="support-item__title">技術サポート</h3>
+                        <div class="support-item__description">
+                            お手入れ方法のご相談、移動時の注意点、季節ごとのケア方法など、家具に関するあらゆるご質問にお答えします。
+                        </div>
+                        <div class="support-item__features">
+                            <span class="feature-tag">お手入れ相談</span>
+                            <span class="feature-tag">移動サポート</span>
+                            <span class="feature-tag">季節ケア</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="flow-faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">よくいただくご質問</h2>
+                    <p class="section-subtitle">
+                        ご注文に関してよくいただくご質問をまとめました。
+                    </p>
+                </div>
+
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>見積もりは無料ですか？</span>
+                            <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>はい、お見積もりは無料です。詳細な図面作成や3Dイメージの作成も含めて、一切費用はかかりません。お気軽にご相談ください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>途中でキャンセルはできますか？</span>
+                            <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>製作開始前であればキャンセル可能です。製作開始後は、進捗に応じてキャンセル料が発生する場合があります。詳細は契約時にご説明いたします。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>納期の短縮は可能ですか？</span>
+                            <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>お急ぎの場合はご相談ください。工房の製作スケジュールや家具の仕様により、可能な場合があります。ただし、品質を保つため無理な短縮はお受けできません。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>配送エリアはどこまでですか？</span>
+                            <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>関東圏（東京・神奈川・千葉・埼玉）は無料配送いたします。その他のエリアについてもご相談に応じますので、お気軽にお問い合わせください。</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-item__question" aria-expanded="false">
+                            <span>修理やメンテナンスの費用はかかりますか？</span>
+                            <svg class="faq-item__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>通常の使用による小さな傷の補修や、年1回の定期点検は無料です。大きな修理や特殊なメンテナンスについては、事前にお見積もりをご提示いたします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-section__inner">
+                    <h2 class="cta-section__title">まずはお気軽にご相談ください</h2>
+                    <p class="cta-section__description">
+                        理想の家具について、どんな小さなことでもお聞かせください。<br>
+                        専門スタッフが丁寧にお答えいたします。
+                    </p>
+                    
+                    <div class="cta-section__actions">
+                        <a href="../contact/" class="btn btn--contact btn--lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="9" cy="9" r="2"/>
+                                <path d="M21 15L16 10L5 21"/>
+                            </svg>
+                            <span>お問い合わせ</span>
+                        </a>
+                        <a href="../simulator/" class="btn btn--secondary btn--lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="9" cy="9" r="2"/>
+                                <path d="M21 15L16 10L5 21"/>
+                            </svg>
+                            <span>見積もりシミュレーター</span>
+                        </a>
+                    </div>
+                    
+                    <div class="cta-section__contact">
+                        <div class="contact-info">
+                            <span class="contact-label">お電話でのお問い合わせ</span>
+                            <a href="tel:03-1234-5678" class="contact-phone">03-1234-5678</a>
+                            <span class="contact-hours">平日 9:00-18:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <div class="footer__logo">
+                        <span class="footer__logo-text">Craft Furniture</span>
+                        <span class="footer__logo-sub">株式会社クラフトファニチャー</span>
+                    </div>
+                    <p class="footer__description">
+                        東京を拠点に、一枚板を使ったオーダーメイド家具の製造・販売を行っています。職人の技術と木の温もりを大切に、一生を共にする家具をお作りします。
+                    </p>
+                    <div class="footer__contact">
+                        <p class="footer__phone">TEL: 03-1234-5678</p>
+                        <p class="footer__address">〒123-4567 東京都○○区○○ 1-2-3</p>
+                    </div>
+                </div>
+
+                <nav class="footer__nav">
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">サービス</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../works/">施工事例</a></li>
+                            <li><a href="../process/">製作工程</a></li>
+                            <li><a href="../craftsmen/">職人紹介</a></li>
+                            <li><a href="../wood-guide/">木材図鑑</a></li>
+                            <li><a href="../simulator/">見積もり</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">会社情報</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../about/">会社概要</a></li>
+                            <li><a href="./">納品までの流れ</a></li>
+                            <li><a href="../delivery/">納品エリア</a></li>
+                            <li><a href="../showroom/">ショールーム</a></li>
+                            <li><a href="../faq/">よくある質問</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__nav-section">
+                        <h3 class="footer__nav-title">その他</h3>
+                        <ul class="footer__nav-list">
+                            <li><a href="../voice/">お客様の声</a></li>
+                            <li><a href="../news/">お知らせ</a></li>
+                            <li><a href="../contact/">お問い合わせ</a></li>
+                            <li><a href="../privacy/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="footer__social">
+                    <h3 class="footer__social-title">Follow Us</h3>
+                    <div class="footer__social-links">
+                        <a href="https://www.instagram.com/craft_furniture_jp/" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Craft Furniture Co., Ltd. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/common.js"></script>
+    <script>
+        // FAQ Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-item__question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('.faq-item__icon');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all other FAQ items
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== this) {
+                            otherQuestion.setAttribute('aria-expanded', 'false');
+                            otherQuestion.nextElementSibling.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ item
+                    if (isExpanded) {
+                        this.setAttribute('aria-expanded', 'false');
+                        answer.classList.remove('active');
+                    } else {
+                        this.setAttribute('aria-expanded', 'true');
+                        answer.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll for CTA buttons
+            const ctaButtons = document.querySelectorAll('.cta-section__actions a');
+            ctaButtons.forEach(button => {
+                if (button.getAttribute('href').startsWith('#')) {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                }
+            });
+            
+            // Animate timeline bars on scroll
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'slideInUp 0.6s ease forwards';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe flow steps
+            const flowSteps = document.querySelectorAll('.flow-step');
+            flowSteps.forEach(step => {
+                observer.observe(step);
+            });
+            
+            // Add animation keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                .flow-step {
+                    opacity: 0;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

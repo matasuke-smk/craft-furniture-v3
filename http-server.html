@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クラフトファニチャー - ローカルサーバー起動</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #3E2723;
+            text-align: center;
+            border-bottom: 3px solid #2E5E3E;
+            padding-bottom: 1rem;
+        }
+        .step {
+            background: #f8f8f8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border-left: 4px solid #2E5E3E;
+        }
+        .command {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            margin: 0.5rem 0;
+            overflow-x: auto;
+        }
+        .button {
+            background: #2E5E3E;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background: #236B3A;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏠 クラフトファニチャー ローカルサーバー</h1>
+        
+        <div class="success">
+            <h3>✅ 準備完了！以下の手順でサーバーを起動してください</h3>
+        </div>
+
+        <div class="step">
+            <h3>📝 手順1: コマンドプロンプトを開く</h3>
+            <p>以下のいずれかの方法でコマンドプロンプトを開いてください：</p>
+            <ul>
+                <li><strong>方法A:</strong> Windows キー + R → <code>cmd</code> と入力 → Enter</li>
+                <li><strong>方法B:</strong> スタートメニューで「cmd」と検索 → 「コマンドプロンプト」をクリック</li>
+                <li><strong>方法C:</strong> Windows キー + X → 「ターミナル」または「コマンドプロンプト」を選択</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>📁 手順2: ディレクトリに移動</h3>
+            <p>以下のコマンドをコピー&ペーストして実行：</p>
+            <div class="command">cd /d "C:\Users\shioz\iCloudDrive\portfolio\craft-furniture"</div>
+        </div>
+
+        <div class="step">
+            <h3>🚀 手順3: サーバーを起動</h3>
+            <p>以下のコマンドをコピー&ペーストして実行：</p>
+            <div class="command">node server-alt.js</div>
+            <p><small>※ ポート8080でサーバーが起動します</small></p>
+        </div>
+
+        <div class="step">
+            <h3>🌐 手順4: ブラウザでアクセス</h3>
+            <p>サーバーが起動したら、新しいタブで以下のURLにアクセス：</p>
+            <a href="http://localhost:8080" class="button" target="_blank">http://localhost:8080</a>
+        </div>
+
+        <div class="warning">
+            <h3>⚠️ うまくいかない場合</h3>
+            <p><strong>エラーが出る場合は、以下を試してください：</strong></p>
+            <ul>
+                <li>他のポート番号を試す: <code>node simple-server.js</code> (ポート3000)</li>
+                <li>Node.jsがインストールされているか確認: <code>node --version</code></li>
+                <li>ファイルを直接開く: エクスプローラーで <code>index.html</code> をブラウザにドラッグ</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>📋 利用可能なページ一覧</h3>
+            <p>サーバー起動後、以下のページにアクセスできます：</p>
+            <ul>
+                <li><a href="http://localhost:8080/" target="_blank">トップページ</a> - メインページ</li>
+                <li><a href="http://localhost:8080/works/" target="_blank">施工事例</a> - フィルター機能付き</li>
+                <li><a href="http://localhost:8080/craftsmen/" target="_blank">職人紹介</a> - 3名のプロフィール</li>
+                <li><a href="http://localhost:8080/simulator/" target="_blank">見積もりシミュレーター</a> - 価格計算</li>
+                <li><a href="http://localhost:8080/showroom/" target="_blank">ショールーム</a> - 予約システム</li>
+                <li><a href="http://localhost:8080/news/" target="_blank">お知らせ</a> - ニュース一覧</li>
+                <li><a href="http://localhost:8080/delivery/" target="_blank">納品エリア</a> - 配送情報</li>
+                <li><a href="http://localhost:8080/privacy/" target="_blank">プライバシーポリシー</a> - 法的文書</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <h3>🎉 完了！</h3>
+            <p>サーバーが起動したら、クラフトファニチャーのウェブサイトの全機能をローカル環境でお試しいただけます。</p>
+            <p><strong>停止するには:</strong> コマンドプロンプトで Ctrl+C を押してください。</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-scroll to important sections
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('クラフトファニチャー ローカルサーバー起動ガイド準備完了');
+        });
+    </script>
+</body>
+</html>

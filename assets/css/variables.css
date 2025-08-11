@@ -1,0 +1,181 @@
+/* CSS Custom Properties (Variables) */
+:root {
+    /* Colors - Primary Palette */
+    --color-primary: #3E2723;     /* ダークブラウン（ウォールナット色） */
+    --color-secondary: #FAF7F0;   /* ライトウッド（明るい白木調） */
+    --color-accent: #2E5E3E;      /* フォレストグリーン（工房看板色・アクセント） */
+    --color-text: #424242;        /* チャコールグレー（テキスト） */
+    
+    /* Colors - Neutral */
+    --color-white: #FFFFFF;       /* ピュアホワイト */
+    --color-gray-light: #F8F8F8;  /* ソフトグレー */
+    --color-gray: #E0E0E0;
+    --color-gray-dark: #9E9E9E;
+    --color-black: #212121;
+    
+    /* Colors - Text variations */
+    --color-text-secondary: #757575;      /* ライトグレーテキスト */
+    --color-text-light: #9E9E9E;          /* さらに薄いテキスト */
+    
+    /* Colors - Semantic */
+    --color-success: #4CAF50;
+    --color-warning: #FF9800;
+    --color-error: #F44336;
+    --color-info: #2196F3;
+    
+    /* Typography */
+    --font-primary: 'Noto Serif JP', 'Georgia', serif;      /* 見出し用 - 品格のある明朝体 */
+    --font-secondary: 'Noto Sans JP', 'Helvetica Neue', sans-serif; /* 本文用 - 読みやすいゴシック体 */
+    --font-accent: 'Montserrat', sans-serif;               /* 英字アクセント - 職人感を演出 */
+    
+    /* Font Sizes */
+    --text-xs: 0.75rem;    /* 12px */
+    --text-sm: 0.875rem;   /* 14px */
+    --text-base: 1rem;     /* 16px */
+    --text-lg: 1.125rem;   /* 18px */
+    --text-xl: 1.25rem;    /* 20px */
+    --text-2xl: 1.5rem;    /* 24px */
+    --text-3xl: 1.875rem;  /* 30px */
+    --text-4xl: 2.25rem;   /* 36px */
+    --text-5xl: 3rem;      /* 48px */
+    --text-6xl: 4rem;      /* 64px */
+    
+    /* Font Weights */
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    
+    /* Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+    
+    /* Spacing Scale */
+    --space-1: 0.25rem;   /* 4px */
+    --space-2: 0.5rem;    /* 8px */
+    --space-3: 0.75rem;   /* 12px */
+    --space-4: 1rem;      /* 16px */
+    --space-5: 1.25rem;   /* 20px */
+    --space-6: 1.5rem;    /* 24px */
+    --space-8: 2rem;      /* 32px */
+    --space-10: 2.5rem;   /* 40px */
+    --space-12: 3rem;     /* 48px */
+    --space-16: 4rem;     /* 64px */
+    --space-20: 5rem;     /* 80px */
+    --space-24: 6rem;     /* 96px */
+    --space-32: 8rem;     /* 128px */
+    --space-40: 10rem;    /* 160px */
+    --space-48: 12rem;    /* 192px */
+    --space-56: 14rem;    /* 224px */
+    --space-64: 16rem;    /* 256px */
+    
+    /* Container Sizes */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1440px;
+    --container-max: 1600px;
+    
+    /* Border Radius */
+    --radius-none: 0;
+    --radius-sm: 0.125rem; /* 2px */
+    --radius: 0.25rem;     /* 4px */
+    --radius-md: 0.375rem; /* 6px */
+    --radius-lg: 0.5rem;   /* 8px */
+    --radius-xl: 0.75rem;  /* 12px */
+    --radius-2xl: 1rem;    /* 16px */
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    
+    /* Transitions */
+    --transition-fast: 150ms;
+    --transition-base: 250ms;
+    --transition-slow: 350ms;
+    --transition-slower: 500ms;
+    
+    /* Easing Functions */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-Index Scale */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+    --z-toast: 1080;
+    
+    /* Breakpoints */
+    --bp-sm: 640px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+    --bp-2xl: 1536px;
+    
+    /* Layout */
+    --header-height: 80px;
+    --header-height-mobile: 64px;
+    --footer-height: auto;
+    
+    /* Content Width */
+    --content-width: var(--container-xl);
+    --content-padding: var(--space-6);
+    --content-padding-mobile: var(--space-4);
+}
+
+/* Dark mode disabled - always use light mode for furniture website */
+
+/* Color opacity utilities - using CSS color-mix for better browser support */
+:root {
+    --color-primary-50: color-mix(in srgb, var(--color-primary) 5%, transparent);
+    --color-primary-100: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    --color-primary-200: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    --color-primary-300: color-mix(in srgb, var(--color-primary) 30%, transparent);
+    --color-primary-400: color-mix(in srgb, var(--color-primary) 40%, transparent);
+    --color-primary-500: var(--color-primary);
+    --color-primary-600: color-mix(in srgb, var(--color-primary) 80%, black);
+    --color-primary-700: color-mix(in srgb, var(--color-primary) 70%, black);
+    --color-primary-800: color-mix(in srgb, var(--color-primary) 60%, black);
+    --color-primary-900: color-mix(in srgb, var(--color-primary) 50%, black);
+    
+    --color-accent-50: color-mix(in srgb, var(--color-accent) 5%, transparent);
+    --color-accent-100: color-mix(in srgb, var(--color-accent) 10%, transparent);
+    --color-accent-200: color-mix(in srgb, var(--color-accent) 20%, transparent);
+    --color-accent-300: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    --color-accent-400: color-mix(in srgb, var(--color-accent) 40%, transparent);
+    --color-accent-500: var(--color-accent);
+    --color-accent-600: color-mix(in srgb, var(--color-accent) 80%, black);
+    --color-accent-700: color-mix(in srgb, var(--color-accent) 70%, black);
+    --color-accent-800: color-mix(in srgb, var(--color-accent) 60%, black);
+    --color-accent-900: color-mix(in srgb, var(--color-accent) 50%, black);
+}
+
+/* Print mode adjustments - shadows only */
+@media print {
+    :root {
+        --shadow-sm: none;
+        --shadow: none;
+        --shadow-md: none;
+        --shadow-lg: none;
+        --shadow-xl: none;
+        --shadow-2xl: none;
+    }
+}
