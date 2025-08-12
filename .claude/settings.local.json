@@ -12,7 +12,8 @@
       "Bash(touch:*)",
       "Bash(python:*)",
       "Bash(grep:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
