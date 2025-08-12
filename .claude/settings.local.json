@@ -10,7 +10,8 @@
       "Bash(git remote add:*)",
       "Bash(rm:*)",
       "Bash(touch:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }
