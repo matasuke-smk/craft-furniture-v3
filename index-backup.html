@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社クラフトファニチャー | 一生を共にする、家具づくり</title>
+    <meta name="description" content="東京を拠点とする家具職人による、一枚板を使ったオーダーメイド家具の製造・販売。ダイニングテーブルを中心に、永年保証でお客様の一生に寄り添う家具をお作りします。">
+    <meta name="keywords" content="オーダー家具, 一枚板, ダイニングテーブル, 東京, 家具職人, オーダーメイド">
+    
+    <style>
+        /* Mobile-first complete CSS */
+        :root{
+            --color-primary:#3E2723;--color-accent:#2E5E3E;--color-white:#FFF;--color-gray:#F8F8F8;
+            --space-2:0.5rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-12:3rem;
+            --text-sm:0.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;
+            --radius-md:0.5rem;--shadow-sm:0 2px 10px rgba(0,0,0,0.1);
+        }
+        *{box-sizing:border-box}
+        body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#333;line-height:1.6;background:var(--color-white)}
+        .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+        
+        /* Header - Matching works page exactly */
+        .header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(224,224,224,0.3);z-index:1000;transition:all 0.2s ease}
+        .header.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+        
+        /* Navigation */
+        .nav{height:80px}
+        .nav__container{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 1rem}
+        
+        /* Logo/Brand */
+        .nav__brand{flex-shrink:0}
+        .nav__logo{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;transition:opacity 0.2s ease}
+        .nav__logo:hover{opacity:0.8}
+        .nav__logo-text{font-size:1.25rem;font-weight:700;color:var(--color-primary);line-height:1}
+        .nav__logo-sub{font-size:0.75rem;color:#666;margin-top:2px}
+        
+        /* Mobile menu toggle */
+        .nav__toggle{display:flex;flex-direction:column;justify-content:space-between;width:48px;height:36px;background:none;border:none;cursor:pointer;z-index:1001;transition:transform 0.2s ease}
+        .nav__toggle span{display:block;width:100%;height:2px;background:var(--color-primary);border-radius:1px;transition:all 0.2s ease}
+        .nav__toggle.active{transform:rotate(45deg)}
+        .nav__toggle.active span:nth-child(1){transform:rotate(90deg) translateX(0);opacity:0}
+        .nav__toggle.active span:nth-child(2){transform:rotate(0deg) scale(1)}
+        .nav__toggle.active span:nth-child(3){transform:rotate(90deg) translateX(0);opacity:0}
+        
+        /* Navigation menu */
+        .nav__menu{display:flex;align-items:center}
+        .nav__list{display:none;align-items:center;gap:0.5rem;list-style:none;margin:0;padding:0}
+        
+        /* Navigation links */
+        .nav__link{display:flex;align-items:center;padding:0.75rem 1rem;font-size:1rem;font-weight:500;color:#424242 !important;text-decoration:none;border-radius:0.75rem;transition:all 0.2s ease;position:relative}
+        .nav__link:hover,.nav__link:focus{color:#2E5E3E !important;background:rgba(46,94,62,0.05)}
+        .nav__link--active{color:#2E5E3E !important;font-weight:600}
+        .nav__link--active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:20px;height:2px;background:var(--color-accent);border-radius:1px}
+        
+        /* CTA buttons */
+        .nav__item--cta{display:flex !important;align-items:center !important}
+        .nav__item--cta .nav__link,.nav__link--cta,.nav__link--contact{font-weight:600 !important;margin-left:0.5rem !important;margin-top:0 !important;margin-bottom:0 !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;min-height:40px !important;max-height:40px !important;line-height:1 !important;vertical-align:top !important;align-self:center !important}
+        .nav__link--cta{background:#2E5E3E !important;color:#FFFFFF !important;border:2px solid #2E5E3E !important;padding:0.5rem 1rem !important;border-radius:0.5rem !important}
+        .nav__link--cta:hover{background:#1e3f2a !important;border-color:#1e3f2a !important;color:#FFFFFF !important;transform:translateY(-1px)}
+        .nav__link--contact{background:#FFFFFF !important;color:#2E5E3E !important;border:2px solid #2E5E3E !important;padding:0.5rem 1rem !important;border-radius:0.5rem !important}
+        .nav__link--contact:hover{background:#2E5E3E !important;color:#FFFFFF !important;transform:translateY(-1px)}
+        
+        /* Dropdown */
+        .nav__item--dropdown{position:relative}
+        .nav__dropdown{position:absolute;top:100%;left:0;background:#FFFFFF;box-shadow:0 2px 10px rgba(0,0,0,0.1);border-radius:0.75rem;padding:0.5rem 0;min-width:200px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all 0.2s ease;z-index:1002}
+        .nav__item--dropdown:hover .nav__dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+        .nav__dropdown li{margin:0}
+        .nav__dropdown a{padding:0.5rem 1rem;color:var(--color-primary);text-decoration:none;display:block;transition:background-color 0.2s;border-radius:0}
+        .nav__dropdown a:hover{background:var(--color-gray)}
+        
+        /* Mobile Menu - Matching works page exactly */
+        @media (max-width:1024px){
+            .nav{height:80px}
+            .nav__toggle{display:flex;width:48px;height:36px}
+            .nav__toggle span{width:100%;height:2px;background:#3E2723;border-radius:2px;transition:all 0.2s ease}
+            .nav__toggle.active span:nth-child(1){transform:rotate(45deg) translate(9px, 9px)}
+            .nav__toggle.active span:nth-child(2){opacity:0}
+            .nav__toggle.active span:nth-child(3){transform:rotate(-45deg) translate(9px, -9px)}
+            .nav__menu{position:fixed;top:80px;left:0;width:100%;height:calc(100vh - 80px);background:#FFFFFF;transform:translateX(-100%);transition:transform 0.2s ease;overflow-y:auto;z-index:999}
+            .nav__menu.active{transform:translateX(0)}
+            .nav__list{flex-direction:column;align-items:stretch;gap:0;padding:1.5rem 1rem 2.5rem}
+            .nav__item{width:100%}
+            .nav__link{justify-content:space-between;padding:1rem 1.5rem;border-radius:0;border-bottom:1px solid #f0f0f0;font-size:1.125rem}
+            .nav__link:hover{background:#F8F8F8}
+            .nav__link--active::after{display:none}
+            .nav__item--cta .nav__link,.nav__link--cta,.nav__link--contact{margin-left:0 !important;margin-top:1rem !important;margin-bottom:0 !important;border:2px solid transparent;border-radius:0.75rem;text-align:center;justify-content:center !important;font-weight:700;display:inline-flex !important;align-items:center !important;min-height:40px !important;line-height:1 !important}
+            .nav__item--cta .nav__link,.nav__link--cta{background:#2E5E3E !important;color:#FFFFFF !important;border-color:#2E5E3E}
+            .nav__link--contact{background:#2E5E3E !important;color:#FFFFFF !important;border-color:#2E5E3E}
+            .nav__dropdown{display:none}
+        }
+        
+        /* Desktop styles */
+        @media (min-width:1025px){
+            .nav__toggle{display:none !important}
+            .nav__menu{position:static !important;transform:none !important;height:auto !important;background:transparent !important;overflow:visible !important}
+            .nav__list{display:flex}
+        }
+        
+        /* Hero */
+        .hero{height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--color-gray) 0%,var(--color-white) 100%);text-align:center;position:relative}
+        .hero__content{padding:0 1rem;z-index:2;max-width:600px}
+        .hero__title{font-size:clamp(1.75rem,5vw,2.5rem);font-weight:600;margin:0 0 1rem;color:var(--color-primary);line-height:1.2}
+        .hero__subtitle{font-size:var(--text-lg);color:#666;margin:0 0 2rem;line-height:1.5}
+        .hero__buttons{display:flex;flex-direction:column;gap:1rem;align-items:center}
+        
+        /* Buttons */
+        .btn{display:inline-block;padding:1rem 2rem;border-radius:var(--radius-md);text-decoration:none;font-weight:600;text-align:center;transition:all 0.2s;cursor:pointer;border:none;min-width:200px}
+        .btn--primary{background:var(--color-accent);color:var(--color-white)}
+        .btn--primary:hover{background:#1e3f2a;transform:translateY(-1px)}
+        .btn--contact{background:var(--color-white);color:var(--color-accent);border:2px solid var(--color-accent)}
+        .btn--contact:hover{background:var(--color-accent);color:var(--color-white)}
+        
+        /* Sections */
+        .section{padding:var(--space-12) 0}
+        .section__title{font-size:var(--text-2xl);font-weight:600;color:var(--color-primary);text-align:center;margin:0 0 var(--space-8)}
+        
+        /* Concept */
+        .concept-grid{display:grid;gap:1.5rem;margin-top:2rem}
+        .concept-item{padding:2rem 1.5rem;background:var(--color-white);border-radius:var(--radius-md);text-align:center;box-shadow:var(--shadow-sm);transition:transform 0.2s}
+        .concept-item:hover{transform:translateY(-2px)}
+        .concept-item h3{color:var(--color-primary);margin:0 0 1rem;font-size:var(--text-lg)}
+        .concept-item p{margin:0;color:#666}
+        
+        /* Works */
+        .works-grid{display:grid;gap:1rem;margin-top:2rem}
+        .work-item{background:var(--color-white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform 0.2s}
+        .work-item:hover{transform:translateY(-2px)}
+        .work-placeholder{height:200px;background:linear-gradient(45deg,#f0f0f0 25%,transparent 25%,transparent 50%,#f0f0f0 50%,#f0f0f0 75%,transparent 75%,transparent);background-size:20px 20px;display:flex;align-items:center;justify-content:center;color:#999}
+        .work-item__content{padding:1.5rem}
+        .work-item__title{font-size:var(--text-lg);font-weight:600;margin:0 0 0.5rem;color:var(--color-primary)}
+        .work-item__desc{margin:0;color:#666;font-size:var(--text-sm)}
+        
+        /* Craftsmen */
+        .craftsman-grid{display:grid;gap:2rem;margin-top:2rem}
+        .craftsman-item{text-align:center;padding:2rem;background:var(--color-white);border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+        .craftsman-placeholder{width:120px;height:120px;border-radius:50%;background:linear-gradient(45deg,var(--color-gray),#e0e0e0);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#999;font-size:var(--text-sm)}
+        .craftsman-item h3{color:var(--color-primary);margin:0 0 0.5rem}
+        .craftsman-item p{margin:0;color:#666;font-size:var(--text-sm)}
+        
+        /* Instagram */
+        .instagram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-top:2rem}
+        .instagram-item{aspect-ratio:1;background:var(--color-gray);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:#999;font-size:var(--text-sm);text-align:center;cursor:pointer;transition:opacity 0.2s}
+        .instagram-item:hover{opacity:0.8}
+        
+        /* News */
+        .news-list{margin-top:2rem}
+        .news-item{padding:1.5rem;background:var(--color-white);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);margin-bottom:1rem;transition:transform 0.2s}
+        .news-item:hover{transform:translateY(-1px)}
+        .news-item__date{font-size:var(--text-sm);color:#999;margin:0 0 0.5rem}
+        .news-item__title{font-size:var(--text-lg);font-weight:600;margin:0 0 0.5rem;color:var(--color-primary)}
+        .news-item__excerpt{margin:0;color:#666;font-size:var(--text-sm);line-height:1.5}
+        
+        /* CTA */
+        .cta{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-accent) 100%);color:var(--color-white);text-align:center;padding:var(--space-12) 0}
+        .cta__title{font-size:var(--text-2xl);margin:0 0 1rem}
+        .cta__description{margin:0 0 2rem;opacity:0.9;font-size:var(--text-lg)}
+        .cta__buttons{display:flex;flex-direction:column;gap:1rem;align-items:center}
+        .cta .btn--contact{background:var(--color-white);color:var(--color-accent)}
+        
+        /* Footer */
+        .footer{background:#333;color:#fff;padding:3rem 0 2rem;text-align:center}
+        .footer__content{display:grid;gap:2rem}
+        .footer__section h4{color:var(--color-white);margin:0 0 1rem;font-size:var(--text-lg)}
+        .footer__section p,.footer__section a{color:#ccc;font-size:var(--text-sm);text-decoration:none;line-height:1.6}
+        .footer__section a:hover{color:var(--color-white)}
+        .footer__bottom{margin-top:2rem;padding-top:2rem;border-top:1px solid #555;font-size:var(--text-sm);color:#999}
+        
+        /* Desktop adjustments */
+        @media (min-width:768px){
+            .hero__buttons{flex-direction:row;justify-content:center}
+            .concept-grid{grid-template-columns:repeat(3,1fr)}
+            .works-grid{grid-template-columns:repeat(2,1fr)}
+            .craftsman-grid{grid-template-columns:repeat(3,1fr)}
+            .footer__content{grid-template-columns:repeat(3,1fr);text-align:left}
+        }
+        
+        /* Loading states */
+        .loading{opacity:0.6;pointer-events:none}
+        .fade-in{animation:fadeIn 0.6s ease-in}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="#" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--active">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="works/?filter=desk">デスク</a></li>
+                                <li><a href="works/?filter=storage">収納家具</a></li>
+                                <li><a href="works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="about/">会社概要</a></li>
+                                <li><a href="flow/">納品までの流れ</a></li>
+                                <li><a href="delivery/">納品エリア</a></li>
+                                <li><a href="showroom/">ショールーム</a></li>
+                                <li><a href="faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="simulator/" class="nav__link nav__link--cta">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">一生を共にする、家具づくり</h1>
+                <p class="hero__subtitle">東京の職人が手がける、一枚板オーダーメイド家具</p>
+                <div class="hero__buttons">
+                    <a href="works/" class="btn btn--primary">施工事例を見る</a>
+                    <a href="simulator/" class="btn btn--contact">見積もり依頼</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">3つの強み</h2>
+            <div class="concept-grid">
+                <div class="concept-item fade-in">
+                    <h3>素材へのこだわり</h3>
+                    <p>厳選された一枚板のみを使用。自然の美しい木目を活かした家具をお作りします。</p>
+                </div>
+                <div class="concept-item fade-in">
+                    <h3>職人の技術</h3>
+                    <p>10年以上の経験を持つ熟練職人が、一つひとつ丁寧に仕上げます。</p>
+                </div>
+                <div class="concept-item fade-in">
+                    <h3>永年保証</h3>
+                    <p>充実のアフターケアサービスで、一生涯にわたってサポートします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section -->
+    <section class="section" style="background:var(--color-gray)">
+        <div class="container">
+            <h2 class="section__title">施工事例</h2>
+            <div class="works-grid">
+                <div class="work-item fade-in">
+                    <div class="work-placeholder">
+                        <span>ウォールナット<br>ダイニングテーブル</span>
+                    </div>
+                    <div class="work-item__content">
+                        <h3 class="work-item__title">一枚板ダイニングテーブル</h3>
+                        <p class="work-item__desc">W1800×D900×H720mm / ウォールナット材</p>
+                    </div>
+                </div>
+                <div class="work-item fade-in">
+                    <div class="work-placeholder">
+                        <span>オーク材<br>カウンターテーブル</span>
+                    </div>
+                    <div class="work-item__content">
+                        <h3 class="work-item__title">店舗用カウンター</h3>
+                        <p class="work-item__desc">W2400×D600×H1000mm / オーク材</p>
+                    </div>
+                </div>
+                <div class="work-item fade-in">
+                    <div class="work-placeholder">
+                        <span>チェリー材<br>デスク</span>
+                    </div>
+                    <div class="work-item__content">
+                        <h3 class="work-item__title">オーダーデスク</h3>
+                        <p class="work-item__desc">W1200×D700×H720mm / チェリー材</p>
+                    </div>
+                </div>
+                <div class="work-item fade-in">
+                    <div class="work-placeholder">
+                        <span>無垢材<br>収納棚</span>
+                    </div>
+                    <div class="work-item__content">
+                        <h3 class="work-item__title">リビング収納</h3>
+                        <p class="work-item__desc">W1800×D400×H1800mm / オーク材</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:3rem">
+                <a href="works/" class="btn btn--primary">すべての施工事例を見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craftsmen Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">職人紹介</h2>
+            <div class="craftsman-grid">
+                <div class="craftsman-item fade-in">
+                    <div class="craftsman-placeholder">田中職人</div>
+                    <h3>田中 一郎</h3>
+                    <p>家具職人歴15年<br>一枚板テーブル専門</p>
+                </div>
+                <div class="craftsman-item fade-in">
+                    <div class="craftsman-placeholder">山田職人</div>
+                    <h3>山田 太郎</h3>
+                    <p>家具職人歴12年<br>収納家具・細工専門</p>
+                </div>
+                <div class="craftsman-item fade-in">
+                    <div class="craftsman-placeholder">K.S職人</div>
+                    <h3>K.S</h3>
+                    <p>家具職人歴20年以上<br>オーダーデスク専門</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:3rem">
+                <a href="craftsmen/" class="btn btn--primary">職人詳細を見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="section" style="background:var(--color-gray)">
+        <div class="container">
+            <h2 class="section__title">Instagram</h2>
+            <div class="instagram-grid">
+                <div class="instagram-item" onclick="openInstagram()">製作中</div>
+                <div class="instagram-item" onclick="openInstagram()">完成品</div>
+                <div class="instagram-item" onclick="openInstagram()">工房風景</div>
+                <div class="instagram-item" onclick="openInstagram()">木材選定</div>
+                <div class="instagram-item" onclick="openInstagram()">加工作業</div>
+                <div class="instagram-item" onclick="openInstagram()">仕上げ</div>
+                <div class="instagram-item" onclick="openInstagram()">納品</div>
+                <div class="instagram-item" onclick="openInstagram()">お客様宅</div>
+                <div class="instagram-item" onclick="openInstagram()">メンテ</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section__title">お知らせ</h2>
+            <div class="news-list">
+                <article class="news-item fade-in">
+                    <time class="news-item__date">2025.01.15</time>
+                    <h3 class="news-item__title">4月住宅展示場イベント出展のお知らせ</h3>
+                    <p class="news-item__excerpt">2025年4月に開催される住宅展示場イベントに出展いたします。実際の家具をご覧いただけます。</p>
+                </article>
+                <article class="news-item fade-in">
+                    <time class="news-item__date">2025.01.10</time>
+                    <h3 class="news-item__title">新年のご挨拶</h3>
+                    <p class="news-item__excerpt">明けましておめでとうございます。本年も職人の技術を活かした家具作りに励んでまいります。</p>
+                </article>
+                <article class="news-item fade-in">
+                    <time class="news-item__date">2025.01.05</time>
+                    <h3 class="news-item__title">ショールーム営業時間変更のお知らせ</h3>
+                    <p class="news-item__excerpt">1月より、ショールームの営業時間を変更させていただきます。完全予約制となります。</p>
+                </article>
+            </div>
+            <div style="text-align:center;margin-top:3rem">
+                <a href="news/" class="btn btn--primary">すべてのお知らせを見る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta__title">お気軽にお問い合わせください</h2>
+            <p class="cta__description">無料お見積もり・ご相談承ります</p>
+            <div class="cta__buttons">
+                <a href="contact/" class="btn btn--contact">お問い合わせ</a>
+                <a href="simulator/" class="btn btn--contact">見積もりシミュレーター</a>
+                <a href="showroom/" class="btn btn--contact">ショールーム予約</a>
+            </div>
+            <div style="margin-top:2rem;font-size:var(--text-lg)">
+                <p>📞 03-1234-5678<br>
+                🕒 営業時間: 9:00-18:00（完全予約制）</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>会社情報</h4>
+                    <p>株式会社クラフトファニチャー<br>
+                    〒123-4567 東京都○○区<br>
+                    TEL: 03-1234-5678</p>
+                </div>
+                <div class="footer__section">
+                    <h4>サービス</h4>
+                    <p><a href="works/">施工事例</a><br>
+                    <a href="simulator/">見積もり</a><br>
+                    <a href="showroom/">ショールーム</a></p>
+                </div>
+                <div class="footer__section">
+                    <h4>サポート</h4>
+                    <p><a href="faq/">よくある質問</a><br>
+                    <a href="contact/">お問い合わせ</a><br>
+                    <a href="delivery/">配送について</a></p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 株式会社クラフトファニチャー. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation functionality - matching works page exactly
+        function initNavigation() {
+            const nav = document.querySelector('.nav');
+            const navToggle = document.querySelector('.nav__toggle');
+            const navMenu = document.querySelector('.nav__menu');
+            const navLinks = document.querySelectorAll('.nav__link');
+            const dropdownItems = document.querySelectorAll('.nav__item--dropdown');
+
+            // Mobile menu toggle
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    const isActive = navToggle.classList.contains('active');
+                    
+                    if (isActive) {
+                        closeNavMenu();
+                    } else {
+                        openNavMenu();
+                    }
+                });
+
+                // Close menu when clicking on a link
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 1024) {
+                            closeNavMenu();
+                        }
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!nav.contains(event.target) && navToggle.classList.contains('active')) {
+                        closeNavMenu();
+                    }
+                });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && navToggle.classList.contains('active')) {
+                        closeNavMenu();
+                    }
+                });
+            }
+
+            // Mobile dropdown functionality
+            dropdownItems.forEach(item => {
+                const link = item.querySelector('.nav__link');
+                
+                if (link) {
+                    link.addEventListener('click', function(event) {
+                        if (window.innerWidth <= 1024) {
+                            event.preventDefault();
+                            
+                            // Close other dropdowns
+                            dropdownItems.forEach(otherItem => {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('active');
+                                }
+                            });
+                            
+                            // Toggle current dropdown
+                            item.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 1024) {
+                    closeNavMenu();
+                    dropdownItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+
+            function openNavMenu() {
+                navToggle.classList.add('active');
+                navMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                navToggle.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeNavMenu() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                navToggle.setAttribute('aria-expanded', 'false');
+                
+                // Close all dropdowns
+                dropdownItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        }
+        
+        // Scroll effects for header
+        function initScrollEffects() {
+            const header = document.querySelector('.header');
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                const scrollY = window.scrollY;
+                
+                // Add scrolled class when not at top
+                if (scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollY = scrollY;
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+        }
+
+        function openInstagram() {
+            window.open('https://www.instagram.com/craft_furniture_jp/', '_blank');
+        }
+
+        // Desktop redirect for large screens
+        (function() {
+            const isDesktop = window.innerWidth > 1024 && !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            const isFastConnection = !connection || connection.effectiveType === '4g';
+            
+            if (isDesktop && isFastConnection) {
+                window.location.href = 'index-desktop.html';
+                return;
+            }
+        })();
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            const loadTime = performance.now();
+            console.log(`Complete mobile page loaded in ${loadTime.toFixed(2)}ms`);
+        });
+
+        // Simple animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all functionality
+            initNavigation();
+            initScrollEffects();
+            
+            // Initialize animations
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
