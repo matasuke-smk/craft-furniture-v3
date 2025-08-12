@@ -305,6 +305,7 @@
                 this.isOpen = false;
                 
                 this.init();
+                this.adjustMenuHeight();
             }
             
             init() {
@@ -336,6 +337,7 @@
                     if (window.innerWidth > 1024 && this.isOpen) {
                         this.close();
                     }
+                    this.adjustMenuHeight();
                 });
                 
                 // Scroll effect
@@ -388,6 +390,47 @@
                         ticking = true;
                     }
                 });
+            }
+            
+            adjustMenuHeight() {
+                const viewportHeight = window.innerHeight;
+                const headerHeight = 90;
+                const availableHeight = viewportHeight - headerHeight;
+                
+                // Calculate minimum required height
+                const menuItems = document.querySelectorAll('.mobile-menu__item');
+                const ctaSection = document.querySelector('.mobile-menu__cta');
+                const totalItems = menuItems.length + 2; // +2 for CTA buttons
+                
+                // Adjust item heights based on available space
+                const minItemHeight = 35; // Minimum height per item
+                const minCtaHeight = 80; // Minimum height for CTA section
+                const totalMinHeight = (totalItems * minItemHeight) + minCtaHeight;
+                
+                const mobileMenuElement = this.mobileMenu;
+                
+                if (availableHeight < totalMinHeight) {
+                    // Very small screens - make items smaller and enable scroll
+                    const adjustedItemHeight = Math.max(35, (availableHeight - minCtaHeight) / totalItems);
+                    const ctaPadding = Math.max(0.4, adjustedItemHeight / 60);
+                    
+                    document.documentElement.style.setProperty('--mobile-menu-item-height', `${adjustedItemHeight}px`);
+                    document.documentElement.style.setProperty('--mobile-menu-cta-padding', `${ctaPadding}rem`);
+                    
+                    // Enable scroll for very small screens
+                    if (mobileMenuElement) {
+                        mobileMenuElement.style.overflowY = 'auto';
+                    }
+                } else {
+                    // Normal sizing - disable scroll as everything fits
+                    document.documentElement.style.setProperty('--mobile-menu-item-height', '45px');
+                    document.documentElement.style.setProperty('--mobile-menu-cta-padding', '0.6rem');
+                    
+                    // Disable scroll when everything fits
+                    if (mobileMenuElement) {
+                        mobileMenuElement.style.overflowY = 'hidden';
+                    }
+                }
             }
         }
         
