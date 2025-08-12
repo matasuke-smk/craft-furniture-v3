@@ -25,44 +25,108 @@
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
 
-    <!-- Fonts - Optimized for mobile -->
+    <!-- Fonts - Optional loading for better mobile performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        // Load fonts only on fast connections or desktop
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        const isFastConnection = !connection || connection.effectiveType === '4g';
+        const isDesktop = window.innerWidth > 768;
+        
+        if (isFastConnection || isDesktop) {
+            const fontLink = document.createElement('link');
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Noto+Serif+JP:wght@400;600&display=swap';
+            fontLink.rel = 'stylesheet';
+            document.head.appendChild(fontLink);
+        }
+    </script>
     
-    <!-- Critical CSS for mobile performance -->
+    <!-- Critical CSS for immediate rendering -->
     <style id="critical-css">
-        /* Mobile-first critical styles inline for immediate rendering */
-        :root{--color-primary:#3E2723;--color-accent:#2E5E3E;--color-white:#FFFFFF;--space-4:1rem;--space-6:1.5rem;--text-base:1rem;--text-lg:1.125rem;--radius-md:0.5rem}
-        *{box-sizing:border-box}
-        body{margin:0;padding:0;font-family:'Noto Sans JP',sans-serif;color:#333;overflow-x:hidden}
+        /* Complete mobile-first critical styles */
+        :root{
+            --color-primary:#3E2723;--color-accent:#2E5E3E;--color-white:#FFFFFF;--color-gray-light:#F8F8F8;
+            --space-2:0.5rem;--space-4:1rem;--space-6:1.5rem;--space-8:2rem;--space-12:3rem;
+            --text-sm:0.875rem;--text-base:1rem;--text-lg:1.125rem;--text-xl:1.25rem;--text-2xl:1.5rem;
+            --radius-md:0.5rem;--radius-lg:0.75rem;--shadow-sm:0 1px 3px rgba(0,0,0,0.1);
+            --transition-base:0.2s ease;
+        }
+        *,*::before,*::after{box-sizing:border-box}
+        html{font-size:16px;line-height:1.6;scroll-behavior:smooth}
+        body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#333;overflow-x:hidden;background:var(--color-white)}
         .container{max-width:1200px;margin:0 auto;padding:0 var(--space-4)}
-        .header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);z-index:1000;padding:var(--space-4) 0}
-        .hero{height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#F8F8F8 0%,#FFFFFF 100%)}
-        .hero__title{font-size:clamp(1.75rem,5vw,3rem);font-weight:600;margin:0;color:var(--color-primary);text-align:center}
-        .btn{display:inline-block;padding:var(--space-4) var(--space-6);border-radius:var(--radius-md);text-decoration:none;font-weight:600;text-align:center}
+        
+        /* Header */
+        .header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;padding:var(--space-4) 0;border-bottom:1px solid #eee}
+        .header__content{display:flex;justify-content:space-between;align-items:center}
+        .header__logo{font-size:var(--text-lg);font-weight:600;color:var(--color-primary);text-decoration:none}
+        .header__nav{display:none}
+        
+        /* Hero */
+        .hero{height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--color-gray-light) 0%,var(--color-white) 100%);position:relative;text-align:center}
+        .hero__content{padding:0 var(--space-4);z-index:2;max-width:800px}
+        .hero__title{font-size:clamp(1.75rem,5vw,3rem);font-weight:600;margin:0 0 var(--space-4);color:var(--color-primary);line-height:1.2}
+        .hero__subtitle{font-size:var(--text-lg);color:#666;margin:0 0 var(--space-6);line-height:1.5}
+        
+        /* Buttons */
+        .btn{display:inline-block;padding:var(--space-4) var(--space-6);border-radius:var(--radius-md);text-decoration:none;font-weight:600;text-align:center;transition:var(--transition-base);cursor:pointer;border:none}
         .btn--primary{background:var(--color-accent);color:var(--color-white)}
+        .btn--primary:hover{background:#1e3f2a}
+        .btn--contact{background:var(--color-white);color:var(--color-accent);border:2px solid var(--color-accent)}
+        .btn--large{padding:var(--space-6) var(--space-8);font-size:var(--text-lg)}
+        
+        /* Basic layout */
+        .section{padding:var(--space-12) 0}
+        .section__title{font-size:var(--text-2xl);font-weight:600;color:var(--color-primary);text-align:center;margin:0 0 var(--space-8)}
+        
+        /* Mobile optimization */
+        @media (max-width:768px){
+            .container{padding:0 1rem}
+            .hero{height:80vh}
+            .hero__title{font-size:2rem}
+            .btn--large{padding:var(--space-4) var(--space-6);font-size:var(--text-base)}
+            .section{padding:var(--space-8) 0}
+        }
+        
+        /* Hide complex sections initially on mobile */
+        @media (max-width:768px){
+            .instagram,.works,.craftsmen{display:none}
+        }
+        
+        /* Show loading state */
+        .loading{text-align:center;padding:var(--space-8);color:#666}
+        .loading::after{content:'...';animation:dots 1.5s infinite}
+        @keyframes dots{0%,20%{content:''}40%{content:'.'}60%{content:'..'}80%,100%{content:'...'}}
     </style>
     
-    <!-- Non-critical CSS loaded asynchronously -->
-    <link rel="preload" href="assets/css/reset.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/variables.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/typography.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/common.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="assets/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Essential CSS only - loaded synchronously for mobile -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
     
-    <!-- Fallback for browsers that don't support preload -->
-    <noscript>
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/variables.css">
-        <link rel="stylesheet" href="assets/css/typography.css">
-        <link rel="stylesheet" href="assets/css/common.css">
-        <link rel="stylesheet" href="assets/css/header.css">
-        <link rel="stylesheet" href="assets/css/footer.css">
-        <link rel="stylesheet" href="assets/css/home.css">
-    </noscript>
+    <!-- Conditional loading for mobile vs desktop -->
+    <script>
+        // Load CSS based on device type
+        const isMobile = window.innerWidth <= 768;
+        const loadCSS = (href) => {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            document.head.appendChild(link);
+        };
+        
+        if (isMobile) {
+            // Mobile: Load only essential CSS
+            loadCSS('assets/css/mobile-critical.css');
+        } else {
+            // Desktop: Load all CSS
+            loadCSS('assets/css/typography.css');
+            loadCSS('assets/css/common.css');
+            loadCSS('assets/css/header.css');
+            loadCSS('assets/css/footer.css');
+            loadCSS('assets/css/home.css');
+        }
+    </script>
     
     <!-- 見積もりシミュレーターボタンのスタイル強制適用 -->
     <style>
