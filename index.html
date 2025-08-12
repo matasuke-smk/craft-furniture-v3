@@ -19,47 +19,70 @@
         body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#333;line-height:1.6;background:var(--color-white)}
         .container{max-width:1200px;margin:0 auto;padding:0 1rem}
         
-        /* Header */
-        .header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:100;transition:all 0.3s ease}
-        .nav{padding:1rem 0}
-        .nav__container{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center}
-        .nav__logo{text-decoration:none;color:var(--color-primary)}
-        .nav__logo-text{display:block;font-size:var(--text-lg);font-weight:600;line-height:1.2}
-        .nav__logo-sub{display:block;font-size:var(--text-sm);color:#666;margin-top:0.2rem}
+        /* Header - Matching works page exactly */
+        .header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(224,224,224,0.3);z-index:1000;transition:all 0.2s ease}
+        .header.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 4px 20px rgba(0,0,0,0.08)}
         
-        /* Desktop Navigation */
-        .nav__list{display:none;list-style:none;padding:0;margin:0;align-items:center;gap:2rem}
-        .nav__link{color:var(--color-primary);text-decoration:none;font-weight:500;padding:0.5rem 0;transition:color 0.2s}
-        .nav__link--active{color:var(--color-accent);font-weight:600}
-        .nav__link--cta{background:var(--color-accent);color:var(--color-white);padding:0.5rem 1rem;border-radius:var(--radius-md);font-weight:600}
-        .nav__link--contact{background:var(--color-white);color:var(--color-accent);border:2px solid var(--color-accent);padding:0.5rem 1rem;border-radius:var(--radius-md);font-weight:600}
+        /* Navigation */
+        .nav{height:80px}
+        .nav__container{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1200px;margin:0 auto;padding:0 1rem}
         
-        /* Mobile Menu Toggle */
-        .nav__toggle{display:flex;flex-direction:column;width:24px;height:24px;background:none;border:none;cursor:pointer;justify-content:space-between;padding:0}
-        .nav__toggle span{width:100%;height:2px;background:var(--color-primary);transition:all 0.3s ease;transform-origin:center}
-        .nav__toggle.active span:first-child{transform:rotate(45deg) translate(5px,5px)}
-        .nav__toggle.active span:nth-child(2){opacity:0}
-        .nav__toggle.active span:last-child{transform:rotate(-45deg) translate(7px,-6px)}
+        /* Logo/Brand */
+        .nav__brand{flex-shrink:0}
+        .nav__logo{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;transition:opacity 0.2s ease}
+        .nav__logo:hover{opacity:0.8}
+        .nav__logo-text{font-size:1.25rem;font-weight:700;color:var(--color-primary);line-height:1}
+        .nav__logo-sub{font-size:0.75rem;color:#666;margin-top:2px}
+        
+        /* Mobile menu toggle */
+        .nav__toggle{display:flex;flex-direction:column;justify-content:space-between;width:24px;height:18px;background:none;border:none;cursor:pointer;z-index:1001;transition:transform 0.2s ease}
+        .nav__toggle span{display:block;width:100%;height:2px;background:var(--color-primary);border-radius:1px;transition:all 0.2s ease}
+        .nav__toggle.active{transform:rotate(45deg)}
+        .nav__toggle.active span:nth-child(1){transform:rotate(90deg) translateX(0);opacity:0}
+        .nav__toggle.active span:nth-child(2){transform:rotate(0deg) scale(1)}
+        .nav__toggle.active span:nth-child(3){transform:rotate(90deg) translateX(0);opacity:0}
+        
+        /* Navigation menu */
+        .nav__menu{display:flex;align-items:center}
+        .nav__list{display:none;align-items:center;gap:0.5rem;list-style:none;margin:0;padding:0}
+        
+        /* Navigation links */
+        .nav__link{display:flex;align-items:center;padding:0.75rem 1rem;font-size:1rem;font-weight:500;color:#424242 !important;text-decoration:none;border-radius:0.75rem;transition:all 0.2s ease;position:relative}
+        .nav__link:hover,.nav__link:focus{color:#2E5E3E !important;background:rgba(46,94,62,0.05)}
+        .nav__link--active{color:#2E5E3E !important;font-weight:600}
+        .nav__link--active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:20px;height:2px;background:var(--color-accent);border-radius:1px}
+        
+        /* CTA buttons */
+        .nav__item--cta{display:flex !important;align-items:center !important}
+        .nav__item--cta .nav__link,.nav__link--cta,.nav__link--contact{font-weight:600 !important;margin-left:0.5rem !important;margin-top:0 !important;margin-bottom:0 !important;display:inline-flex !important;align-items:center !important;justify-content:center !important;min-height:40px !important;max-height:40px !important;line-height:1 !important;vertical-align:top !important;align-self:center !important}
+        .nav__link--cta{background:#2E5E3E !important;color:#FFFFFF !important;border:2px solid #2E5E3E !important;padding:0.5rem 1rem !important;border-radius:0.5rem !important}
+        .nav__link--cta:hover{background:#1e3f2a !important;border-color:#1e3f2a !important;color:#FFFFFF !important;transform:translateY(-1px)}
+        .nav__link--contact{background:#FFFFFF !important;color:#2E5E3E !important;border:2px solid #2E5E3E !important;padding:0.5rem 1rem !important;border-radius:0.5rem !important}
+        .nav__link--contact:hover{background:#2E5E3E !important;color:#FFFFFF !important;transform:translateY(-1px)}
+        
+        /* Dropdown */
+        .nav__item--dropdown{position:relative}
+        .nav__dropdown{position:absolute;top:100%;left:0;background:#FFFFFF;box-shadow:0 2px 10px rgba(0,0,0,0.1);border-radius:0.75rem;padding:0.5rem 0;min-width:200px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all 0.2s ease;z-index:1002}
+        .nav__item--dropdown:hover .nav__dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+        .nav__dropdown li{margin:0}
+        .nav__dropdown a{padding:0.5rem 1rem;color:var(--color-primary);text-decoration:none;display:block;transition:background-color 0.2s;border-radius:0}
+        .nav__dropdown a:hover{background:var(--color-gray)}
         
         /* Mobile Menu */
-        .nav__menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--color-white);z-index:200;padding:80px 1rem 1rem;overflow-y:auto}
-        .nav__menu.active{display:block}
-        .nav__menu .nav__list{display:flex;flex-direction:column;gap:0}
-        .nav__menu .nav__link{display:block;padding:1rem;border-bottom:1px solid #eee;transition:background-color 0.2s}
-        .nav__menu .nav__link:hover{background:var(--color-gray)}
-        .nav__dropdown{display:none}
+        @media (max-width:767px){
+            .nav__menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:#FFFFFF;z-index:1000;padding:80px 1rem 1rem;overflow-y:auto}
+            .nav__menu.active{display:block}
+            .nav__menu .nav__list{display:flex;flex-direction:column;gap:0}
+            .nav__menu .nav__link{display:block;padding:1rem;border-bottom:1px solid #eee;border-radius:0}
+            .nav__menu .nav__link:hover{background:var(--color-gray)}
+            .nav__dropdown{display:none}
+        }
         
         /* Desktop styles */
         @media (min-width:768px){
             .nav__toggle{display:none}
             .nav__list{display:flex}
             .nav__menu{display:block;position:static;height:auto;background:none;padding:0}
-            .nav__item--dropdown{position:relative}
-            .nav__dropdown{position:absolute;top:100%;left:0;background:var(--color-white);box-shadow:var(--shadow-sm);border-radius:var(--radius-md);padding:0.5rem 0;min-width:200px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all 0.2s ease}
-            .nav__item--dropdown:hover .nav__dropdown{opacity:1;visibility:visible;transform:translateY(0)}
-            .nav__dropdown li{margin:0}
-            .nav__dropdown a{padding:0.5rem 1rem;color:var(--color-primary);text-decoration:none;display:block;transition:background-color 0.2s}
-            .nav__dropdown a:hover{background:var(--color-gray)}
         }
         
         /* Hero */
@@ -419,38 +442,122 @@
     </footer>
 
     <script>
-        // Header navigation functionality
+        // Navigation functionality - matching works page exactly
         function initNavigation() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
+            const nav = document.querySelector('.nav');
+            const navToggle = document.querySelector('.nav__toggle');
+            const navMenu = document.querySelector('.nav__menu');
+            const navLinks = document.querySelectorAll('.nav__link');
+            const dropdownItems = document.querySelectorAll('.nav__item--dropdown');
+
+            // Mobile menu toggle
             if (navToggle && navMenu) {
                 navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                    const isActive = navToggle.classList.contains('active');
                     
-                    // Animate hamburger menu
-                    this.classList.toggle('active');
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.style.overflow = '';
+                    if (isActive) {
+                        closeNavMenu();
+                    } else {
+                        openNavMenu();
                     }
                 });
-                
-                // Close menu when clicking a link
-                navMenu.addEventListener('click', function(event) {
-                    if (event.target.classList.contains('nav__link')) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.style.overflow = '';
+
+                // Close menu when clicking on a link
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (window.innerWidth <= 767) {
+                            closeNavMenu();
+                        }
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!nav.contains(event.target) && navToggle.classList.contains('active')) {
+                        closeNavMenu();
+                    }
+                });
+
+                // Close menu on escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && navToggle.classList.contains('active')) {
+                        closeNavMenu();
                     }
                 });
             }
+
+            // Mobile dropdown functionality
+            dropdownItems.forEach(item => {
+                const link = item.querySelector('.nav__link');
+                
+                if (link) {
+                    link.addEventListener('click', function(event) {
+                        if (window.innerWidth <= 767) {
+                            event.preventDefault();
+                            
+                            // Close other dropdowns
+                            dropdownItems.forEach(otherItem => {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('active');
+                                }
+                            });
+                            
+                            // Toggle current dropdown
+                            item.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 767) {
+                    closeNavMenu();
+                    dropdownItems.forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+
+            function openNavMenu() {
+                navToggle.classList.add('active');
+                navMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                navToggle.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeNavMenu() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                navToggle.setAttribute('aria-expanded', 'false');
+                
+                // Close all dropdowns
+                dropdownItems.forEach(item => {
+                    item.classList.remove('active');
+                });
+            }
+        }
+        
+        // Scroll effects for header
+        function initScrollEffects() {
+            const header = document.querySelector('.header');
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                const scrollY = window.scrollY;
+                
+                // Add scrolled class when not at top
+                if (scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollY = scrollY;
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
         }
 
         function openInstagram() {
@@ -491,8 +598,9 @@
         }, observerOptions);
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize navigation
+            // Initialize all functionality
             initNavigation();
+            initScrollEffects();
             
             // Initialize animations
             document.querySelectorAll('.fade-in').forEach(el => {
