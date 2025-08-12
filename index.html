@@ -139,6 +139,8 @@
         /* Desktop Navigation */
         .nav__menu{
             display:flex;
+            flex:1;
+            justify-content:center;
         }
         
         .nav__list{
@@ -146,8 +148,10 @@
             list-style:none;
             gap:0.25rem;
             align-items:center;
+            justify-content:center;
             margin:0;
             padding:0;
+            flex:1;
         }
         
         .nav__link{
@@ -351,6 +355,15 @@
             }
         }
         
+        /* Hide current page link */
+        .nav .nav__list .nav__item.nav__item--hidden,
+        .nav__item--hidden,
+        .mobile-menu .mobile-menu__nav .mobile-menu__item.mobile-menu__item--hidden,
+        .mobile-menu__item--hidden {
+            display: none !important;
+            visibility: hidden !important;
+        }
+        
         /* Content Styles */
         .hero{
             height:100vh;
@@ -487,7 +500,7 @@
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item nav__item--hidden" style="display: none !important;">
-                        <a href="./" class="nav__link">ホーム</a>
+                        <a href="./" class="nav__link nav__link--active">ホーム</a>
                     </li>
                     <li class="nav__item">
                         <a href="works/" class="nav__link">施工事例</a>
