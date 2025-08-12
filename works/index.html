@@ -569,24 +569,34 @@
                 const visibleMenuItems = document.querySelectorAll('.mobile-menu__item:not([style*="display: none"])');
                 const mobileMenuElement = this.mobileMenu;
                 
-                // Fixed CTA section height (reduced for maximum space utilization)
-                const ctaFixedHeight = 70; // Fixed height for CTA buttons
-                const topPadding = 10; // Minimal top padding
-                const bottomPadding = 10; // Minimal bottom padding
+                // Debug logging
+                console.log(`Viewport height: ${viewportHeight}, Available height: ${availableHeight}`);
+                console.log(`Visible menu items: ${visibleMenuItems.length}`);
                 
-                // Calculate available height for menu items
-                const availableForItems = availableHeight - ctaFixedHeight - topPadding - bottomPadding;
+                // Conservative CTA section height to ensure visibility
+                const ctaFixedHeight = 100; // Increased height for CTA buttons
+                const topPadding = 5; // Minimal top padding
+                const bottomPadding = 5; // Minimal bottom padding
+                const safetyMargin = 20; // Extra safety margin
+                
+                // Calculate available height for menu items with safety margin
+                const availableForItems = availableHeight - ctaFixedHeight - topPadding - bottomPadding - safetyMargin;
                 const itemCount = visibleMenuItems.length;
                 
                 if (itemCount > 0) {
-                    // Calculate optimal height per item (minimum 20px, maximum 60px)
-                    const idealItemHeight = availableForItems / itemCount;
-                    const itemHeight = Math.max(20, Math.min(60, idealItemHeight));
+                    // Calculate optimal height per item (minimum 15px, maximum 50px)
+                    const idealItemHeight = Math.floor(availableForItems / itemCount);
+                    const itemHeight = Math.max(15, Math.min(50, idealItemHeight));
                     
-                    // Calculate actual CTA padding based on remaining space
+                    console.log(`Item height calculated: ${itemHeight}px per item`);
+                    
+                    // Calculate actual CTA padding - more conservative
                     const totalItemsHeight = itemHeight * itemCount;
-                    const remainingSpace = availableHeight - totalItemsHeight - topPadding - bottomPadding;
-                    const ctaPadding = Math.max(0.2, Math.min(1.0, remainingSpace / 100));
+                    const usedHeight = totalItemsHeight + ctaFixedHeight + topPadding + bottomPadding;
+                    const remainingSpace = availableHeight - usedHeight;
+                    const ctaPadding = Math.max(0.1, Math.min(0.8, remainingSpace / 120));
+                    
+                    console.log(`Used height: ${usedHeight}, Remaining: ${remainingSpace}, CTA padding: ${ctaPadding}rem`);
                     
                     // Apply calculated values
                     document.documentElement.style.setProperty('--mobile-menu-item-height', `${itemHeight}px`);
@@ -609,6 +619,7 @@
                         menuContent.style.flexDirection = 'column';
                         menuContent.style.paddingTop = `${topPadding}px`;
                         menuContent.style.paddingBottom = `${bottomPadding}px`;
+                        menuContent.style.boxSizing = 'border-box';
                     }
                     
                     // Set navigation list to flex and distribute space
@@ -617,17 +628,33 @@
                         navList.style.flex = '1';
                         navList.style.display = 'flex';
                         navList.style.flexDirection = 'column';
-                        navList.style.justifyContent = 'space-evenly';
+                        navList.style.justifyContent = 'space-around'; // Changed from space-evenly
                         navList.style.margin = '0';
                         navList.style.padding = '0 2rem';
+                        navList.style.minHeight = `${totalItemsHeight}px`;
+                        navList.style.maxHeight = `${totalItemsHeight}px`;
                     }
                     
-                    // Set CTA section to be fixed height
+                    // Set CTA section to be fixed height with guaranteed space
                     const ctaSection = document.querySelector('.mobile-menu__cta');
                     if (ctaSection) {
                         ctaSection.style.flexShrink = '0';
                         ctaSection.style.minHeight = `${ctaFixedHeight}px`;
+                        ctaSection.style.maxHeight = `${ctaFixedHeight}px`;
+                        ctaSection.style.paddingTop = `${ctaPadding}rem`;
+                        ctaSection.style.paddingBottom = `${ctaPadding}rem`;
+                        ctaSection.style.boxSizing = 'border-box';
+                        ctaSection.style.display = 'flex';
+                        ctaSection.style.alignItems = 'center';
                     }
+                    
+                    // Ensure CTA buttons are properly sized
+                    const ctaButtons = document.querySelectorAll('.mobile-menu__cta-btn');
+                    ctaButtons.forEach(btn => {
+                        btn.style.minHeight = '35px';
+                        btn.style.fontSize = '0.8rem';
+                        btn.style.padding = '0.4rem 1rem';
+                    });
                 }
             }
         }
