@@ -221,10 +221,13 @@
         }
         
         .mobile-menu__content{
-            padding:2rem 1.5rem 4rem 1.5rem;
+            padding:1rem 1rem;
             max-width:400px;
             margin:0 auto;
-            min-height:calc(100vh - 80px);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            height:100%;
         }
         
         .mobile-menu__nav{
@@ -234,22 +237,22 @@
         }
         
         .mobile-menu__item{
-            margin-bottom:0.75rem;
+            margin-bottom:0.5rem;
         }
         
         .mobile-menu__link{
             display:flex;
             align-items:center;
             justify-content:space-between;
-            padding:1.25rem 1.5rem;
+            padding:0.9rem 1.2rem;
             background:var(--white);
             color:var(--text);
             text-decoration:none;
             font-weight:500;
-            font-size:1.1rem;
-            border-radius:var(--radius);
+            font-size:1rem;
+            border-radius:12px;
             border:1px solid rgba(0,0,0,0.06);
-            box-shadow:0 2px 8px rgba(0,0,0,0.04);
+            box-shadow:0 1px 4px rgba(0,0,0,0.04);
             transition:var(--transition);
             position:relative;
             overflow:hidden;
@@ -273,36 +276,35 @@
         .mobile-menu__link:hover{
             background:rgba(46,94,62,0.02);
             color:var(--accent);
-            transform:translateY(-2px);
-            box-shadow:0 4px 16px rgba(46,94,62,0.1);
+            transform:translateY(-1px);
+            box-shadow:0 2px 8px rgba(46,94,62,0.1);
             border-color:rgba(46,94,62,0.2);
         }
         
         .mobile-menu__arrow{
-            font-size:1.25rem;
+            font-size:1.1rem;
             color:#d1d5db;
             transition:var(--transition);
         }
         
         .mobile-menu__link:hover .mobile-menu__arrow{
             color:var(--accent);
-            transform:translateX(3px);
+            transform:translateX(2px);
         }
         
         /* CTA Buttons in Mobile */
         .mobile-menu__cta{
-            margin-top:2rem;
-            padding-top:2rem;
-            padding-bottom:2rem;
+            margin-top:1rem;
+            padding-top:1rem;
             border-top:1px solid rgba(0,0,0,0.06);
         }
         
         .mobile-menu__cta .mobile-menu__item{
-            margin-bottom:1rem;
+            margin-bottom:0.5rem;
         }
         
         .mobile-menu__cta .mobile-menu__item:last-child{
-            margin-bottom:2rem;
+            margin-bottom:0;
         }
         
         .mobile-menu__cta .mobile-menu__link--primary{
@@ -310,14 +312,15 @@
             color:var(--white) !important;
             font-weight:600;
             justify-content:center;
-            box-shadow:0 4px 20px rgba(46,94,62,0.3);
+            box-shadow:0 2px 12px rgba(46,94,62,0.3);
             border:none;
+            padding:0.8rem 1.2rem;
         }
         
         .mobile-menu__cta .mobile-menu__link--primary:hover{
             background:linear-gradient(135deg,#1e3f2a 0%,var(--accent) 100%);
-            transform:translateY(-3px);
-            box-shadow:0 6px 24px rgba(46,94,62,0.4);
+            transform:translateY(-2px);
+            box-shadow:0 4px 16px rgba(46,94,62,0.4);
         }
         
         .mobile-menu__cta .mobile-menu__link--primary .mobile-menu__arrow{
@@ -330,14 +333,15 @@
             border:2px solid var(--accent);
             font-weight:600;
             justify-content:center;
-            box-shadow:0 2px 12px rgba(46,94,62,0.15);
+            box-shadow:0 1px 8px rgba(46,94,62,0.15);
+            padding:0.8rem 1.2rem;
         }
         
         .mobile-menu__cta .mobile-menu__link--contact:hover{
             background:var(--accent);
             color:var(--white) !important;
-            transform:translateY(-3px);
-            box-shadow:0 4px 20px rgba(46,94,62,0.3);
+            transform:translateY(-2px);
+            box-shadow:0 2px 12px rgba(46,94,62,0.3);
         }
         
         .mobile-menu__cta .mobile-menu__link--contact .mobile-menu__arrow{
