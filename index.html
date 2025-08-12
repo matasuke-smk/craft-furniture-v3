@@ -1484,41 +1484,66 @@
                 
                 // Calculate visible menu items (excluding hidden current page)
                 const visibleMenuItems = document.querySelectorAll('.mobile-menu__item:not([style*="display: none"])');
-                const ctaSection = document.querySelector('.mobile-menu__cta');
-                const totalVisibleItems = visibleMenuItems.length + 2; // +2 for CTA buttons
-                
-                // Adjust item heights based on available space
-                const minItemHeight = 35; // Minimum height per item
-                const minCtaHeight = 80; // Minimum height for CTA section
-                const padding = 40; // Extra padding for breathing room
-                const totalMinHeight = (totalVisibleItems * minItemHeight) + minCtaHeight + padding;
-                
                 const mobileMenuElement = this.mobileMenu;
                 
-                if (availableHeight < totalMinHeight) {
-                    // Small screens - calculate appropriate sizes
-                    const adjustedItemHeight = Math.max(30, (availableHeight - minCtaHeight - padding) / totalVisibleItems);
-                    const ctaPadding = Math.max(0.3, adjustedItemHeight / 80);
+                // Fixed CTA section height (reduced for maximum space utilization)
+                const ctaFixedHeight = 70; // Fixed height for CTA buttons
+                const topPadding = 10; // Minimal top padding
+                const bottomPadding = 10; // Minimal bottom padding
+                
+                // Calculate available height for menu items
+                const availableForItems = availableHeight - ctaFixedHeight - topPadding - bottomPadding;
+                const itemCount = visibleMenuItems.length;
+                
+                if (itemCount > 0) {
+                    // Calculate optimal height per item (minimum 20px, maximum 60px)
+                    const idealItemHeight = availableForItems / itemCount;
+                    const itemHeight = Math.max(20, Math.min(60, idealItemHeight));
                     
-                    document.documentElement.style.setProperty('--mobile-menu-item-height', `${adjustedItemHeight}px`);
+                    // Calculate actual CTA padding based on remaining space
+                    const totalItemsHeight = itemHeight * itemCount;
+                    const remainingSpace = availableHeight - totalItemsHeight - topPadding - bottomPadding;
+                    const ctaPadding = Math.max(0.2, Math.min(1.0, remainingSpace / 100));
+                    
+                    // Apply calculated values
+                    document.documentElement.style.setProperty('--mobile-menu-item-height', `${itemHeight}px`);
                     document.documentElement.style.setProperty('--mobile-menu-cta-padding', `${ctaPadding}rem`);
                     
-                    // Enable scroll for very small screens
+                    // Ensure menu content fits exactly in available space
                     if (mobileMenuElement) {
-                        mobileMenuElement.style.overflowY = 'auto';
+                        mobileMenuElement.style.height = `${availableHeight}px`;
                         mobileMenuElement.style.maxHeight = `${availableHeight}px`;
+                        mobileMenuElement.style.overflowY = 'hidden'; // Never scroll
+                        mobileMenuElement.style.display = 'flex';
+                        mobileMenuElement.style.flexDirection = 'column';
                     }
-                } else {
-                    // Normal sizing - everything fits comfortably
-                    const normalItemHeight = Math.min(50, (availableHeight - minCtaHeight - padding) / totalVisibleItems);
                     
-                    document.documentElement.style.setProperty('--mobile-menu-item-height', `${normalItemHeight}px`);
-                    document.documentElement.style.setProperty('--mobile-menu-cta-padding', '0.8rem');
+                    // Set menu content to use flex layout
+                    const menuContent = document.querySelector('.mobile-menu__content');
+                    if (menuContent) {
+                        menuContent.style.height = '100%';
+                        menuContent.style.display = 'flex';
+                        menuContent.style.flexDirection = 'column';
+                        menuContent.style.paddingTop = `${topPadding}px`;
+                        menuContent.style.paddingBottom = `${bottomPadding}px`;
+                    }
                     
-                    // Disable scroll when everything fits
-                    if (mobileMenuElement) {
-                        mobileMenuElement.style.overflowY = 'hidden';
-                        mobileMenuElement.style.maxHeight = 'none';
+                    // Set navigation list to flex and distribute space
+                    const navList = document.querySelector('.mobile-menu__nav');
+                    if (navList) {
+                        navList.style.flex = '1';
+                        navList.style.display = 'flex';
+                        navList.style.flexDirection = 'column';
+                        navList.style.justifyContent = 'space-evenly';
+                        navList.style.margin = '0';
+                        navList.style.padding = '0 2rem';
+                    }
+                    
+                    // Set CTA section to be fixed height
+                    const ctaSection = document.querySelector('.mobile-menu__cta');
+                    if (ctaSection) {
+                        ctaSection.style.flexShrink = '0';
+                        ctaSection.style.minHeight = `${ctaFixedHeight}px`;
                     }
                 }
             }
