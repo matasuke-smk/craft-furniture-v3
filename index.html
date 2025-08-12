@@ -20,18 +20,47 @@
         .container{max-width:1200px;margin:0 auto;padding:0 1rem}
         
         /* Header */
-        .header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:100;padding:1rem 0;border-bottom:1px solid #eee}
-        .header__content{display:flex;justify-content:space-between;align-items:center}
-        .header__logo{font-size:var(--text-lg);font-weight:600;color:var(--color-primary);text-decoration:none}
-        .mobile-menu-toggle{background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--color-primary)}
+        .header{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:100;transition:all 0.3s ease}
+        .nav{padding:1rem 0}
+        .nav__container{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;justify-content:space-between;align-items:center}
+        .nav__logo{text-decoration:none;color:var(--color-primary)}
+        .nav__logo-text{display:block;font-size:var(--text-lg);font-weight:600;line-height:1.2}
+        .nav__logo-sub{display:block;font-size:var(--text-sm);color:#666;margin-top:0.2rem}
         
-        /* Mobile navigation */
-        .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--color-white);z-index:200;padding:80px 1rem 1rem;overflow-y:auto}
-        .mobile-menu.active{display:block}
-        .mobile-menu__nav{list-style:none;padding:0;margin:0}
-        .mobile-menu__nav li{margin:0 0 0.5rem}
-        .mobile-menu__nav a{display:block;padding:1rem;color:var(--color-primary);text-decoration:none;border-bottom:1px solid #eee;transition:background-color 0.2s}
-        .mobile-menu__nav a:hover{background:var(--color-gray)}
+        /* Desktop Navigation */
+        .nav__list{display:none;list-style:none;padding:0;margin:0;align-items:center;gap:2rem}
+        .nav__link{color:var(--color-primary);text-decoration:none;font-weight:500;padding:0.5rem 0;transition:color 0.2s}
+        .nav__link--active{color:var(--color-accent);font-weight:600}
+        .nav__link--cta{background:var(--color-accent);color:var(--color-white);padding:0.5rem 1rem;border-radius:var(--radius-md);font-weight:600}
+        .nav__link--contact{background:var(--color-white);color:var(--color-accent);border:2px solid var(--color-accent);padding:0.5rem 1rem;border-radius:var(--radius-md);font-weight:600}
+        
+        /* Mobile Menu Toggle */
+        .nav__toggle{display:flex;flex-direction:column;width:24px;height:24px;background:none;border:none;cursor:pointer;justify-content:space-between;padding:0}
+        .nav__toggle span{width:100%;height:2px;background:var(--color-primary);transition:all 0.3s ease;transform-origin:center}
+        .nav__toggle.active span:first-child{transform:rotate(45deg) translate(5px,5px)}
+        .nav__toggle.active span:nth-child(2){opacity:0}
+        .nav__toggle.active span:last-child{transform:rotate(-45deg) translate(7px,-6px)}
+        
+        /* Mobile Menu */
+        .nav__menu{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--color-white);z-index:200;padding:80px 1rem 1rem;overflow-y:auto}
+        .nav__menu.active{display:block}
+        .nav__menu .nav__list{display:flex;flex-direction:column;gap:0}
+        .nav__menu .nav__link{display:block;padding:1rem;border-bottom:1px solid #eee;transition:background-color 0.2s}
+        .nav__menu .nav__link:hover{background:var(--color-gray)}
+        .nav__dropdown{display:none}
+        
+        /* Desktop styles */
+        @media (min-width:768px){
+            .nav__toggle{display:none}
+            .nav__list{display:flex}
+            .nav__menu{display:block;position:static;height:auto;background:none;padding:0}
+            .nav__item--dropdown{position:relative}
+            .nav__dropdown{position:absolute;top:100%;left:0;background:var(--color-white);box-shadow:var(--shadow-sm);border-radius:var(--radius-md);padding:0.5rem 0;min-width:200px;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all 0.2s ease}
+            .nav__item--dropdown:hover .nav__dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+            .nav__dropdown li{margin:0}
+            .nav__dropdown a{padding:0.5rem 1rem;color:var(--color-primary);text-decoration:none;display:block;transition:background-color 0.2s}
+            .nav__dropdown a:hover{background:var(--color-gray)}
+        }
         
         /* Hero */
         .hero{height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--color-gray) 0%,var(--color-white) 100%);text-align:center;position:relative}
@@ -119,33 +148,74 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header__content">
-                <a href="#" class="header__logo">クラフトファニチャー</a>
-                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-            </div>
-        </div>
-    </header>
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="#" class="nav__logo">
+                        <span class="nav__logo-text">Craft Furniture</span>
+                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                    </a>
+                </div>
 
-    <!-- Mobile Menu -->
-    <nav class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-menu__nav">
-            <li><a href="works/">施工事例</a></li>
-            <li><a href="process/">製作工程</a></li>
-            <li><a href="craftsmen/">職人紹介</a></li>
-            <li><a href="wood-guide/">木材図鑑</a></li>
-            <li><a href="about/">会社概要</a></li>
-            <li><a href="flow/">納品までの流れ</a></li>
-            <li><a href="delivery/">納品エリア</a></li>
-            <li><a href="showroom/">ショールーム案内</a></li>
-            <li><a href="faq/">よくある質問</a></li>
-            <li><a href="voice/">お客様の声</a></li>
-            <li><a href="news/">お知らせ</a></li>
-            <li><a href="simulator/" style="background:var(--color-accent);color:var(--color-white);border-radius:var(--radius-md);margin:0.5rem 0">見積もりシミュレーター</a></li>
-            <li><a href="contact/" style="background:var(--color-primary);color:var(--color-white);border-radius:var(--radius-md)">お問い合わせ</a></li>
-        </ul>
-    </nav>
+                <!-- Mobile Menu Button -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--active">ホーム</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="works/" class="nav__link">施工事例</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="works/?filter=dining">ダイニングテーブル</a></li>
+                                <li><a href="works/?filter=desk">デスク</a></li>
+                                <li><a href="works/?filter=storage">収納家具</a></li>
+                                <li><a href="works/?filter=others">その他</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="process/" class="nav__link">製作工程</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="craftsmen/" class="nav__link">職人紹介</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="wood-guide/" class="nav__link">木材図鑑</a>
+                        </li>
+                        <li class="nav__item nav__item--dropdown">
+                            <a href="about/" class="nav__link">会社情報</a>
+                            <ul class="nav__dropdown">
+                                <li><a href="about/">会社概要</a></li>
+                                <li><a href="flow/">納品までの流れ</a></li>
+                                <li><a href="delivery/">納品エリア</a></li>
+                                <li><a href="showroom/">ショールーム</a></li>
+                                <li><a href="faq/">よくある質問</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a href="voice/" class="nav__link">お客様の声</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="news/" class="nav__link">お知らせ</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="simulator/" class="nav__link nav__link--cta">見積もり</a>
+                        </li>
+                        <li class="nav__item nav__item--cta">
+                            <a href="contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -349,27 +419,43 @@
     </footer>
 
     <script>
-        // Mobile functionality
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        // Header navigation functionality
+        function initNavigation() {
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            if (navToggle && navMenu) {
+                navToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                    
+                    // Animate hamburger menu
+                    this.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Close menu when clicking a link
+                navMenu.addEventListener('click', function(event) {
+                    if (event.target.classList.contains('nav__link')) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
         }
 
         function openInstagram() {
             window.open('https://www.instagram.com/craft_furniture_jp/', '_blank');
         }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (!menu.contains(event.target) && !toggle.contains(event.target)) {
-                menu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
 
         // Desktop redirect for large screens
         (function() {
@@ -405,6 +491,10 @@
         }, observerOptions);
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize navigation
+            initNavigation();
+            
+            // Initialize animations
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
             });
