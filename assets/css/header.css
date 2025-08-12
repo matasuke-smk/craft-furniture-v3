@@ -152,6 +152,9 @@ body {
     border-radius: 12px;
     transition: var(--transition);
     position: relative;
+    box-sizing: border-box;
+    min-height: 40px;
+    border: 2px solid transparent;
 }
 
 .nav__link:hover {
