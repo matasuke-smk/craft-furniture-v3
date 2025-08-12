@@ -1579,34 +1579,46 @@
                         ctaButtonsContainer.style.opacity = '1';
                     }
                     
-                    // Make sure existing HTML buttons are visible
-                    const existingButtons = document.querySelectorAll('.mobile-menu__cta-btn');
-                    existingButtons.forEach(btn => {
-                        btn.style.display = 'flex';
-                        btn.style.alignItems = 'center';
-                        btn.style.justifyContent = 'center';
-                        btn.style.visibility = 'visible';
-                        btn.style.opacity = '1';
-                        btn.style.minHeight = '35px';
-                        btn.style.fontSize = '0.8rem';
-                        btn.style.fontWeight = '600';
-                        btn.style.padding = '0.4rem 1rem';
-                        btn.style.textDecoration = 'none';
-                        btn.style.borderRadius = '6px';
-                        btn.style.position = 'relative';
-                        btn.style.zIndex = '1';
-                        
-                        // Apply specific styles based on button type
-                        if (btn.classList.contains('mobile-menu__cta-btn--primary')) {
-                            btn.style.backgroundColor = '#2E5E3E';
-                            btn.style.color = '#FFFFFF';
-                            btn.style.border = 'none';
-                        } else if (btn.classList.contains('mobile-menu__cta-btn--secondary')) {
-                            btn.style.backgroundColor = 'transparent';
-                            btn.style.color = '#2E5E3E';
-                            btn.style.border = '2px solid #2E5E3E';
-                        }
-                    });
+                    // Force CTA buttons to be visible with absolute positioning if needed
+                    const ctaContainer = document.querySelector('.mobile-menu__cta-buttons');
+                    if (ctaContainer) {
+                        ctaContainer.innerHTML = `
+                            <a href="simulator/" style="
+                                display: block !important;
+                                background: #2E5E3E !important;
+                                color: #FFFFFF !important;
+                                padding: 12px 16px !important;
+                                text-decoration: none !important;
+                                border-radius: 6px !important;
+                                font-weight: 600 !important;
+                                font-size: 14px !important;
+                                text-align: center !important;
+                                margin-bottom: 8px !important;
+                                border: none !important;
+                                visibility: visible !important;
+                                opacity: 1 !important;
+                                position: relative !important;
+                                z-index: 999 !important;
+                            ">見積もりシミュレーター</a>
+                            <a href="contact/" style="
+                                display: block !important;
+                                background: transparent !important;
+                                color: #2E5E3E !important;
+                                padding: 12px 16px !important;
+                                text-decoration: none !important;
+                                border-radius: 6px !important;
+                                font-weight: 600 !important;
+                                font-size: 14px !important;
+                                text-align: center !important;
+                                border: 2px solid #2E5E3E !important;
+                                visibility: visible !important;
+                                opacity: 1 !important;
+                                position: relative !important;
+                                z-index: 999 !important;
+                            ">お問い合わせ</a>
+                        `;
+                        console.log('CTA buttons forced with innerHTML');
+                    }
                 }
             }
             
