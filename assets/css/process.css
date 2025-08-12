@@ -318,7 +318,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('../images/wood-texture.jpg') center/cover;
+    background: linear-gradient(45deg, #FAF7F0 25%, transparent 25%), 
+                linear-gradient(-45deg, #FAF7F0 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #FAF7F0 75%), 
+                linear-gradient(-45deg, transparent 75%, #FAF7F0 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
     opacity: 0.1;
     z-index: 1;
 }

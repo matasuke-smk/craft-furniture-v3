@@ -105,29 +105,29 @@ function renderInstagramFeed(posts) {
     // Show loading state
     container.innerHTML = '<div class="instagram__loading">Loading Instagram posts...</div>';
     
-    // Clear container and add posts
-    setTimeout(() => {
-        container.innerHTML = '';
-        
-        posts.slice(0, 9).forEach((post, index) => {
-            const postElement = createInstagramPost(post, index);
-            container.appendChild(postElement);
-        });
-        
-        // Add animation delays
+    // Clear container and add posts immediately for mobile performance
+    container.innerHTML = '';
+    
+    posts.slice(0, 9).forEach((post, index) => {
+        const postElement = createInstagramPost(post, index);
+        container.appendChild(postElement);
+    });
+    
+    // Add animation delays only on non-mobile devices
+    if (window.innerWidth > 768) {
         const items = container.querySelectorAll('.instagram__item');
         items.forEach((item, index) => {
             item.style.animationDelay = `${index * 0.1}s`;
         });
-        
-        // Initialize lazy loading for Instagram images
-        initInstagramLazyLoading();
-        
-        // Track successful load
-        if (typeof trackEvent === 'function') {
-            trackEvent('Instagram', 'Feed Loaded', 'Success', posts.length);
-        }
-    }, 500); // Simulate loading delay
+    }
+    
+    // Initialize lazy loading for Instagram images
+    initInstagramLazyLoading();
+    
+    // Track successful load
+    if (typeof trackEvent === 'function') {
+        trackEvent('Instagram', 'Feed Loaded', 'Success', posts.length);
+    }
 }
 
 function createInstagramPost(post, index) {
