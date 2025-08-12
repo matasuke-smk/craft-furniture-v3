@@ -1482,22 +1482,23 @@
                 const headerHeight = 90;
                 const availableHeight = viewportHeight - headerHeight;
                 
-                // Calculate minimum required height
-                const menuItems = document.querySelectorAll('.mobile-menu__item');
+                // Calculate visible menu items (excluding hidden current page)
+                const visibleMenuItems = document.querySelectorAll('.mobile-menu__item:not([style*="display: none"])');
                 const ctaSection = document.querySelector('.mobile-menu__cta');
-                const totalItems = menuItems.length + 2; // +2 for CTA buttons
+                const totalVisibleItems = visibleMenuItems.length + 2; // +2 for CTA buttons
                 
                 // Adjust item heights based on available space
                 const minItemHeight = 35; // Minimum height per item
                 const minCtaHeight = 80; // Minimum height for CTA section
-                const totalMinHeight = (totalItems * minItemHeight) + minCtaHeight;
+                const padding = 40; // Extra padding for breathing room
+                const totalMinHeight = (totalVisibleItems * minItemHeight) + minCtaHeight + padding;
                 
                 const mobileMenuElement = this.mobileMenu;
                 
                 if (availableHeight < totalMinHeight) {
-                    // Very small screens - make items smaller and enable scroll
-                    const adjustedItemHeight = Math.max(35, (availableHeight - minCtaHeight) / totalItems);
-                    const ctaPadding = Math.max(0.4, adjustedItemHeight / 60);
+                    // Small screens - calculate appropriate sizes
+                    const adjustedItemHeight = Math.max(30, (availableHeight - minCtaHeight - padding) / totalVisibleItems);
+                    const ctaPadding = Math.max(0.3, adjustedItemHeight / 80);
                     
                     document.documentElement.style.setProperty('--mobile-menu-item-height', `${adjustedItemHeight}px`);
                     document.documentElement.style.setProperty('--mobile-menu-cta-padding', `${ctaPadding}rem`);
@@ -1505,23 +1506,90 @@
                     // Enable scroll for very small screens
                     if (mobileMenuElement) {
                         mobileMenuElement.style.overflowY = 'auto';
+                        mobileMenuElement.style.maxHeight = `${availableHeight}px`;
                     }
                 } else {
-                    // Normal sizing - disable scroll as everything fits
-                    document.documentElement.style.setProperty('--mobile-menu-item-height', '45px');
-                    document.documentElement.style.setProperty('--mobile-menu-cta-padding', '0.6rem');
+                    // Normal sizing - everything fits comfortably
+                    const normalItemHeight = Math.min(50, (availableHeight - minCtaHeight - padding) / totalVisibleItems);
+                    
+                    document.documentElement.style.setProperty('--mobile-menu-item-height', `${normalItemHeight}px`);
+                    document.documentElement.style.setProperty('--mobile-menu-cta-padding', '0.8rem');
                     
                     // Disable scroll when everything fits
                     if (mobileMenuElement) {
                         mobileMenuElement.style.overflowY = 'hidden';
+                        mobileMenuElement.style.maxHeight = 'none';
                     }
                 }
             }
         }
         
+        // Current Page Menu Handler
+        class CurrentPageMenuHandler {
+            constructor(mobileMenuInstance) {
+                this.mobileMenuInstance = mobileMenuInstance;
+                this.currentPath = this.getCurrentPath();
+                this.hideCurrentPageLink();
+            }
+            
+            getCurrentPath() {
+                const path = window.location.pathname;
+                if (path === '/' || path === '/index.html' || path.endsWith('/')) {
+                    return './';
+                }
+                return path.replace(/^\//, '').replace(/\.html$/, '') + '/';
+            }
+            
+            hideCurrentPageLink() {
+                const mobileMenuItems = document.querySelectorAll('.mobile-menu__item');
+                const desktopMenuItems = document.querySelectorAll('.nav__item');
+                let hiddenCount = 0;
+                
+                // Hide current page link in mobile menu
+                mobileMenuItems.forEach(item => {
+                    const link = item.querySelector('.mobile-menu__link');
+                    if (link && this.isCurrentPage(link.getAttribute('href'))) {
+                        item.style.display = 'none';
+                        hiddenCount++;
+                    }
+                });
+                
+                // Hide current page link in desktop menu
+                desktopMenuItems.forEach(item => {
+                    const link = item.querySelector('.nav__link');
+                    if (link && this.isCurrentPage(link.getAttribute('href'))) {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Refresh menu height calculation after hiding items
+                if (hiddenCount > 0 && this.mobileMenuInstance) {
+                    // Wait for DOM update then recalculate
+                    setTimeout(() => {
+                        this.mobileMenuInstance.adjustMenuHeight();
+                    }, 10);
+                }
+            }
+            
+            isCurrentPage(href) {
+                if (!href) return false;
+                
+                // Normalize the href for comparison
+                let normalizedHref = href;
+                if (normalizedHref === './') {
+                    normalizedHref = './';
+                } else if (!normalizedHref.endsWith('/') && !normalizedHref.includes('#')) {
+                    normalizedHref += '/';
+                }
+                
+                return this.currentPath === normalizedHref;
+            }
+        }
+        
         // Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
-            new MobileMenu();
+            const mobileMenu = new MobileMenu();
+            new CurrentPageMenuHandler(mobileMenu);
         });
         
         // Performance monitoring
