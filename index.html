@@ -1575,20 +1575,107 @@
                         ctaButtonsContainer.style.justifyContent = 'center';
                     }
                     
-                    // Ensure CTA buttons are properly sized and visible
-                    const ctaButtons = document.querySelectorAll('.mobile-menu__cta-btn');
-                    ctaButtons.forEach(btn => {
-                        btn.style.display = 'flex';
-                        btn.style.alignItems = 'center';
-                        btn.style.justifyContent = 'center';
-                        btn.style.minHeight = '35px';
-                        btn.style.fontSize = '0.8rem';
-                        btn.style.padding = '0.4rem 1rem';
-                        btn.style.visibility = 'visible';
-                        btn.style.opacity = '1';
-                        btn.style.position = 'relative';
-                        btn.style.zIndex = '1';
-                    });
+                    // Force recreate CTA buttons if they don't exist or are hidden
+                    this.ensureCtaButtons();
+                }
+            }
+            
+            ensureCtaButtons() {
+                const ctaSection = document.querySelector('.mobile-menu__cta');
+                let ctaButtonsContainer = document.querySelector('.mobile-menu__cta-buttons');
+                
+                if (!ctaSection) {
+                    console.error('CTA section not found');
+                    return;
+                }
+                
+                // Remove existing buttons container if it exists
+                if (ctaButtonsContainer) {
+                    ctaButtonsContainer.remove();
+                }
+                
+                // Create new buttons container
+                ctaButtonsContainer = document.createElement('div');
+                ctaButtonsContainer.className = 'mobile-menu__cta-buttons';
+                ctaButtonsContainer.style.display = 'flex';
+                ctaButtonsContainer.style.flexDirection = 'column';
+                ctaButtonsContainer.style.gap = '0.5rem';
+                ctaButtonsContainer.style.height = 'auto';
+                ctaButtonsContainer.style.justifyContent = 'center';
+                
+                // Create primary button (見積もりシミュレーター)
+                const primaryButton = document.createElement('a');
+                primaryButton.href = 'simulator/';
+                primaryButton.className = 'mobile-menu__cta-btn mobile-menu__cta-btn--primary';
+                primaryButton.textContent = '見積もりシミュレーター';
+                primaryButton.style.display = 'flex';
+                primaryButton.style.alignItems = 'center';
+                primaryButton.style.justifyContent = 'center';
+                primaryButton.style.minHeight = '35px';
+                primaryButton.style.fontSize = '0.8rem';
+                primaryButton.style.fontWeight = '600';
+                primaryButton.style.padding = '0.4rem 1rem';
+                primaryButton.style.textDecoration = 'none';
+                primaryButton.style.borderRadius = '6px';
+                primaryButton.style.backgroundColor = '#2E5E3E';
+                primaryButton.style.color = '#FFFFFF';
+                primaryButton.style.border = 'none';
+                primaryButton.style.transition = 'all 0.2s ease';
+                primaryButton.style.visibility = 'visible';
+                primaryButton.style.opacity = '1';
+                primaryButton.style.position = 'relative';
+                primaryButton.style.zIndex = '1';
+                
+                // Create secondary button (お問い合わせ)
+                const secondaryButton = document.createElement('a');
+                secondaryButton.href = 'contact/';
+                secondaryButton.className = 'mobile-menu__cta-btn mobile-menu__cta-btn--secondary';
+                secondaryButton.textContent = 'お問い合わせ';
+                secondaryButton.style.display = 'flex';
+                secondaryButton.style.alignItems = 'center';
+                secondaryButton.style.justifyContent = 'center';
+                secondaryButton.style.minHeight = '35px';
+                secondaryButton.style.fontSize = '0.8rem';
+                secondaryButton.style.fontWeight = '600';
+                secondaryButton.style.padding = '0.4rem 1rem';
+                secondaryButton.style.textDecoration = 'none';
+                secondaryButton.style.borderRadius = '6px';
+                secondaryButton.style.backgroundColor = 'transparent';
+                secondaryButton.style.color = '#2E5E3E';
+                secondaryButton.style.border = '2px solid #2E5E3E';
+                secondaryButton.style.transition = 'all 0.2s ease';
+                secondaryButton.style.visibility = 'visible';
+                secondaryButton.style.opacity = '1';
+                secondaryButton.style.position = 'relative';
+                secondaryButton.style.zIndex = '1';
+                
+                // Add hover effects
+                primaryButton.addEventListener('mouseenter', () => {
+                    primaryButton.style.backgroundColor = '#1e3f2a';
+                    primaryButton.style.transform = 'translateY(-1px)';
+                });
+                primaryButton.addEventListener('mouseleave', () => {
+                    primaryButton.style.backgroundColor = '#2E5E3E';
+                    primaryButton.style.transform = 'translateY(0)';
+                });
+                
+                secondaryButton.addEventListener('mouseenter', () => {
+                    secondaryButton.style.backgroundColor = '#2E5E3E';
+                    secondaryButton.style.color = '#FFFFFF';
+                });
+                secondaryButton.addEventListener('mouseleave', () => {
+                    secondaryButton.style.backgroundColor = 'transparent';
+                    secondaryButton.style.color = '#2E5E3E';
+                });
+                
+                // Append buttons to container
+                ctaButtonsContainer.appendChild(primaryButton);
+                ctaButtonsContainer.appendChild(secondaryButton);
+                
+                // Append container to CTA section
+                ctaSection.appendChild(ctaButtonsContainer);
+                
+                console.log('CTA buttons recreated successfully');
                 }
             }
         }
