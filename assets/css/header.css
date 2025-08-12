@@ -374,7 +374,10 @@ body {
 }
 
 /* Hide current page link */
+.nav .nav__list .nav__item.nav__item--hidden,
 .nav__item--hidden,
+.mobile-menu .mobile-menu__nav .mobile-menu__item.mobile-menu__item--hidden,
 .mobile-menu__item--hidden {
     display: none !important;
+    visibility: hidden !important;
 }
