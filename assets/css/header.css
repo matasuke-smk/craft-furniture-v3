@@ -126,6 +126,8 @@ body {
 /* Desktop Navigation */
 .nav__menu {
     display: flex;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav__list {
@@ -133,8 +135,10 @@ body {
     list-style: none;
     gap: 0.25rem;
     align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
+    flex: 1;
 }
 
 .nav__link {
