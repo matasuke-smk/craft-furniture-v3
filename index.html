@@ -69,12 +69,24 @@
         }
         
         .nav__logo{
-            font-size:1.5rem;
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+            text-decoration:none;
+            transition:var(--transition);
+        }
+        
+        .nav__logo-text{
+            font-size:1.25rem;
             font-weight:700;
             color:var(--primary);
-            text-decoration:none;
-            letter-spacing:-0.02em;
-            transition:var(--transition);
+            line-height:1;
+        }
+        
+        .nav__logo-sub{
+            font-size:0.75rem;
+            color:#666;
+            margin-top:2px;
         }
         
         .nav__logo:hover{
@@ -199,7 +211,9 @@
             transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);
             z-index:var(--z-menu);
             overflow-y:auto;
+            overflow-x:hidden;
             border-top:1px solid rgba(0,0,0,0.06);
+            -webkit-overflow-scrolling:touch;
         }
         
         .mobile-menu.active{
@@ -207,9 +221,10 @@
         }
         
         .mobile-menu__content{
-            padding:2rem 1.5rem;
+            padding:2rem 1.5rem 4rem 1.5rem;
             max-width:400px;
             margin:0 auto;
+            min-height:calc(100vh - 80px);
         }
         
         .mobile-menu__nav{
@@ -278,11 +293,16 @@
         .mobile-menu__cta{
             margin-top:2rem;
             padding-top:2rem;
+            padding-bottom:2rem;
             border-top:1px solid rgba(0,0,0,0.06);
         }
         
         .mobile-menu__cta .mobile-menu__item{
             margin-bottom:1rem;
+        }
+        
+        .mobile-menu__cta .mobile-menu__item:last-child{
+            margin-bottom:2rem;
         }
         
         .mobile-menu__cta .mobile-menu__link--primary{
@@ -462,7 +482,8 @@
         <nav class="nav">
             <div class="nav__brand">
                 <a href="#" class="nav__logo">
-                    クラフトファニチャー
+                    <span class="nav__logo-text">Craft Furniture</span>
+                    <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
                 </a>
             </div>
             
