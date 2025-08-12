@@ -372,3 +372,9 @@ body {
     color: var(--accent) !important;
     font-weight: 600;
 }
+
+/* Hide current page link */
+.nav__item--hidden,
+.mobile-menu__item--hidden {
+    display: none !important;
+}
