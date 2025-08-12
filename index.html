@@ -44,7 +44,62 @@
             padding-top:90px;
         }
         
-        /* Only hero-specific styles remain here */
+        /* Global Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1.875rem, 4vw, 2.5rem);
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        .section-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .btn--outline {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+        
+        .btn--outline:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+        
+        .btn--large {
+            padding: 1.25rem 2.5rem;
+            font-size: 1.125rem;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .btn--large small {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
         
         /* Content Styles */
         .hero{
@@ -157,6 +212,586 @@
         
         .hero__buttons{
             animation-delay:0.3s;
+        }
+        
+        /* Concept Section */
+        .concept {
+            padding: 6rem 0;
+            background: var(--gray);
+        }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .concept-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .concept-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .concept-card__icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent), #1e3f2a);
+            color: var(--white);
+            border-radius: 50%;
+        }
+        
+        .concept-card__title {
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .concept-card__description {
+            line-height: 1.7;
+            color: var(--text);
+            opacity: 0.9;
+        }
+        
+        /* Works Pickup Section */
+        .works-pickup {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .work-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .work-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .work-card__image {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .work-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .work-card:hover .work-card__image img {
+            transform: scale(1.05);
+        }
+        
+        .work-card__overlay {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .work-card__price,
+        .work-card__material {
+            background: rgba(0,0,0,0.8);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .work-card__content {
+            padding: 1.5rem;
+        }
+        
+        .work-card__title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .work-card__specs {
+            font-size: 0.875rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        /* Craftsmen Section */
+        .craftsmen {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+        
+        .craftsmen-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .craftsman-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .craftsman-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .craftsman-card__image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .craftsman-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .craftsman-card__content {
+            padding: 1.5rem;
+        }
+        
+        .craftsman-card__name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .craftsman-card__experience,
+        .craftsman-card__specialty {
+            font-size: 0.875rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .craftsman-card__message {
+            margin-top: 1rem;
+            line-height: 1.6;
+            color: var(--text);
+            opacity: 0.9;
+        }
+        
+        /* Instagram Section */
+        .instagram {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
+        .section-hashtag {
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .instagram-item {
+            aspect-ratio: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .instagram-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Delivery Area Section */
+        .delivery-area {
+            padding: 6rem 0;
+            background: var(--gray);
+        }
+        
+        .delivery-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .delivery-areas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .area-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+        
+        .area-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+        
+        .area-item h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .delivery-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .info-item h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-item p {
+            line-height: 1.6;
+            color: var(--text);
+            opacity: 0.9;
+        }
+        
+        /* News Section */
+        .news {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
+        .news-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .news-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(66,66,66,0.1);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-item__date {
+            font-size: 0.875rem;
+            color: var(--text);
+            opacity: 0.7;
+            min-width: 100px;
+        }
+        
+        .news-item__category {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-weight: 600;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .news-item__category.event {
+            background: var(--accent);
+            color: var(--white);
+        }
+        
+        .news-item__category.info {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        .news-item__title {
+            flex: 1;
+        }
+        
+        .news-item__title a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .news-item__title a:hover {
+            color: var(--accent);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, #2e1b18 100%);
+            color: var(--white);
+        }
+        
+        .cta-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1.875rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: block;
+        }
+        
+        .footer-logo-ja {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            display: block;
+            margin-top: 0.25rem;
+        }
+        
+        .footer-description {
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .contact-item {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+        
+        .footer-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-nav-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+        
+        .footer-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .footer-nav-list a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.875rem;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .footer-nav-list a:hover {
+            opacity: 1;
+            color: var(--light);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.875rem;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            opacity: 1;
+            color: var(--light);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+        
+        .copyright {
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section-header {
+                margin-bottom: 3rem;
+            }
+            
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .craftsmen-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .instagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .delivery-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .delivery-areas {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                text-align: left;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn--large {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-nav {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .instagram-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-nav {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -294,6 +929,456 @@
             </div>
         </div>
     </section>
+    
+    <!-- Concept Section -->
+    <section class="concept">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">クラフトファニチャーの3つの強み</h2>
+                <p class="section-subtitle">永年保証で安心、職人の技術と厳選された素材で一生モノの家具を</p>
+            </div>
+            
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-card__icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="concept-card__title">素材へのこだわり</h3>
+                    <p class="concept-card__description">
+                        国内外から厳選した一枚板を使用。ウォールナット、オーク、チェリーなど、それぞれの木材の特性を活かした美しい仕上がりをお約束します。
+                    </p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-card__icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                            <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3"/>
+                            <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3"/>
+                        </svg>
+                    </div>
+                    <h3 class="concept-card__title">職人の技術</h3>
+                    <p class="concept-card__description">
+                        10年以上の経験を持つ熟練職人が、伝統的な手仕事と現代の技術を融合。一点一点丁寧に仕上げ、お客様だけの特別な家具をお作りします。
+                    </p>
+                </div>
+                
+                <div class="concept-card">
+                    <div class="concept-card__icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="concept-card__title">永年保証</h3>
+                    <p class="concept-card__description">
+                        アフターメンテナンスも万全。メンテナンス方法のご指導から修理・再仕上げまで、永年にわたってお客様の大切な家具をサポートいたします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Works Pickup Section -->
+    <section class="works-pickup">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">施工事例</h2>
+                <p class="section-subtitle">お客様のご自宅や店舗で実際に使われている家具をご紹介</p>
+            </div>
+            
+            <div class="works-grid">
+                <article class="work-card">
+                    <div class="work-card__image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ウォールナット一枚板ダイニングテーブル" loading="lazy">
+                        <div class="work-card__overlay">
+                            <span class="work-card__price">150〜200万円</span>
+                            <span class="work-card__material">ウォールナット</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">ウォールナット一枚板テーブル</h3>
+                        <p class="work-card__specs">W2400 × D900 × H720mm / 板厚50mm</p>
+                    </div>
+                </article>
+                
+                <article class="work-card">
+                    <div class="work-card__image">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="オーク材カウンターテーブル" loading="lazy">
+                        <div class="work-card__overlay">
+                            <span class="work-card__price">80〜120万円</span>
+                            <span class="work-card__material">オーク</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">オーク材カウンターテーブル</h3>
+                        <p class="work-card__specs">W1800 × D600 × H900mm / 板厚40mm</p>
+                    </div>
+                </article>
+                
+                <article class="work-card">
+                    <div class="work-card__image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="チェリー材デスク" loading="lazy">
+                        <div class="work-card__overlay">
+                            <span class="work-card__price">60〜90万円</span>
+                            <span class="work-card__material">チェリー</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">チェリー材オーダーデスク</h3>
+                        <p class="work-card__specs">W1400 × D700 × H720mm / 板厚30mm</p>
+                    </div>
+                </article>
+                
+                <article class="work-card">
+                    <div class="work-card__image">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="無垢材収納家具" loading="lazy">
+                        <div class="work-card__overlay">
+                            <span class="work-card__price">40〜80万円</span>
+                            <span class="work-card__material">オーク</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">オーク材収納キャビネット</h3>
+                        <p class="work-card__specs">W1200 × D450 × H1800mm</p>
+                    </div>
+                </article>
+                
+                <article class="work-card">
+                    <div class="work-card__image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ダイニングセット" loading="lazy">
+                        <div class="work-card__overlay">
+                            <span class="work-card__price">200〜300万円</span>
+                            <span class="work-card__material">ウォールナット</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">ダイニングセット一式</h3>
+                        <p class="work-card__specs">テーブル + チェア4脚 + ベンチ</p>
+                    </div>
+                </article>
+                
+                <article class="work-card">
+                    <div class="work-card__image">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="店舗用テーブル" loading="lazy">
+                        <div class="work-card__overlay">
+                            <span class="work-card__price">100〜150万円</span>
+                            <span class="work-card__material">オーク</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">店舗用オーク材テーブル</h3>
+                        <p class="work-card__specs">W2000 × D800 × H720mm / 板厚40mm</p>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="section-cta">
+                <a href="works/" class="btn btn--outline">すべての施工事例を見る</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Craftsmen Section -->
+    <section class="craftsmen">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">職人紹介</h2>
+                <p class="section-subtitle">熟練の技術で一生モノの家具をお作りする、当社の職人たち</p>
+            </div>
+            
+            <div class="craftsmen-grid">
+                <div class="craftsman-card">
+                    <div class="craftsman-card__image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="田中一郎職人" loading="lazy">
+                    </div>
+                    <div class="craftsman-card__content">
+                        <h3 class="craftsman-card__name">田中 一郎</h3>
+                        <p class="craftsman-card__experience">家具職人歴15年</p>
+                        <p class="craftsman-card__specialty">得意：一枚板テーブル</p>
+                        <p class="craftsman-card__message">
+                            一枚板の持つ自然の美しさを最大限に引き出すことを心がけています。木との対話を大切に、お客様の想いを形にします。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="craftsman-card">
+                    <div class="craftsman-card__image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="山田太郎職人" loading="lazy">
+                    </div>
+                    <div class="craftsman-card__content">
+                        <h3 class="craftsman-card__name">山田 太郎</h3>
+                        <p class="craftsman-card__experience">家具職人歴12年</p>
+                        <p class="craftsman-card__specialty">得意：収納家具・細工</p>
+                        <p class="craftsman-card__message">
+                            細部にまでこだわり、機能美を追求した家具作りが私の信念です。使い勝手の良さと美しさを両立させることに喜びを感じています。
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="craftsman-card">
+                    <div class="craftsman-card__image">
+                        <img src="https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="職人の手元" loading="lazy">
+                    </div>
+                    <div class="craftsman-card__content">
+                        <h3 class="craftsman-card__name">K.S</h3>
+                        <p class="craftsman-card__experience">家具職人歴20年以上</p>
+                        <p class="craftsman-card__specialty">得意：オーダーデスク</p>
+                        <p class="craftsman-card__message">
+                            長年培った技術で、お客様の理想を超える作品をお作りします。木の声を聞きながら、一つ一つ丁寧に仕上げています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="craftsmen/" class="btn btn--outline">職人について詳しく見る</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Instagram Section -->
+    <section class="instagram">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Instagram</h2>
+                <p class="section-subtitle">制作過程や完成品を日々更新中</p>
+                <p class="section-hashtag">#クラフトファニチャー</p>
+            </div>
+            
+            <div class="instagram-grid" id="instagramGrid">
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+                <div class="instagram-item">
+                    <img src="https://images.unsplash.com/photo-1581382575275-97901c2635b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Instagram投稿" loading="lazy">
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="https://instagram.com/craft_furniture_tokyo" target="_blank" class="btn btn--outline">Instagramでもっと見る</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Delivery Area Section -->
+    <section class="delivery-area">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">納品エリア</h2>
+                <p class="section-subtitle">東京・神奈川・千葉・埼玉は配送設置無料</p>
+            </div>
+            
+            <div class="delivery-content">
+                <div class="delivery-map">
+                    <div class="delivery-areas">
+                        <div class="area-item free">
+                            <span class="area-badge">配送無料</span>
+                            <h3>東京都</h3>
+                        </div>
+                        <div class="area-item free">
+                            <span class="area-badge">配送無料</span>
+                            <h3>神奈川県</h3>
+                        </div>
+                        <div class="area-item free">
+                            <span class="area-badge">配送無料</span>
+                            <h3>千葉県</h3>
+                        </div>
+                        <div class="area-item free">
+                            <span class="area-badge">配送無料</span>
+                            <h3>埼玉県</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="delivery-info">
+                    <div class="info-item">
+                        <h3>配送について</h3>
+                        <p>上記エリア内は配送・設置費用無料。2階以上への搬入も対応いたします。</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>その他のエリア</h3>
+                        <p>関東近県・関西・東海エリアも配送可能です。詳細はお問い合わせください。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="delivery/" class="btn btn--outline">配送エリア詳細を見る</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">お知らせ</h2>
+                <p class="section-subtitle">最新情報・展示会・イベント情報</p>
+            </div>
+            
+            <div class="news-list">
+                <article class="news-item">
+                    <time class="news-item__date" datetime="2025-01-10">2025.01.10</time>
+                    <span class="news-item__category event">イベント</span>
+                    <h3 class="news-item__title">
+                        <a href="news/housing-fair-2025.html">2025年4月 住宅展示場フェア出展のお知らせ</a>
+                    </h3>
+                </article>
+                
+                <article class="news-item">
+                    <time class="news-item__date" datetime="2025-01-05">2025.01.05</time>
+                    <span class="news-item__category info">お知らせ</span>
+                    <h3 class="news-item__title">
+                        <a href="news/new-year-2025.html">新年のご挨拶と営業開始について</a>
+                    </h3>
+                </article>
+                
+                <article class="news-item">
+                    <time class="news-item__date" datetime="2024-12-20">2024.12.20</time>
+                    <span class="news-item__category info">お知らせ</span>
+                    <h3 class="news-item__title">
+                        <a href="news/year-end-holidays.html">年末年始休業のお知らせ</a>
+                    </h3>
+                </article>
+            </div>
+            
+            <div class="section-cta">
+                <a href="news/" class="btn btn--outline">すべてのお知らせを見る</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">あなただけの家具を、一緒に作りませんか？</h2>
+                <p class="cta-subtitle">
+                    無料相談・見積もりから始めて、理想の家具を形にしましょう。<br>
+                    ショールームでの実物確認や、木材サンプルもご用意しています。
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="simulator/" class="btn btn--primary btn--large">
+                        <span>見積もりシミュレーター</span>
+                        <small>概算価格をすぐに確認</small>
+                    </a>
+                    <a href="showroom/" class="btn btn--secondary btn--large">
+                        <span>ショールーム予約</span>
+                        <small>実物を見て相談</small>
+                    </a>
+                    <a href="contact/" class="btn btn--outline btn--large">
+                        <span>お問い合わせ</span>
+                        <small>何でもお気軽に</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <h3 class="footer-logo">
+                            <span class="footer-logo-en">Craft Furniture</span>
+                            <span class="footer-logo-ja">株式会社クラフトファニチャー</span>
+                        </h3>
+                        <p class="footer-description">
+                            東京を拠点とする家具職人による、一枚板を使ったオーダーメイド家具の製造・販売。<br>
+                            永年保証でお客様の一生に寄り添う家具をお作りします。
+                        </p>
+                        
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <strong>TEL:</strong> 03-1234-5678
+                            </div>
+                            <div class="contact-item">
+                                <strong>営業時間:</strong> 平日 9:00-18:00（土日祝は完全予約制）
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-nav">
+                    <div class="footer-nav-section">
+                        <h4 class="footer-nav-title">製品・サービス</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="works/">施工事例</a></li>
+                            <li><a href="process/">製作工程</a></li>
+                            <li><a href="craftsmen/">職人紹介</a></li>
+                            <li><a href="wood-guide/">木材図鑑</a></li>
+                            <li><a href="simulator/">見積もりシミュレーター</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-section">
+                        <h4 class="footer-nav-title">サポート</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="flow/">納品までの流れ</a></li>
+                            <li><a href="delivery/">納品エリア</a></li>
+                            <li><a href="faq/">よくある質問</a></li>
+                            <li><a href="voice/">お客様の声</a></li>
+                            <li><a href="showroom/">ショールーム案内</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-section">
+                        <h4 class="footer-nav-title">会社情報</h4>
+                        <ul class="footer-nav-list">
+                            <li><a href="about/">会社概要</a></li>
+                            <li><a href="news/">お知らせ</a></li>
+                            <li><a href="contact/">お問い合わせ</a></li>
+                            <li><a href="privacy/">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-nav-section">
+                        <h4 class="footer-nav-title">SNS</h4>
+                        <div class="footer-social">
+                            <a href="https://instagram.com/craft_furniture_tokyo" target="_blank" class="social-link">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                                Instagram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 株式会社クラフトファニチャー All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
     
     <script>
         // Modern Mobile Menu Control
