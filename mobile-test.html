@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>モバイルテスト - クラフトファニチャー</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+        .test-container {
+            max-width: 100%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-header {
+            color: #2E5E3E;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .test-item {
+            padding: 15px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #2E5E3E;
+            border-radius: 4px;
+        }
+        .test-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #2E5E3E;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .status {
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .status.loading {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        .status.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .status.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1 class="test-header">📱 モバイルテストページ</h1>
+        
+        <div id="loading-status" class="status loading">
+            🔄 ページ読み込み中...
+        </div>
+        
+        <div class="test-item">
+            <h3>✅ 基本的なHTMLとCSS</h3>
+            <p>このページが表示されていれば、基本的なHTMLとCSSは正常に動作しています。</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>🌐 ネットワーク接続</h3>
+            <p id="network-status">接続テスト中...</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>📄 JavaScriptの動作</h3>
+            <p id="js-status">JavaScript確認中...</p>
+        </div>
+        
+        <div class="test-item">
+            <h3>📱 デバイス情報</h3>
+            <p id="device-info">デバイス情報取得中...</p>
+        </div>
+        
+        <a href="index.html" class="test-button">
+            🏠 メインサイトに戻る
+        </a>
+        
+        <a href="works/" class="test-button">
+            🔨 施工事例ページをテスト
+        </a>
+        
+        <div class="test-item">
+            <h3>🔍 診断結果</h3>
+            <div id="diagnosis">診断中...</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 基本的なJavaScript動作確認
+            document.getElementById('js-status').textContent = '✅ JavaScriptが正常に動作しています';
+            document.getElementById('loading-status').className = 'status success';
+            document.getElementById('loading-status').textContent = '✅ ページ読み込み完了';
+            
+            // デバイス情報取得
+            const deviceInfo = document.getElementById('device-info');
+            const userAgent = navigator.userAgent;
+            const viewport = `${window.innerWidth}x${window.innerHeight}`;
+            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+            
+            let deviceText = `
+                📱 ユーザーエージェント: ${userAgent}<br>
+                📏 ビューポート: ${viewport}<br>
+                🔗 接続: ${connection ? connection.effectiveType || 'unknown' : 'unknown'}
+            `;
+            deviceInfo.innerHTML = deviceText;
+            
+            // ネットワーク接続テスト
+            testNetworkConnection();
+            
+            // 診断実行
+            runDiagnosis();
+        });
+        
+        function testNetworkConnection() {
+            const networkStatus = document.getElementById('network-status');
+            
+            fetch('https://api.github.com/repos/matasuke-smk/craft-furniture-v3')
+                .then(response => {
+                    if (response.ok) {
+                        networkStatus.innerHTML = '✅ ネットワーク接続良好 (GitHub API応答正常)';
+                    } else {
+                        networkStatus.innerHTML = `⚠️ ネットワーク接続に問題 (ステータス: ${response.status})`;
+                    }
+                })
+                .catch(error => {
+                    networkStatus.innerHTML = `❌ ネットワーク接続エラー: ${error.message}`;
+                });
+        }
+        
+        function runDiagnosis() {
+            const diagnosis = document.getElementById('diagnosis');
+            const issues = [];
+            const suggestions = [];
+            
+            // 接続速度チェック
+            if (navigator.connection) {
+                const connection = navigator.connection;
+                if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+                    issues.push('🐌 接続速度が非常に遅いです');
+                    suggestions.push('WiFi接続またはより高速な回線での再試行をお勧めします');
+                }
+            }
+            
+            // メモリチェック
+            if (navigator.deviceMemory && navigator.deviceMemory < 2) {
+                issues.push('📱 デバイスメモリが少ないです');
+                suggestions.push('他のアプリを閉じてからアクセスしてください');
+            }
+            
+            // ビューポートチェック
+            if (window.innerWidth < 320) {
+                issues.push('📏 画面幅が非常に小さいです');
+                suggestions.push('横向きでの表示を試してください');
+            }
+            
+            let diagnosisText = '';
+            
+            if (issues.length === 0) {
+                diagnosisText = '<div class="status success">✅ 特に問題は検出されませんでした</div>';
+            } else {
+                diagnosisText = '<div class="status error">';
+                diagnosisText += '<strong>検出された問題:</strong><br>';
+                diagnosisText += issues.join('<br>');
+                diagnosisText += '<br><br><strong>推奨事項:</strong><br>';
+                diagnosisText += suggestions.join('<br>');
+                diagnosisText += '</div>';
+            }
+            
+            diagnosis.innerHTML = diagnosisText;
+        }
+        
+        // パフォーマンス測定
+        window.addEventListener('load', function() {
+            const loadTime = performance.now();
+            console.log(`ページ読み込み時間: ${loadTime.toFixed(2)}ms`);
+            
+            const perfInfo = document.createElement('div');
+            perfInfo.className = 'test-item';
+            perfInfo.innerHTML = `
+                <h3>⚡ パフォーマンス</h3>
+                <p>ページ読み込み時間: ${loadTime.toFixed(2)}ms</p>
+            `;
+            document.querySelector('.test-container').appendChild(perfInfo);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超軽量テスト - クラフトファニチャー</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            font-family: sans-serif; 
+            background: #f5f5f5; 
+            line-height: 1.6;
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+        }
+        h1 { 
+            color: #2E5E3E; 
+            text-align: center; 
+        }
+        .btn { 
+            display: block; 
+            padding: 15px; 
+            background: #2E5E3E; 
+            color: white; 
+            text-decoration: none; 
+            text-align: center; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+        }
+        .status { 
+            padding: 10px; 
+            margin: 10px 0; 
+            border-radius: 4px; 
+            background: #d4edda; 
+            color: #155724; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 超軽量テストページ</h1>
+        
+        <div class="status">
+            ✅ このページが表示されればHTMLは正常です
+        </div>
+        
+        <p><strong>ファイルサイズ:</strong> 約2KB（画像なし）</p>
+        <p><strong>リクエスト数:</strong> 1つのみ</p>
+        <p><strong>JavaScript:</strong> なし</p>
+        <p><strong>外部フォント:</strong> なし</p>
+        
+        <h2>📱 株式会社クラフトファニチャー</h2>
+        <p>東京を拠点とする家具職人による、一枚板を使ったオーダーメイド家具の製造・販売。</p>
+        
+        <h3>🔨 主なサービス</h3>
+        <ul>
+            <li>一枚板ダイニングテーブル</li>
+            <li>オーダーメイド家具</li>
+            <li>永年保証・アフターケア</li>
+        </ul>
+        
+        <a href="index.html" class="btn">メインサイトへ</a>
+        <a href="mobile-test.html" class="btn">詳細テストページ</a>
+        
+        <h3>🔍 このページのテスト結果</h3>
+        <div id="results"></div>
+        
+    </div>
+
+    <script>
+        // 最小限のJavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const results = document.getElementById('results');
+            const loadTime = performance.now();
+            
+            results.innerHTML = `
+                <div class="status">
+                    📊 読み込み時間: ${loadTime.toFixed(2)}ms<br>
+                    📱 画面サイズ: ${window.innerWidth}x${window.innerHeight}<br>
+                    🌐 ユーザーエージェント: ${navigator.userAgent.includes('Mobile') ? 'モバイル' : 'デスクトップ'}
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

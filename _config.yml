@@ -1,0 +1,53 @@
+# GitHub Pages Configuration for Craft Furniture
+title: 株式会社クラフトファニチャー
+description: オーダーメイド家具製造・販売
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# GitHub Pages settings
+github: [metadata]
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude files from processing
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - server.js
+  - debug-server.js
+  - start-server.js
+  - minimal-server.js
+  - simple-server.js
+  - server-alt.js
+  - test-server.py
+  - check-links.js
+  - "*.bat"
+  - "*.md"
+  - .claude/
+
+# Include files that start with underscores
+include:
+  - _redirects
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Mobile optimization
+future: true
+livereload: true
+strict_front_matter: false
+
+# Performance
+sass:
+  style: compressed
+  
+# SEO
+url: "https://matasuke-smk.github.io"
+baseurl: "/craft-furniture-v3"
