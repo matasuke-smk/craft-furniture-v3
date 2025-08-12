@@ -70,75 +70,127 @@
 </head>
 
 <body>
-    <!-- Header -->
+        <!-- Beautiful Modern Header -->
     <header class="header" id="header">
         <nav class="nav">
-            <div class="nav__container">
-                <div class="nav__brand">
-                    <a href="../" class="nav__logo">
-                        <span class="nav__logo-text">Craft Furniture</span>
-                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <!-- Navigation Menu -->
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="../" class="nav__link">ホーム</a>
-                        </li>
-                        <li class="nav__item nav__item--dropdown">
-                            <a href="../works/" class="nav__link">施工事例</a>
-                            <ul class="nav__dropdown">
-                                <li><a href="../works/?filter=dining">ダイニングテーブル</a></li>
-                                <li><a href="../works/?filter=desk">デスク</a></li>
-                                <li><a href="../works/?filter=storage">収納家具</a></li>
-                                <li><a href="../works/?filter=others">その他</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../process/" class="nav__link">製作工程</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../craftsmen/" class="nav__link">職人紹介</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../wood-guide/" class="nav__link">木材図鑑</a>
-                        </li>
-                        <li class="nav__item nav__item--dropdown">
-                            <a href="./" class="nav__link nav__link--active">会社情報</a>
-                            <ul class="nav__dropdown">
-                                <li><a href="./">会社概要</a></li>
-                                <li><a href="../flow/">納品までの流れ</a></li>
-                                <li><a href="../delivery/">納品エリア</a></li>
-                                <li><a href="../showroom/">ショールーム</a></li>
-                                <li><a href="../faq/">よくある質問</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../voice/" class="nav__link">お客様の声</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../news/" class="nav__link">お知らせ</a>
-                        </li>
-                        <li class="nav__item nav__item--cta">
-                            <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
-                        </li>
-                        <li class="nav__item nav__item--cta">
-                            <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="nav__brand">
+                <a href="../" class="nav__logo">
+                    <span class="nav__logo-text">Craft Furniture</span>
+                    <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                </a>
+            </div>
+            
+            <!-- Modern Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../" class="nav__link">ホーム</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../works/" class="nav__link">施工事例</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../process/" class="nav__link">製作工程</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../craftsmen/" class="nav__link">職人紹介</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../wood-guide/" class="nav__link">木材図鑑</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../about/" class="nav__link">会社情報</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../voice/" class="nav__link">お客様の声</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../news/" class="nav__link">お知らせ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
+    
+    <!-- Clean Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__content">
+            <ul class="mobile-menu__nav">
+                <li class="mobile-menu__item">
+                    <a href="../" class="mobile-menu__link">
+                        <span>ホーム</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../works/" class="mobile-menu__link">
+                        <span>施工事例</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../process/" class="mobile-menu__link">
+                        <span>製作工程</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../craftsmen/" class="mobile-menu__link">
+                        <span>職人紹介</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../wood-guide/" class="mobile-menu__link">
+                        <span>木材図鑑</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../about/" class="mobile-menu__link">
+                        <span>会社情報</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../voice/" class="mobile-menu__link">
+                        <span>お客様の声</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../news/" class="mobile-menu__link">
+                        <span>お知らせ</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="mobile-menu__cta">
+                <div class="mobile-menu__cta-buttons">
+                    <a href="../simulator/" class="mobile-menu__cta-btn mobile-menu__cta-btn--primary">
+                        見積もりシミュレーター
+                    </a>
+                    <a href="../contact/" class="mobile-menu__cta-btn mobile-menu__cta-btn--secondary">
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="main">
@@ -597,7 +649,105 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="../assets/js/common.js"></script>
-</body>
+        <script>
+        // Modern Mobile Menu Control
+        class MobileMenu {
+            constructor() {
+                this.hamburger = document.getElementById('hamburger');
+                this.mobileMenu = document.getElementById('mobileMenu');
+                this.header = document.getElementById('header');
+                this.isOpen = false;
+                
+                this.init();
+            }
+            
+            init() {
+                this.hamburger.addEventListener('click', () => this.toggle());
+                
+                // Close on link click
+                this.mobileMenu.addEventListener('click', (e) => {
+                    if (e.target.closest('.mobile-menu__link')) {
+                        this.close();
+                    }
+                });
+                
+                // Close on outside click
+                document.addEventListener('click', (e) => {
+                    if (!this.hamburger.contains(e.target) && !this.mobileMenu.contains(e.target) && this.isOpen) {
+                        this.close();
+                    }
+                });
+                
+                // Close on escape
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.close();
+                    }
+                });
+                
+                // Handle resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 1024 && this.isOpen) {
+                        this.close();
+                    }
+                });
+                
+                // Scroll effect
+                this.initScrollEffect();
+            }
+            
+            toggle() {
+                this.isOpen ? this.close() : this.open();
+            }
+            
+            open() {
+                this.isOpen = true;
+                this.hamburger.classList.add('active');
+                this.mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                this.hamburger.setAttribute('aria-expanded', 'true');
+            }
+            
+            close() {
+                this.isOpen = false;
+                this.hamburger.classList.remove('active');
+                this.mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                this.hamburger.setAttribute('aria-expanded', 'false');
+            }
+            
+            initScrollEffect() {
+                let lastScrollY = window.scrollY;
+                
+                const updateHeader = () => {
+                    const currentScrollY = window.scrollY;
+                    
+                    if (currentScrollY > 100) {
+                        this.header.classList.add('scrolled');
+                    } else {
+                        this.header.classList.remove('scrolled');
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                };
+                
+                let ticking = false;
+                
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            updateHeader();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+            }
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            new MobileMenu();
+        });
+    </script></body>
 </html>

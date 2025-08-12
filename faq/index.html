@@ -466,75 +466,127 @@
 </head>
 
 <body>
-    <!-- Header -->
+        <!-- Beautiful Modern Header -->
     <header class="header" id="header">
         <nav class="nav">
-            <div class="nav__container">
-                <div class="nav__brand">
-                    <a href="../" class="nav__logo">
-                        <span class="nav__logo-text">Craft Furniture</span>
-                        <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="nav__toggle" id="nav-toggle" aria-label="メニュー">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <!-- Navigation Menu -->
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="../" class="nav__link">ホーム</a>
-                        </li>
-                        <li class="nav__item nav__item--dropdown">
-                            <a href="../works/" class="nav__link">施工事例</a>
-                            <ul class="nav__dropdown">
-                                <li><a href="../works/?filter=dining">ダイニングテーブル</a></li>
-                                <li><a href="../works/?filter=desk">デスク</a></li>
-                                <li><a href="../works/?filter=storage">収納家具</a></li>
-                                <li><a href="../works/?filter=others">その他</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../process/" class="nav__link">製作工程</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../craftsmen/" class="nav__link">職人紹介</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../wood-guide/" class="nav__link">木材図鑑</a>
-                        </li>
-                        <li class="nav__item nav__item--dropdown">
-                            <a href="../about/" class="nav__link">会社情報</a>
-                            <ul class="nav__dropdown">
-                                <li><a href="../about/">会社概要</a></li>
-                                <li><a href="../flow/">納品までの流れ</a></li>
-                                <li><a href="../delivery/">納品エリア</a></li>
-                                <li><a href="../showroom/">ショールーム</a></li>
-                                <li><a href="./" class="nav__link--active">よくある質問</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../voice/" class="nav__link">お客様の声</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="../news/" class="nav__link">お知らせ</a>
-                        </li>
-                        <li class="nav__item nav__item--cta">
-                            <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
-                        </li>
-                        <li class="nav__item nav__item--cta">
-                            <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="nav__brand">
+                <a href="../" class="nav__logo">
+                    <span class="nav__logo-text">Craft Furniture</span>
+                    <span class="nav__logo-sub">株式会社クラフトファニチャー</span>
+                </a>
+            </div>
+            
+            <!-- Modern Hamburger -->
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../" class="nav__link">ホーム</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../works/" class="nav__link">施工事例</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../process/" class="nav__link">製作工程</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../craftsmen/" class="nav__link">職人紹介</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../wood-guide/" class="nav__link">木材図鑑</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../about/" class="nav__link">会社情報</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../voice/" class="nav__link">お客様の声</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../news/" class="nav__link">お知らせ</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../simulator/" class="nav__link nav__link--cta">見積もり</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../contact/" class="nav__link nav__link--contact">お問い合わせ</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
+    
+    <!-- Clean Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__content">
+            <ul class="mobile-menu__nav">
+                <li class="mobile-menu__item">
+                    <a href="../" class="mobile-menu__link">
+                        <span>ホーム</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../works/" class="mobile-menu__link">
+                        <span>施工事例</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../process/" class="mobile-menu__link">
+                        <span>製作工程</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../craftsmen/" class="mobile-menu__link">
+                        <span>職人紹介</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../wood-guide/" class="mobile-menu__link">
+                        <span>木材図鑑</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../about/" class="mobile-menu__link">
+                        <span>会社情報</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../voice/" class="mobile-menu__link">
+                        <span>お客様の声</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="../news/" class="mobile-menu__link">
+                        <span>お知らせ</span>
+                        <span class="mobile-menu__arrow">→</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="mobile-menu__cta">
+                <div class="mobile-menu__cta-buttons">
+                    <a href="../simulator/" class="mobile-menu__cta-btn mobile-menu__cta-btn--primary">
+                        見積もりシミュレーター
+                    </a>
+                    <a href="../contact/" class="mobile-menu__cta-btn mobile-menu__cta-btn--secondary">
+                        お問い合わせ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="main" id="main-content">
@@ -1142,268 +1194,105 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="../assets/js/common.js"></script>
-    <script>
-        // FAQ Functionality
-        class FAQManager {
+        <script>
+        // Modern Mobile Menu Control
+        class MobileMenu {
             constructor() {
-                this.searchInput = document.getElementById('faq-search');
-                this.categoryBtns = document.querySelectorAll('.category-btn');
-                this.faqItems = document.querySelectorAll('.faq-item');
-                this.noResults = document.getElementById('no-results');
-                this.currentCategory = 'all';
-                this.currentSearchTerm = '';
+                this.hamburger = document.getElementById('hamburger');
+                this.mobileMenu = document.getElementById('mobileMenu');
+                this.header = document.getElementById('header');
+                this.isOpen = false;
                 
                 this.init();
             }
             
             init() {
-                this.setupEventListeners();
-                this.setupAccessibility();
+                this.hamburger.addEventListener('click', () => this.toggle());
+                
+                // Close on link click
+                this.mobileMenu.addEventListener('click', (e) => {
+                    if (e.target.closest('.mobile-menu__link')) {
+                        this.close();
+                    }
+                });
+                
+                // Close on outside click
+                document.addEventListener('click', (e) => {
+                    if (!this.hamburger.contains(e.target) && !this.mobileMenu.contains(e.target) && this.isOpen) {
+                        this.close();
+                    }
+                });
+                
+                // Close on escape
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) {
+                        this.close();
+                    }
+                });
+                
+                // Handle resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 1024 && this.isOpen) {
+                        this.close();
+                    }
+                });
+                
+                // Scroll effect
+                this.initScrollEffect();
             }
             
-            setupEventListeners() {
-                // Search functionality
-                this.searchInput?.addEventListener('input', (e) => {
-                    this.currentSearchTerm = e.target.value.toLowerCase().trim();
-                    this.filterFAQs();
-                });
-                
-                // Search button click
-                document.getElementById('search-btn')?.addEventListener('click', () => {
-                    this.searchInput?.focus();
-                });
-                
-                // Category filtering
-                this.categoryBtns.forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        this.setActiveCategory(btn);
-                        this.currentCategory = btn.dataset.category;
-                        this.filterFAQs();
-                    });
-                });
-                
-                // Details open/close tracking for analytics
-                this.faqItems.forEach(item => {
-                    item.addEventListener('toggle', (e) => {
-                        if (e.target.open) {
-                            this.trackFAQOpen(e.target);
-                        }
-                    });
-                });
+            toggle() {
+                this.isOpen ? this.close() : this.open();
             }
             
-            setupAccessibility() {
-                // Add keyboard navigation for category buttons
-                this.categoryBtns.forEach(btn => {
-                    btn.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            btn.click();
-                        }
-                    });
-                });
-                
-                // Improve search accessibility
-                this.searchInput?.setAttribute('aria-label', '質問を検索');
-                this.searchInput?.setAttribute('role', 'searchbox');
+            open() {
+                this.isOpen = true;
+                this.hamburger.classList.add('active');
+                this.mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                this.hamburger.setAttribute('aria-expanded', 'true');
             }
             
-            setActiveCategory(activeBtn) {
-                this.categoryBtns.forEach(btn => {
-                    btn.classList.remove('category-btn--active');
-                });
-                activeBtn.classList.add('category-btn--active');
+            close() {
+                this.isOpen = false;
+                this.hamburger.classList.remove('active');
+                this.mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                this.hamburger.setAttribute('aria-expanded', 'false');
             }
             
-            filterFAQs() {
-                let visibleCount = 0;
+            initScrollEffect() {
+                let lastScrollY = window.scrollY;
                 
-                this.faqItems.forEach(item => {
-                    const matchesCategory = this.currentCategory === 'all' || 
-                                          item.dataset.category === this.currentCategory;
-                    const matchesSearch = this.matchesSearchTerm(item);
+                const updateHeader = () => {
+                    const currentScrollY = window.scrollY;
                     
-                    if (matchesCategory && matchesSearch) {
-                        item.classList.remove('hidden');
-                        visibleCount++;
+                    if (currentScrollY > 100) {
+                        this.header.classList.add('scrolled');
                     } else {
-                        item.classList.add('hidden');
-                        // Close expanded FAQ items when hiding them
-                        item.removeAttribute('open');
+                        this.header.classList.remove('scrolled');
                     }
-                });
-                
-                // Show/hide no results message
-                if (visibleCount === 0) {
-                    this.noResults?.style.setProperty('display', 'block');
-                    this.updateNoResultsMessage();
-                } else {
-                    this.noResults?.style.setProperty('display', 'none');
-                }
-                
-                // Update results count in analytics
-                this.trackFilterResults(visibleCount);
-            }
-            
-            matchesSearchTerm(item) {
-                if (!this.currentSearchTerm) return true;
-                
-                const question = item.querySelector('.faq-item__question')?.textContent.toLowerCase() || '';
-                const answer = item.querySelector('.faq-item__answer')?.textContent.toLowerCase() || '';
-                
-                return question.includes(this.currentSearchTerm) || 
-                       answer.includes(this.currentSearchTerm);
-            }
-            
-            updateNoResultsMessage() {
-                const noResultsContent = this.noResults?.querySelector('.no-results__content');
-                if (!noResultsContent) return;
-                
-                let message = '検索結果が見つかりませんでした';
-                
-                if (this.currentSearchTerm && this.currentCategory !== 'all') {
-                    message = `「${this.currentSearchTerm}」の検索結果が「${this.getCategoryName(this.currentCategory)}」カテゴリで見つかりませんでした`;
-                } else if (this.currentSearchTerm) {
-                    message = `「${this.currentSearchTerm}」の検索結果が見つかりませんでした`;
-                } else if (this.currentCategory !== 'all') {
-                    message = `「${this.getCategoryName(this.currentCategory)}」カテゴリに質問がありません`;
-                }
-                
-                noResultsContent.querySelector('h3').textContent = message;
-            }
-            
-            getCategoryName(category) {
-                const categoryNames = {
-                    'order': 'ご注文について',
-                    'price': '価格・お支払い',
-                    'delivery': '配送・納品',
-                    'maintenance': 'メンテナンス',
-                    'material': '素材・木材'
+                    
+                    lastScrollY = currentScrollY;
                 };
-                return categoryNames[category] || category;
-            }
-            
-            trackFAQOpen(item) {
-                const question = item.querySelector('.faq-item__question')?.textContent || '';
-                console.log('FAQ opened:', question);
-                // Here you could send analytics data to your tracking service
-            }
-            
-            trackFilterResults(count) {
-                console.log(`Filter applied - Category: ${this.currentCategory}, Search: "${this.currentSearchTerm}", Results: ${count}`);
-                // Here you could send analytics data to your tracking service
-            }
-            
-            // Public method to reset filters (can be called from other scripts)
-            resetFilters() {
-                this.currentCategory = 'all';
-                this.currentSearchTerm = '';
-                this.searchInput.value = '';
                 
-                // Reset active category
-                this.categoryBtns.forEach(btn => {
-                    btn.classList.remove('category-btn--active');
-                    if (btn.dataset.category === 'all') {
-                        btn.classList.add('category-btn--active');
-                    }
-                });
+                let ticking = false;
                 
-                this.filterFAQs();
-            }
-            
-            // Public method to search for specific term
-            searchFor(term) {
-                this.searchInput.value = term;
-                this.currentSearchTerm = term.toLowerCase().trim();
-                this.filterFAQs();
-                this.searchInput.focus();
-            }
-            
-            // Public method to filter by category
-            filterByCategory(category) {
-                const targetBtn = Array.from(this.categoryBtns).find(btn => 
-                    btn.dataset.category === category
-                );
-                if (targetBtn) {
-                    targetBtn.click();
-                }
-            }
-        }
-        
-        // Smooth scrolling enhancement
-        class FAQScrollManager {
-            constructor() {
-                this.init();
-            }
-            
-            init() {
-                // Auto-scroll to FAQ list when filtering
-                document.addEventListener('faq-filtered', () => {
-                    const faqList = document.querySelector('.faq-list-section');
-                    if (faqList) {
-                        const rect = faqList.getBoundingClientRect();
-                        const scrollTop = window.pageYOffset + rect.top - 100; // 100px上に調整
-                        
-                        window.scrollTo({
-                            top: scrollTop,
-                            behavior: 'smooth'
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            updateHeader();
+                            ticking = false;
                         });
+                        ticking = true;
                     }
-                });
-                
-                // Smooth scroll to top when category changes
-                document.querySelectorAll('.category-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        setTimeout(() => {
-                            document.dispatchEvent(new CustomEvent('faq-filtered'));
-                        }, 100);
-                    });
                 });
             }
         }
         
-        // Initialize when DOM is loaded
+        // Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
-            window.faqManager = new FAQManager();
-            window.faqScrollManager = new FAQScrollManager();
-            
-            // Add fade-in animation to FAQ items
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'fadeIn 0.6s ease forwards';
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-            
-            document.querySelectorAll('.faq-item').forEach(item => {
-                observer.observe(item);
-            });
-            
-            // Add loading state management
-            const searchInput = document.getElementById('faq-search');
-            let searchTimeout;
-            
-            searchInput?.addEventListener('input', () => {
-                clearTimeout(searchTimeout);
-                searchInput.style.opacity = '0.7';
-                
-                searchTimeout = setTimeout(() => {
-                    searchInput.style.opacity = '1';
-                }, 300);
-            });
+            new MobileMenu();
         });
-        
-        // Export for global access
-        window.resetFAQFilters = () => window.faqManager?.resetFilters();
-        window.searchFAQ = (term) => window.faqManager?.searchFor(term);
-        window.filterFAQByCategory = (category) => window.faqManager?.filterByCategory(category);
-    </script>
-</body>
+    </script></body>
 </html>
