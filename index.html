@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/typography.css">
     <link rel="stylesheet" href="assets/css/common.css">
-    <link rel="stylesheet" href="assets/css/header.css?v=20250813-3">
+    <link rel="stylesheet" href="assets/css/header.css?v=newgrid-20250813">
     
     <style>
         /* Reset & Variables */
@@ -49,6 +49,45 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+        }
+        
+        /* 緊急: 新しいモバイルメニュー CSS（キャッシュ回避） */
+        .mobile-menu {
+            position: fixed !important;
+            top: 90px !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: calc(100vh - 90px - 100px) !important;
+            background: rgba(255,255,255,0.98) !important;
+            backdrop-filter: blur(15px) !important;
+            transform: translateX(-100%) !important;
+            transition: transform 0.3s ease !important;
+            z-index: 999 !important;
+            overflow: hidden !important;
+            border-top: 1px solid rgba(0,0,0,0.1) !important;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0) !important;
+        }
+        
+        .mobile-menu__content {
+            height: 100% !important;
+            display: grid !important;
+            grid-template-rows: 0.25rem 1fr 0.25rem auto 100px !important;
+            padding: 0 2rem !important;
+        }
+        
+        .mobile-menu__nav-links {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-evenly !important;
+        }
+        
+        .mobile-menu__cta-section {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0.5rem !important;
         }
         
         .section-header {
