@@ -832,6 +832,17 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* PCヘッダー ボタン位置修正 */
+        @media (min-width: 1025px) {
+            .nav__link--cta,
+            .nav__link--contact {
+                display: inline-flex !important;
+                align-items: center !important;
+                vertical-align: middle !important;
+                line-height: 1 !important;
+            }
+        }
     </style>
 </head>
 <body>
