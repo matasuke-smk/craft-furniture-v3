@@ -198,7 +198,8 @@ body {
 .nav__link--contact {
     background: var(--white);
     color: var(--accent) !important;
-    border: 2px solid var(--accent);
+    border: 2px solid transparent;
+    box-shadow: inset 0 0 0 2px var(--accent);
     font-weight: 600;
     margin-left: 0.5rem;
 }
