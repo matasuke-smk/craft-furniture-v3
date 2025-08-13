@@ -1475,6 +1475,9 @@
             }
             
             adjustMenuHeight() {
+                // Disable dynamic layout - let CSS handle it
+                return;
+                
                 const viewportHeight = window.innerHeight;
                 const headerHeight = 90;
                 const availableHeight = viewportHeight - headerHeight;
@@ -1537,31 +1540,25 @@
                     // }
                     
                     // Set navigation list to flex and distribute space
-                    const navList = document.querySelector('.mobile-menu__nav');
+                    const navList = document.querySelector('.mobile-menu__nav-links');
                     if (navList) {
                         navList.style.flex = '1';
                         navList.style.display = 'flex';
                         navList.style.flexDirection = 'column';
-                        navList.style.justifyContent = 'space-around'; // Changed from space-evenly
+                        navList.style.justifyContent = 'space-evenly';
                         navList.style.margin = '0';
-                        navList.style.padding = '0 2rem';
+                        // Remove padding to allow spacers to work
                         navList.style.minHeight = `${totalItemsHeight}px`;
-                        navList.style.maxHeight = `${totalItemsHeight}px`;
                     }
                     
                     // Set CTA section to be fixed height with guaranteed space
-                    const ctaSection = document.querySelector('.mobile-menu__cta');
+                    const ctaSection = document.querySelector('.mobile-menu__cta-section');
                     if (ctaSection) {
                         ctaSection.style.flexShrink = '0';
-                        ctaSection.style.minHeight = `${ctaFixedHeight}px`;
-                        ctaSection.style.maxHeight = `${ctaFixedHeight}px`;
-                        ctaSection.style.paddingTop = `${ctaPadding}rem`;
-                        ctaSection.style.paddingBottom = `${ctaPadding}rem`;
-                        ctaSection.style.boxSizing = 'border-box';
-                        ctaSection.style.display = 'block';
-                        ctaSection.style.overflow = 'visible';
-                        ctaSection.style.visibility = 'visible';
-                        ctaSection.style.opacity = '1';
+                        ctaSection.style.display = 'flex';
+                        ctaSection.style.flexDirection = 'column';
+                        ctaSection.style.gap = '0.5rem';
+                        // Don't override padding - let CSS handle it
                     }
                     
                     // Ensure existing CTA buttons are visible
