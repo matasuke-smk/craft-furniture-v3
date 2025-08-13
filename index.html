@@ -854,66 +854,65 @@
     <!-- Clean Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu__content">
-            <ul class="mobile-menu__nav">
-                <li class="mobile-menu__item">
+            <div class="mobile-menu__top-spacer"></div>
+            <div class="mobile-menu__nav-links">
+                <div class="mobile-menu__item">
                     <a href="./" class="mobile-menu__link">
                         <span>ホーム</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-                <li class="mobile-menu__item">
+                </div>
+                <div class="mobile-menu__item">
                     <a href="works/" class="mobile-menu__link">
                         <span>施工事例</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-                <li class="mobile-menu__item">
+                </div>
+                <div class="mobile-menu__item">
                     <a href="process/" class="mobile-menu__link">
                         <span>製作工程</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-                <li class="mobile-menu__item">
+                </div>
+                <div class="mobile-menu__item">
                     <a href="craftsmen/" class="mobile-menu__link">
                         <span>職人紹介</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-                <li class="mobile-menu__item">
+                </div>
+                <div class="mobile-menu__item">
                     <a href="wood-guide/" class="mobile-menu__link">
                         <span>木材図鑑</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-                <li class="mobile-menu__item">
+                </div>
+                <div class="mobile-menu__item">
                     <a href="about/" class="mobile-menu__link">
                         <span>会社情報</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-                <li class="mobile-menu__item">
+                </div>
+                <div class="mobile-menu__item">
                     <a href="voice/" class="mobile-menu__link">
                         <span>お客様の声</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-                <li class="mobile-menu__item">
+                </div>
+                <div class="mobile-menu__item">
                     <a href="news/" class="mobile-menu__link">
                         <span>お知らせ</span>
                         <span class="mobile-menu__arrow">→</span>
                     </a>
-                </li>
-            </ul>
-            
-            <div class="mobile-menu__cta">
-                <div class="mobile-menu__cta-buttons">
-                    <a href="simulator/" class="mobile-menu__cta-btn mobile-menu__cta-btn--primary">
-                        見積もりシミュレーター
-                    </a>
-                    <a href="contact/" class="mobile-menu__cta-btn mobile-menu__cta-btn--secondary">
-                        お問い合わせ
-                    </a>
                 </div>
+            </div>
+            <div class="mobile-menu__bottom-spacer"></div>
+            <div class="mobile-menu__cta-section">
+                <a href="simulator/" class="mobile-menu__item mobile-menu__cta-btn mobile-menu__cta-btn--primary">
+                    見積もりシミュレーター
+                </a>
+                <a href="contact/" class="mobile-menu__item mobile-menu__cta-btn mobile-menu__cta-btn--secondary">
+                    お問い合わせ
+                </a>
             </div>
         </div>
     </div>
@@ -1501,9 +1500,9 @@
                 const itemCount = visibleMenuItems.length;
                 
                 if (itemCount > 0) {
-                    // Calculate optimal height per item (minimum 15px, maximum 50px)
+                    // Calculate optimal height per item (minimum 40px, maximum 120px)
                     const idealItemHeight = Math.floor(availableForItems / itemCount);
-                    const itemHeight = Math.max(15, Math.min(50, idealItemHeight));
+                    const itemHeight = Math.max(40, Math.min(120, idealItemHeight));
                     
                     console.log(`Item height calculated: ${itemHeight}px per item`);
                     
@@ -1519,25 +1518,25 @@
                     document.documentElement.style.setProperty('--mobile-menu-item-height', `${itemHeight}px`);
                     document.documentElement.style.setProperty('--mobile-menu-cta-padding', `${ctaPadding}rem`);
                     
-                    // Ensure menu content fits exactly in available space
-                    if (mobileMenuElement) {
-                        mobileMenuElement.style.height = `${availableHeight}px`;
-                        mobileMenuElement.style.maxHeight = `${availableHeight}px`;
-                        mobileMenuElement.style.overflowY = 'hidden'; // Never scroll
-                        mobileMenuElement.style.display = 'flex';
-                        mobileMenuElement.style.flexDirection = 'column';
-                    }
+                    // Let CSS handle the layout - don't force JavaScript styles
+                    // if (mobileMenuElement) {
+                    //     mobileMenuElement.style.height = `${availableHeight}px`;
+                    //     mobileMenuElement.style.maxHeight = `${availableHeight}px`;
+                    //     mobileMenuElement.style.overflowY = 'hidden'; // Never scroll
+                    //     mobileMenuElement.style.display = 'flex';
+                    //     mobileMenuElement.style.flexDirection = 'column';
+                    // }
                     
-                    // Set menu content to use flex layout
-                    const menuContent = document.querySelector('.mobile-menu__content');
-                    if (menuContent) {
-                        menuContent.style.height = '100%';
-                        menuContent.style.display = 'flex';
-                        menuContent.style.flexDirection = 'column';
-                        menuContent.style.paddingTop = `${topPadding}px`;
-                        menuContent.style.paddingBottom = `${bottomPadding}px`;
-                        menuContent.style.boxSizing = 'border-box';
-                    }
+                    // Let CSS handle the layout - don't force JavaScript styles
+                    // const menuContent = document.querySelector('.mobile-menu__content');
+                    // if (menuContent) {
+                    //     menuContent.style.height = '100%';
+                    //     menuContent.style.display = 'flex';
+                    //     menuContent.style.flexDirection = 'column';
+                    //     menuContent.style.paddingTop = `${topPadding}px`;
+                    //     menuContent.style.paddingBottom = `${bottomPadding}px`;
+                    //     menuContent.style.boxSizing = 'border-box';
+                    // }
                     
                     // Set navigation list to flex and distribute space
                     const navList = document.querySelector('.mobile-menu__nav');
