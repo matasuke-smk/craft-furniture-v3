@@ -833,6 +833,23 @@
             }
         }
         
+        /* 緊急修正: PC表示でのホームとボタン位置 */
+        @media (min-width: 1025px) {
+            .nav__item--hidden {
+                display: flex !important;
+                visibility: visible !important;
+            }
+            
+            .nav__link--cta,
+            .nav__link--contact {
+                height: 40px !important;
+                border: 2px solid var(--accent) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+        }
+        
     </style>
 </head>
 <body>
