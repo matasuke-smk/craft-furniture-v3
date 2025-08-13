@@ -253,7 +253,6 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     min-height: 350px;
-    padding: 1rem 0;
 }
 
 .mobile-menu__bottom-spacer {
@@ -387,7 +386,6 @@ body {
         flex: none;
         gap: 1rem;
         min-height: auto;
-        padding: 1rem 0;
     }
     
     .mobile-menu__bottom-spacer {
@@ -419,7 +417,6 @@ body {
     .mobile-menu__nav-links {
         gap: 0.8rem;
         min-height: auto;
-        padding: 0.5rem 0;
     }
     
     .mobile-menu__item {
