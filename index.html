@@ -1758,13 +1758,13 @@
                     }
                 });
                 
-                // Hide current page link in desktop menu
-                desktopMenuItems.forEach(item => {
-                    const link = item.querySelector('.nav__link');
-                    if (link && this.isCurrentPage(link.getAttribute('href'))) {
-                        item.style.display = 'none';
-                    }
-                });
+                // Hide current page link in desktop menu (PC表示では無効化)
+                // desktopMenuItems.forEach(item => {
+                //     const link = item.querySelector('.nav__link');
+                //     if (link && this.isCurrentPage(link.getAttribute('href'))) {
+                //         item.style.display = 'none';
+                //     }
+                // });
                 
                 // Refresh menu height calculation after hiding items
                 if (hiddenCount > 0 && this.mobileMenuInstance) {
