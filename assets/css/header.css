@@ -199,6 +199,7 @@ body {
     color: var(--accent) !important;
     border: 2px solid var(--accent);
     font-weight: 600;
+    margin-left: 0.5rem;
 }
 
 .nav__link--contact:hover {
