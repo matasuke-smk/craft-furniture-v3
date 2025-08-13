@@ -214,8 +214,7 @@ body {
     top: 90px !important;
     left: 0 !important;
     width: 100% !important;
-    height: calc(100vh - 90px) !important;
-    max-height: calc(100vh - 90px) !important;
+    height: calc(100vh - 90px - 20px) !important;
     background: rgba(255,255,255,0.98) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -232,47 +231,35 @@ body {
 }
 
 .mobile-menu__content {
-    position: relative !important;
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    padding: 0.5rem 0 0.5rem 0 !important;
+    padding: 0.5rem 2rem 1rem 2rem !important;
     box-sizing: border-box !important;
 }
 
 .mobile-menu__top-spacer {
-    height: 0.25rem;
-    flex-shrink: 0;
-    margin: 0 2rem;
+    height: 0.25rem !important;
+    flex-shrink: 0 !important;
 }
 
 .mobile-menu__nav-links {
-    flex: 0 0 auto !important;
+    flex: 1 !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-evenly !important;
-    height: calc(100vh - 90px - 8rem) !important;
-    min-height: calc(100vh - 90px - 8rem) !important;
-    padding: 0 2rem !important;
 }
 
 .mobile-menu__bottom-spacer {
-    height: 0.25rem;
-    flex-shrink: 0;
-    margin: 0 2rem;
+    height: 0.25rem !important;
+    flex-shrink: 0 !important;
 }
 
 .mobile-menu__cta-section {
-    position: absolute !important;
-    bottom: 1rem !important;
-    left: 2rem !important;
-    right: 2rem !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 0.5rem !important;
     flex-shrink: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
 }
 
 .mobile-menu__item {
@@ -366,20 +353,7 @@ body {
     color: var(--white);
 }
 
-/* Remove complex browser-specific fixes - keep it simple */
-
-/* Small Screen Styles - Only add scroll if really needed */
-@media (max-height: 500px) {
-    .mobile-menu {
-        overflow-y: auto !important;
-    }
-    
-    .mobile-menu__item {
-        min-height: 40px;
-    }
-}
-
-/* Remove duplicate and complex rules */
+/* Clean and simple - no complex overrides */
 
 /* Mobile Styles */
 @media (max-width: 1024px) {

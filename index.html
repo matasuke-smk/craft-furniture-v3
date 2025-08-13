@@ -1436,6 +1436,7 @@
                 this.isOpen = true;
                 this.hamburger.classList.add('active');
                 this.mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
                 this.hamburger.setAttribute('aria-expanded', 'true');
             }
             
@@ -1443,6 +1444,7 @@
                 this.isOpen = false;
                 this.hamburger.classList.remove('active');
                 this.mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
                 this.hamburger.setAttribute('aria-expanded', 'false');
             }
             
