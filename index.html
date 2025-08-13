@@ -1389,7 +1389,7 @@
                 this.isOpen = false;
                 
                 this.init();
-                this.adjustMenuHeight();
+                // this.adjustMenuHeight(); // Disabled
             }
             
             init() {
@@ -1421,7 +1421,7 @@
                     if (window.innerWidth > 1024 && this.isOpen) {
                         this.close();
                     }
-                    this.adjustMenuHeight();
+                    // this.adjustMenuHeight(); // Disabled
                 });
                 
                 // Scroll effect
@@ -1710,7 +1710,7 @@
                 if (hiddenCount > 0 && this.mobileMenuInstance) {
                     // Wait for DOM update then recalculate
                     setTimeout(() => {
-                        this.mobileMenuInstance.adjustMenuHeight();
+                        // this.mobileMenuInstance.adjustMenuHeight(); // Disabled
                     }, 10);
                 }
             }
