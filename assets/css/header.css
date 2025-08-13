@@ -214,19 +214,16 @@ body {
     top: 90px !important;
     left: 0 !important;
     width: 100% !important;
-    height: calc(100vh - 90px - 30px) !important;
-    max-height: calc(100vh - 90px - 30px) !important;
+    height: calc(100vh - 90px) !important;
+    max-height: calc(100vh - 90px) !important;
     background: rgba(255,255,255,0.98) !important;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: var(--z-menu);
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+    overflow: hidden !important;
     border-top: 1px solid rgba(0,0,0,0.1);
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
     box-sizing: border-box !important;
 }
 
@@ -238,7 +235,7 @@ body {
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    padding: 0.5rem 2rem 2rem 2rem !important;
+    padding: 0.5rem 2rem 0.5rem 2rem !important;
     box-sizing: border-box !important;
 }
 
@@ -265,8 +262,8 @@ body {
     flex-direction: column !important;
     gap: 0.5rem !important;
     flex-shrink: 0 !important;
-    padding-bottom: 0.5rem !important;
-    margin-bottom: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .mobile-menu__item {
@@ -360,91 +357,20 @@ body {
     color: var(--white);
 }
 
-/* Mobile browser specific fixes */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-    .mobile-menu {
-        /* iOS Chrome specific adjustments */
-        height: calc(100vh - 90px - env(safe-area-inset-bottom, 30px));
-        max-height: calc(100vh - 90px - env(safe-area-inset-bottom, 30px));
-    }
-}
+/* Remove complex browser-specific fixes - keep it simple */
 
-/* Android Chrome specific fixes */
-@supports not (env(safe-area-inset-bottom)) {
-    .mobile-menu {
-        /* Fallback for devices without safe-area support */
-        height: calc(100vh - 90px - 60px);
-        max-height: calc(100vh - 90px - 60px);
-        padding-bottom: 60px;
-    }
-    
-    .mobile-menu__content {
-        padding-bottom: calc(4rem + 60px);
-    }
-    
-    .mobile-menu__cta-section {
-        padding-bottom: calc(2rem + 60px);
-    }
-}
-
-/* Small Screen Styles - Fixed spacing with scroll */
-@media (max-height: 600px) {
-    .mobile-menu {
-        overflow-y: auto !important;
-        height: calc(100vh - 90px - 50px) !important;
-    }
-    
-    .mobile-menu__content {
-        padding: 0 2rem 1rem 2rem !important;
-        height: 100% !important;
-    }
-    
-    .mobile-menu__nav-links {
-        flex: 1 !important;
-        justify-content: space-evenly !important;
-        min-height: auto !important;
-    }
-    
-    .mobile-menu__item {
-        min-height: 45px;
-        flex-shrink: 0;
-    }
-    
-    .mobile-menu__cta-section {
-        padding-bottom: 0.5rem !important;
-        margin-bottom: 0 !important;
-    }
-}
-
-/* Extra small screens */
+/* Small Screen Styles - Only add scroll if really needed */
 @media (max-height: 500px) {
     .mobile-menu {
         overflow-y: auto !important;
     }
     
-    .mobile-menu__content {
-        padding: 0 1.5rem 3rem 1.5rem;
-        min-height: auto;
-    }
-    
-    .mobile-menu__nav-links {
-        gap: 0.8rem;
-        min-height: auto;
-    }
-    
     .mobile-menu__item {
-        min-height: 45px;
-    }
-    
-    .mobile-menu__cta-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-    }
-    
-    .mobile-menu__cta-section {
-        padding-bottom: calc(3rem + env(safe-area-inset-bottom, 40px));
+        min-height: 40px;
     }
 }
+
+/* Remove duplicate and complex rules */
 
 /* Mobile Styles */
 @media (max-width: 1024px) {
